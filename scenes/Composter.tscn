@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cy40k81p41ncc"]
+[gd_scene load_steps=8 format=3 uid="uid://cy40k81p41ncc"]
 
 [ext_resource type="Script" path="res://scripts/composter.gd" id="1_5yxlq"]
 
@@ -15,7 +15,13 @@ size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukj8a"]
 
-[node name="composter" type="StaticBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xw51s"]
+size = Vector2(100, 1000)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1ch5"]
+size = Vector2(1000, 100)
+
+[node name="Composter" type="StaticBody2D"]
 script = ExtResource("1_5yxlq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -28,5 +34,13 @@ shape = SubResource("RectangleShape2D_4ut8v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_ukj8a")
+
+[node name="BlockArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlockArea"]
+shape = SubResource("RectangleShape2D_xw51s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BlockArea"]
+shape = SubResource("RectangleShape2D_e1ch5")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

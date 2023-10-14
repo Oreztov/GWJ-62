@@ -1,14 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://e01n2h3db0n"]
+[gd_scene load_steps=9 format=3 uid="uid://e01n2h3db0n"]
 
+[ext_resource type="Script" path="res://level.gd" id="1_r3y3s"]
 [ext_resource type="TileSet" uid="uid://d1kqek74ycve3" path="res://resources/level_tile_set.tres" id="1_u7gxt"]
 [ext_resource type="PackedScene" uid="uid://bex00buheapxy" path="res://scenes/player.tscn" id="2_p3v33"]
-[ext_resource type="PackedScene" uid="uid://dp3h0b1c2gc2x" path="res://scenes/gravestone.tscn" id="3_ap34t"]
+[ext_resource type="PackedScene" uid="uid://cybm4l5hvwmvk" path="res://scenes/water_tap.tscn" id="3_1ljv0"]
+[ext_resource type="PackedScene" uid="uid://dwjcfjh7g5jw3" path="res://scenes/gravestone.tscn" id="3_ap34t"]
 [ext_resource type="PackedScene" uid="uid://dle118v1mw774" path="res://scenes/plant.tscn" id="4_2q5to"]
 [ext_resource type="PackedScene" uid="uid://cy40k81p41ncc" path="res://scenes/composter.tscn" id="5_so264"]
-[ext_resource type="PackedScene" uid="uid://duifqnwl3kaia" path="res://scenes/water.tscn" id="6_0jtwn"]
+[ext_resource type="PackedScene" uid="uid://bjtde1hwveusp" path="res://scenes/soul_well.tscn" id="8_wrgja"]
 
 [node name="Level" type="Node2D"]
 position = Vector2(167, 109)
+script = ExtResource("1_r3y3s")
+composter = ExtResource("5_so264")
+water_tap = ExtResource("3_1ljv0")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_u7gxt")
@@ -27,27 +32,35 @@ zoom = Vector2(2.8, 2.8)
 
 [node name="Gravestone" parent="Objects" instance=ExtResource("3_ap34t")]
 position = Vector2(8, 8)
+replace_me = true
 
 [node name="Gravestone2" parent="Objects" instance=ExtResource("3_ap34t")]
 position = Vector2(8, 120)
+replace_me = true
 
 [node name="Gravestone3" parent="Objects" instance=ExtResource("3_ap34t")]
 position = Vector2(8, 232)
+replace_me = true
 
 [node name="Gravestone4" parent="Objects" instance=ExtResource("3_ap34t")]
 position = Vector2(200, 232)
+replace_me = true
 
 [node name="Gravestone5" parent="Objects" instance=ExtResource("3_ap34t")]
 position = Vector2(392, 232)
+replace_me = true
 
 [node name="Gravestone6" parent="Objects" instance=ExtResource("3_ap34t")]
 position = Vector2(392, 120)
+replace_me = true
 
 [node name="Gravestone7" parent="Objects" instance=ExtResource("3_ap34t")]
 position = Vector2(392, 8)
+replace_me = true
 
 [node name="Gravestone8" parent="Objects" instance=ExtResource("3_ap34t")]
 position = Vector2(200, 8)
+replace_me = true
 
 [node name="Gravestone9" parent="Objects" instance=ExtResource("3_ap34t")]
 position = Vector2(56, 40)
@@ -121,17 +134,11 @@ position = Vector2(296, 184)
 [node name="Gravestone32" parent="Objects" instance=ExtResource("3_ap34t")]
 position = Vector2(344, 184)
 
-[node name="Gravestone33" parent="Objects" instance=ExtResource("3_ap34t")]
-position = Vector2(200, 120)
-
 [node name="plant" parent="." instance=ExtResource("4_2q5to")]
 position = Vector2(57, 107)
 
 [node name="plant2" parent="." instance=ExtResource("4_2q5to")]
 position = Vector2(105, 107)
 
-[node name="Composter" parent="." instance=ExtResource("5_so264")]
-position = Vector2(33, 11)
-
-[node name="water" parent="." instance=ExtResource("6_0jtwn")]
-position = Vector2(201, 67)
+[node name="SoulWell" parent="." instance=ExtResource("8_wrgja")]
+position = Vector2(200, 115)

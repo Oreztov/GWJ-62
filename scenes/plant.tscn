@@ -35,7 +35,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7vcp"]
 size = Vector2(8, 8)
 
-[node name="plant" type="Node2D"]
+[node name="Plant" type="Node2D"]
 z_index = 2
 script = ExtResource("1_gs5sh")
 

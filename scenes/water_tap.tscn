@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://duifqnwl3kaia"]
+[gd_scene load_steps=6 format=3 uid="uid://cybm4l5hvwmvk"]
 
-[ext_resource type="Script" path="res://scripts/water.gd" id="1_cjdut"]
+[ext_resource type="Script" path="res://scripts/water_tap.gd" id="1_npgls"]
 
 [sub_resource type="Gradient" id="Gradient_v6br5"]
 colors = PackedColorArray(0, 0.592157, 1, 1, 1, 1, 1, 1)
@@ -15,8 +15,8 @@ size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3o1l"]
 
-[node name="water" type="StaticBody2D"]
-script = ExtResource("1_cjdut")
+[node name="WaterTap" type="StaticBody2D"]
+script = ExtResource("1_npgls")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("GradientTexture2D_2tcix")

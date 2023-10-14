@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dp3h0b1c2gc2x"]
+[gd_scene load_steps=7 format=3 uid="uid://dwjcfjh7g5jw3"]
+
+[ext_resource type="Script" path="res://gravestone.gd" id="1_tuxop"]
 
 [sub_resource type="Gradient" id="Gradient_s6pww"]
 colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
@@ -19,7 +21,8 @@ height = 8
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x5h12"]
 size = Vector2(16, 16)
 
-[node name="Gravestone" type="StaticBody2D"]
+[node name="Gravestone" type="StaticBody2D" groups=["gravestones"]]
+script = ExtResource("1_tuxop")
 
 [node name="BottomPart" type="Sprite2D" parent="."]
 texture = SubResource("GradientTexture2D_3p8nw")
