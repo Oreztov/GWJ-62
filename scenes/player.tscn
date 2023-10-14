@@ -100,7 +100,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"walk",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
@@ -121,7 +121,7 @@ shape = SubResource("RectangleShape2D_hc1rj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_i56bm")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
 
 [node name="PointLight2D" type="PointLight2D" parent="."]

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cd7p0ur8opil2" path="res://resources/generic_sprout.tres" id="1_jejnx"]
 [ext_resource type="Texture2D" uid="uid://d3hxlhxue0n2r" path="res://resources/generic_growth.tres" id="2_sv0bs"]
 [ext_resource type="Texture2D" uid="uid://gvoa2gqeglkj" path="res://resources/generic_harvest.tres" id="3_nqn35"]
-[ext_resource type="PackedScene" uid="uid://ck5obtkmtfd86" path="res://scenes/interaction_label.tscn" id="6_ju8je"]
+[ext_resource type="PackedScene" uid="uid://l45lwmt0s3tn" path="res://scenes/interaction_label.tscn" id="6_ju8je"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7eoq4"]
 animations = [{

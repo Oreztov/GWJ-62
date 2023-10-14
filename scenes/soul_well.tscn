@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bjtde1hwveusp"]
 
 [ext_resource type="Script" path="res://scripts/soul_well.gd" id="1_62fyl"]
-[ext_resource type="PackedScene" uid="uid://ck5obtkmtfd86" path="res://scenes/interaction_label.tscn" id="2_qe7dc"]
+[ext_resource type="PackedScene" uid="uid://l45lwmt0s3tn" path="res://scenes/interaction_label.tscn" id="2_qe7dc"]
 
 [sub_resource type="Gradient" id="Gradient_pvjwc"]
 colors = PackedColorArray(0.243137, 0, 1, 1, 1, 1, 1, 1)

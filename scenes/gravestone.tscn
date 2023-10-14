@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://dwjcfjh7g5jw3"]
 
 [ext_resource type="Script" path="res://gravestone.gd" id="1_tuxop"]
-[ext_resource type="Texture2D" uid="uid://dvi7k8y8u0u2f" path="res://sprites/tileset.png" id="2_iwy1r"]
+[ext_resource type="Texture2D" uid="uid://dnqg84x3bf6iw" path="res://sprites/tileset.png" id="2_iwy1r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x5h12"]
 size = Vector2(16, 16)
