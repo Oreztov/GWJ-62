@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cy40k81p41ncc"]
 
 [ext_resource type="Script" path="res://scripts/composter.gd" id="1_5yxlq"]
-[ext_resource type="PackedScene" uid="uid://ck5obtkmtfd86" path="res://scenes/interaction_label.tscn" id="2_jkgrj"]
+[ext_resource type="PackedScene" uid="uid://l45lwmt0s3tn" path="res://scenes/interaction_label.tscn" id="2_jkgrj"]
 
 [sub_resource type="Gradient" id="Gradient_x2crb"]
 colors = PackedColorArray(0.407843, 0.321569, 0, 1, 1, 1, 1, 1)
