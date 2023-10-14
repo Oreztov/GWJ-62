@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cy40k81p41ncc"]
 
-[ext_resource type="Script" path="res://scripts/Composter.gd" id="1_258au"]
+[ext_resource type="Script" path="res://scripts/composter.gd" id="1_5yxlq"]
 
 [sub_resource type="Gradient" id="Gradient_x2crb"]
 colors = PackedColorArray(0.407843, 0.321569, 0, 1, 1, 1, 1, 1)
@@ -15,8 +15,8 @@ size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukj8a"]
 
-[node name="Composter" type="StaticBody2D"]
-script = ExtResource("1_258au")
+[node name="composter" type="StaticBody2D"]
+script = ExtResource("1_5yxlq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("GradientTexture2D_1qqei")
