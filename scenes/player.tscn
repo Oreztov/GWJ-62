@@ -12,7 +12,7 @@ height = 32
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hc1rj"]
 size = Vector2(16, 16)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 1
 motion_mode = 1
 script = ExtResource("1_7lnnx")

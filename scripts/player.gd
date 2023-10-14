@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var base_speed = 100
 var speed = base_speed
+var hand = Globals.Resources.EMPTY
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.

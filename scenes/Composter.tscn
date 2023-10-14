@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cy40k81p41ncc"]
+
+[ext_resource type="Script" path="res://scripts/Composter.gd" id="1_258au"]
+
+[sub_resource type="Gradient" id="Gradient_x2crb"]
+colors = PackedColorArray(0.407843, 0.321569, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1qqei"]
+gradient = SubResource("Gradient_x2crb")
+width = 16
+height = 16
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ut8v"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukj8a"]
+
+[node name="Composter" type="StaticBody2D"]
+script = ExtResource("1_258au")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_1qqei")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4ut8v")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ukj8a")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

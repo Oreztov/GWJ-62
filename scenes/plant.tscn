@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://dle118v1mw774"]
+
+[ext_resource type="Script" path="res://scripts/plant.gd" id="1_gs5sh"]
+[ext_resource type="Texture2D" uid="uid://cd7p0ur8opil2" path="res://resources/generic_sprout.tres" id="1_jejnx"]
+[ext_resource type="Texture2D" uid="uid://d3hxlhxue0n2r" path="res://resources/generic_growth.tres" id="2_sv0bs"]
+[ext_resource type="Texture2D" uid="uid://gvoa2gqeglkj" path="res://resources/generic_harvest.tres" id="3_nqn35"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7eoq4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_sv0bs")
+}],
+"loop": true,
+"name": &"growth",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_nqn35")
+}],
+"loop": true,
+"name": &"harvest",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jejnx")
+}],
+"loop": true,
+"name": &"sprout",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7vcp"]
+size = Vector2(8, 8)
+
+[node name="plant" type="Node2D"]
+z_index = 2
+script = ExtResource("1_gs5sh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7eoq4")
+animation = &"sprout"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_t7vcp")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
