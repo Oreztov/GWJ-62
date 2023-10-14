@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bjtde1hwveusp"]
+[gd_scene load_steps=9 format=3 uid="uid://bjtde1hwveusp"]
 
 [ext_resource type="Script" path="res://scripts/soul_well.gd" id="1_62fyl"]
+[ext_resource type="PackedScene" uid="uid://ck5obtkmtfd86" path="res://scenes/interaction_label.tscn" id="2_qe7dc"]
 
 [sub_resource type="Gradient" id="Gradient_pvjwc"]
 colors = PackedColorArray(0.243137, 0, 1, 1, 1, 1, 1, 1)
@@ -44,4 +45,7 @@ shape = SubResource("RectangleShape2D_pc3yl")
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_fg6kx")
 
+[node name="InteractionLabel" parent="." instance=ExtResource("2_qe7dc")]
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

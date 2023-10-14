@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cy40k81p41ncc"]
+[gd_scene load_steps=9 format=3 uid="uid://cy40k81p41ncc"]
 
 [ext_resource type="Script" path="res://scripts/composter.gd" id="1_5yxlq"]
+[ext_resource type="PackedScene" uid="uid://ck5obtkmtfd86" path="res://scenes/interaction_label.tscn" id="2_jkgrj"]
 
 [sub_resource type="Gradient" id="Gradient_x2crb"]
 colors = PackedColorArray(0.407843, 0.321569, 0, 1, 1, 1, 1, 1)
@@ -43,4 +44,7 @@ shape = SubResource("RectangleShape2D_xw51s")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="BlockArea"]
 shape = SubResource("RectangleShape2D_e1ch5")
 
+[node name="InteractionLabel" parent="." instance=ExtResource("2_jkgrj")]
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

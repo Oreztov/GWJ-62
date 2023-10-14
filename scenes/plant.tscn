@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dle118v1mw774"]
+[gd_scene load_steps=8 format=3 uid="uid://dle118v1mw774"]
 
 [ext_resource type="Script" path="res://scripts/plant.gd" id="1_gs5sh"]
 [ext_resource type="Texture2D" uid="uid://cd7p0ur8opil2" path="res://resources/generic_sprout.tres" id="1_jejnx"]
 [ext_resource type="Texture2D" uid="uid://d3hxlhxue0n2r" path="res://resources/generic_growth.tres" id="2_sv0bs"]
 [ext_resource type="Texture2D" uid="uid://gvoa2gqeglkj" path="res://resources/generic_harvest.tres" id="3_nqn35"]
-[ext_resource type="FontFile" uid="uid://dg26m14b0nf25" path="res://fonts/static/PixelifySans-Medium.ttf" id="5_frthu"]
+[ext_resource type="PackedScene" uid="uid://ck5obtkmtfd86" path="res://scenes/interaction_label.tscn" id="6_ju8je"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7eoq4"]
 animations = [{
@@ -36,9 +36,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7vcp"]
 size = Vector2(16, 16)
 
-[sub_resource type="LabelSettings" id="LabelSettings_btmo6"]
-font = ExtResource("5_frthu")
-
 [node name="Plant" type="Node2D"]
 z_index = 2
 script = ExtResource("1_gs5sh")
@@ -52,12 +49,7 @@ animation = &"sprout"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_t7vcp")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_right = 48.0
-offset_bottom = 24.0
-text = "$a"
-label_settings = SubResource("LabelSettings_btmo6")
+[node name="InteractionLabel" parent="." instance=ExtResource("6_ju8je")]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
