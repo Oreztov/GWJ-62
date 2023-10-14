@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bex00buheapxy"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_7lnnx"]
+
+[sub_resource type="Gradient" id="Gradient_ua4dl"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h8yt8"]
+gradient = SubResource("Gradient_ua4dl")
+width = 32
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6nuu2"]
+radius = 16.0
+height = 64.0
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_7lnnx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_h8yt8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_6nuu2")
