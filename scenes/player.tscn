@@ -6,13 +6,14 @@
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_h8yt8"]
 gradient = SubResource("Gradient_ua4dl")
-width = 32
+width = 16
+height = 32
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6nuu2"]
-radius = 16.0
-height = 64.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hc1rj"]
+size = Vector2(16, 16)
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
 motion_mode = 1
 script = ExtResource("1_7lnnx")
 
@@ -22,4 +23,5 @@ script = ExtResource("1_7lnnx")
 texture = SubResource("GradientTexture2D_h8yt8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_6nuu2")
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_hc1rj")

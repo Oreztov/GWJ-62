@@ -1,18 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://dp3h0b1c2gc2x"]
+[gd_scene load_steps=6 format=3 uid="uid://dp3h0b1c2gc2x"]
 
 [sub_resource type="Gradient" id="Gradient_s6pww"]
 colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_3p8nw"]
 gradient = SubResource("Gradient_s6pww")
+width = 16
+height = 16
+
+[sub_resource type="Gradient" id="Gradient_41h7n"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_76hm6"]
+gradient = SubResource("Gradient_41h7n")
+width = 16
+height = 8
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x5h12"]
-size = Vector2(64, 64)
+size = Vector2(16, 16)
 
 [node name="Gravestone" type="StaticBody2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="BottomPart" type="Sprite2D" parent="."]
 texture = SubResource("GradientTexture2D_3p8nw")
+
+[node name="TopPart" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -12)
+texture = SubResource("GradientTexture2D_76hm6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_x5h12")
