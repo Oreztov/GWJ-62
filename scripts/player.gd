@@ -15,9 +15,17 @@ func _physics_process(delta):
 	var direction = Vector2(direction_x, direction_y).normalized()
 	if direction:
 		velocity = direction * speed
+		# Play walk animation
+		$AnimatedSprite2D.play("walk")
+		if direction.x < 0:
+			$AnimatedSprite2D.flip_h = true
+		else:
+			$AnimatedSprite2D.flip_h = false
 	else:
 		velocity = Vector2.ZERO
-
+		$AnimatedSprite2D.play("idle")
+	
+	
 	move_and_slide()
 
 func set_hand_item(item):

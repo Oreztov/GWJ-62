@@ -1,36 +1,107 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwjcfjh7g5jw3"]
+[gd_scene load_steps=16 format=3 uid="uid://dwjcfjh7g5jw3"]
 
 [ext_resource type="Script" path="res://gravestone.gd" id="1_tuxop"]
-
-[sub_resource type="Gradient" id="Gradient_s6pww"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_3p8nw"]
-gradient = SubResource("Gradient_s6pww")
-width = 16
-height = 16
-
-[sub_resource type="Gradient" id="Gradient_41h7n"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_76hm6"]
-gradient = SubResource("Gradient_41h7n")
-width = 16
-height = 8
+[ext_resource type="Texture2D" uid="uid://dvi7k8y8u0u2f" path="res://sprites/tileset.png" id="2_iwy1r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x5h12"]
 size = Vector2(16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rt5vy"]
+atlas = ExtResource("2_iwy1r")
+region = Rect2(96, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6ony"]
+atlas = ExtResource("2_iwy1r")
+region = Rect2(112, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yot64"]
+atlas = ExtResource("2_iwy1r")
+region = Rect2(128, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0x0vo"]
+atlas = ExtResource("2_iwy1r")
+region = Rect2(112, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wd0u6"]
+atlas = ExtResource("2_iwy1r")
+region = Rect2(128, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_31wty"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rt5vy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6ony")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yot64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0x0vo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wd0u6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epvyj"]
+atlas = ExtResource("2_iwy1r")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0ap4"]
+atlas = ExtResource("2_iwy1r")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bb32r"]
+atlas = ExtResource("2_iwy1r")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h67f1"]
+atlas = ExtResource("2_iwy1r")
+region = Rect2(112, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5lqq"]
+atlas = ExtResource("2_iwy1r")
+region = Rect2(128, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hj8ci"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epvyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0ap4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bb32r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h67f1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5lqq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Gravestone" type="StaticBody2D" groups=["gravestones"]]
 script = ExtResource("1_tuxop")
 
-[node name="BottomPart" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_3p8nw")
-
-[node name="TopPart" type="Sprite2D" parent="."]
-z_index = 1
-position = Vector2(0, -12)
-texture = SubResource("GradientTexture2D_76hm6")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_x5h12")
+
+[node name="BottomPart" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_31wty")
+
+[node name="TopPart" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_hj8ci")

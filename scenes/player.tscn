@@ -1,16 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bex00buheapxy"]
+[gd_scene load_steps=16 format=3 uid="uid://bex00buheapxy"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_7lnnx"]
 [ext_resource type="Texture2D" uid="uid://d3hxlhxue0n2r" path="res://resources/generic_growth.tres" id="2_5ahrw"]
 [ext_resource type="Texture2D" uid="uid://cd7p0ur8opil2" path="res://resources/generic_sprout.tres" id="3_1t1te"]
 [ext_resource type="Texture2D" uid="uid://gvoa2gqeglkj" path="res://resources/generic_harvest.tres" id="4_u33i5"]
-
-[sub_resource type="Gradient" id="Gradient_ua4dl"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_h8yt8"]
-gradient = SubResource("Gradient_ua4dl")
-width = 16
-height = 32
+[ext_resource type="Texture2D" uid="uid://dpahml8n3wh7r" path="res://sprites/player.png" id="5_cwdgy"]
+[ext_resource type="Texture2D" uid="uid://dt8gpxw27jtkq" path="res://sprites/light.png" id="6_atnuo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y7ou1"]
 animations = [{
@@ -50,20 +45,84 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hc1rj"]
 size = Vector2(16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqj5b"]
+atlas = ExtResource("5_cwdgy")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myt25"]
+atlas = ExtResource("5_cwdgy")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qw5co"]
+atlas = ExtResource("5_cwdgy")
+region = Rect2(0, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_414p4"]
+atlas = ExtResource("5_cwdgy")
+region = Rect2(0, 96, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpuh1"]
+atlas = ExtResource("5_cwdgy")
+region = Rect2(0, 128, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnb33"]
+atlas = ExtResource("5_cwdgy")
+region = Rect2(0, 160, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i56bm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqj5b")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myt25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qw5co")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_414p4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpuh1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnb33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqj5b")
+}],
+"loop": false,
+"name": &"walk",
+"speed": 5.0
+}]
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 1
 motion_mode = 1
 script = ExtResource("1_7lnnx")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_h8yt8")
-
 [node name="HandSprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(8, 0)
+z_index = 1
+position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_y7ou1")
-animation = &"empty"
+animation = &"compost"
 autoplay = "empty"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_hc1rj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_i56bm")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = ExtResource("6_atnuo")

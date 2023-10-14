@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cybm4l5hvwmvk"]
+[gd_scene load_steps=9 format=3 uid="uid://cybm4l5hvwmvk"]
 
 [ext_resource type="Script" path="res://scripts/water_tap.gd" id="1_npgls"]
 [ext_resource type="PackedScene" uid="uid://ck5obtkmtfd86" path="res://scenes/interaction_label.tscn" id="2_3neug"]
@@ -11,6 +11,14 @@ gradient = SubResource("Gradient_v6br5")
 width = 16
 height = 16
 
+[sub_resource type="Gradient" id="Gradient_a11a8"]
+colors = PackedColorArray(0, 0.592157, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cb3of"]
+gradient = SubResource("Gradient_a11a8")
+width = 16
+height = 8
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uuxuo"]
 size = Vector2(16, 16)
 
@@ -19,8 +27,13 @@ size = Vector2(16, 16)
 [node name="WaterTap" type="StaticBody2D"]
 script = ExtResource("1_npgls")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="BottomPart" type="Sprite2D" parent="."]
 texture = SubResource("GradientTexture2D_2tcix")
+
+[node name="TopPart" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -12)
+texture = SubResource("GradientTexture2D_cb3of")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_uuxuo")
