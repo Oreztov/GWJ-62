@@ -15,8 +15,9 @@ layer_0/tile_data = PackedInt32Array(0, 65537, 7, 65536, 65537, 7, 131072, 65537
 position = Vector2(16, 40)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-16, -16)
 anchor_mode = 0
-zoom = Vector2(3, 3)
+zoom = Vector2(2.8, 2.8)
 
 [node name="Objects" type="Node2D" parent="."]
 
@@ -24,7 +25,7 @@ zoom = Vector2(3, 3)
 position = Vector2(8, 8)
 
 [node name="Gravestone2" parent="Objects" instance=ExtResource("3_ap34t")]
-position = Vector2(8, 128)
+position = Vector2(8, 120)
 
 [node name="Gravestone3" parent="Objects" instance=ExtResource("3_ap34t")]
 position = Vector2(8, 232)
@@ -36,7 +37,7 @@ position = Vector2(200, 232)
 position = Vector2(392, 232)
 
 [node name="Gravestone6" parent="Objects" instance=ExtResource("3_ap34t")]
-position = Vector2(392, 128)
+position = Vector2(392, 120)
 
 [node name="Gravestone7" parent="Objects" instance=ExtResource("3_ap34t")]
 position = Vector2(392, 8)
