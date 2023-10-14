@@ -11,6 +11,7 @@
 
 [node name="Level" type="Node2D"]
 position = Vector2(167, 109)
+scale = Vector2(2.8, 2.8)
 script = ExtResource("1_r3y3s")
 composter = ExtResource("5_so264")
 water_tap = ExtResource("3_1ljv0")
@@ -26,7 +27,6 @@ position = Vector2(16, 40)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-16, -16)
 anchor_mode = 0
-zoom = Vector2(2.8, 2.8)
 
 [node name="Objects" type="Node2D" parent="."]
 

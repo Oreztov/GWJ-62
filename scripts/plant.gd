@@ -15,7 +15,7 @@ func _on_area_2d_body_entered(body):
 	if body.is_in_group("player") and stage < 3:
 		if body.hand == Globals.Resources.COMPOST or body.hand == Globals.Resources.WATER or body.hand == Globals.Resources.SOUL:
 			stage += 1
-			body.hand = Globals.Resources.EMPTY
+			body.set_hand_item(Globals.Resources.EMPTY)
 			match stage:
 				1:
 					$AnimatedSprite2D.play("sprout")

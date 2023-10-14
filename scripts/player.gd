@@ -1,8 +1,11 @@
 extends CharacterBody2D
 
-var base_speed = 100
+var base_speed = 250
 var speed = base_speed
 var hand = Globals.Resources.EMPTY
+
+func _ready():
+	$HandSprite.play("empty")
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
@@ -16,3 +19,16 @@ func _physics_process(delta):
 		velocity = Vector2.ZERO
 
 	move_and_slide()
+
+func set_hand_item(item):
+	hand = item
+	match item:
+		Globals.Resources.COMPOST:
+			$HandSprite.play("compost")
+		Globals.Resources.SOUL:
+			$HandSprite.play("soul")
+		Globals.Resources.WATER:
+			$HandSprite.play("water")
+		_:
+			$HandSprite.play("empty")
+			
