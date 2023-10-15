@@ -2,9 +2,9 @@ extends Node2D
 
 var stage = 1
 
-var player_in_area = false
+@onready var player_in_area = false
 
-var player_reference
+@onready var player_reference
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,15 +28,15 @@ func _input(event):
 						$AnimatedSprite2D.play("growth")
 					3:
 						$AnimatedSprite2D.play("harvest")
-						$InteractionLabel.update()
+						$InteractionLabel.disable()
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("player") and stage < 3:
-		$InteractionLabel.update()
+		$InteractionLabel.enable()
 		player_in_area = true
 		player_reference = body
 
 func _on_area_2d_body_exited(body):
 	if body.is_in_group("player") and stage < 3:
-		$InteractionLabel.update()
+		$InteractionLabel.disable()
 		player_in_area = false

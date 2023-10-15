@@ -15,6 +15,7 @@ scale = Vector2(2.8, 2.8)
 script = ExtResource("1_r3y3s")
 composter = ExtResource("5_so264")
 water_tap = ExtResource("3_1ljv0")
+plant = ExtResource("4_2q5to")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_u7gxt")
@@ -28,117 +29,224 @@ position = Vector2(200.357, 178.214)
 position = Vector2(-28.2143, -16.0714)
 anchor_mode = 0
 
-[node name="Objects" type="Node2D" parent="."]
+[node name="Gravestones" type="Node2D" parent="."]
 
-[node name="Gravestone" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(8, 8)
 replace_me = true
 
-[node name="Gravestone2" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone2" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(8, 120)
 replace_me = true
 
-[node name="Gravestone3" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone3" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(8, 232)
 replace_me = true
 
-[node name="Gravestone4" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone4" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(200, 232)
 replace_me = true
 
-[node name="Gravestone5" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone5" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(392, 232)
 replace_me = true
 
-[node name="Gravestone6" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone6" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(392, 120)
 replace_me = true
 
-[node name="Gravestone7" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone7" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(392, 8)
 replace_me = true
 
-[node name="Gravestone8" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone8" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(200, 8)
 replace_me = true
 
-[node name="Gravestone9" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone9" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(56, 40)
 
-[node name="Gravestone10" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone10" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(104, 40)
 
-[node name="Gravestone11" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone11" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(152, 40)
 
-[node name="Gravestone12" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone12" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(56, 88)
 
-[node name="Gravestone13" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone13" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(104, 88)
 
-[node name="Gravestone14" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone14" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(152, 88)
 
-[node name="Gravestone15" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone15" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(56, 136)
 
-[node name="Gravestone16" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone16" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(104, 136)
 
-[node name="Gravestone17" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone17" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(152, 136)
 
-[node name="Gravestone18" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone18" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(56, 184)
 
-[node name="Gravestone19" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone19" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(104, 184)
 
-[node name="Gravestone20" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone20" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(152, 184)
 
-[node name="Gravestone21" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone21" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(248, 40)
 
-[node name="Gravestone22" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone22" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(296, 40)
 
-[node name="Gravestone23" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone23" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(344, 40)
 
-[node name="Gravestone24" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone24" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(248, 88)
 
-[node name="Gravestone25" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone25" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(296, 88)
 
-[node name="Gravestone26" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone26" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(344, 88)
 
-[node name="Gravestone27" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone27" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(248, 136)
 
-[node name="Gravestone28" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone28" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(296, 136)
 
-[node name="Gravestone29" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone29" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(344, 136)
 
-[node name="Gravestone30" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone30" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(248, 184)
 
-[node name="Gravestone31" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone31" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(296, 184)
 
-[node name="Gravestone32" parent="Objects" instance=ExtResource("3_ap34t")]
+[node name="Gravestone32" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(344, 184)
 
-[node name="plant" parent="." instance=ExtResource("4_2q5to")]
-position = Vector2(57, 107)
+[node name="PlantMarkers" type="Node2D" parent="."]
+scale = Vector2(1, 1)
 
-[node name="plant2" parent="." instance=ExtResource("4_2q5to")]
-position = Vector2(105, 107)
+[node name="Marker2D" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(56.0714, 55.3571)
+
+[node name="Marker2D2" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(103.929, 55.3571)
+
+[node name="Marker2D3" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(152.143, 55.3571)
+
+[node name="Marker2D4" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(152.143, 103.929)
+
+[node name="Marker2D5" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(103.929, 103.929)
+
+[node name="Marker2D6" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(56.0714, 103.929)
+
+[node name="Marker2D7" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(56.0714, 155.357)
+
+[node name="Marker2D8" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(103.929, 155.357)
+
+[node name="Marker2D9" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(152.143, 155.357)
+
+[node name="Marker2D10" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(152.143, 203.929)
+
+[node name="Marker2D11" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(103.929, 203.929)
+
+[node name="Marker2D12" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(56.0714, 203.929)
+
+[node name="Marker2D13" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(247.5, 53.9286)
+
+[node name="Marker2D14" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(295.357, 53.9286)
+
+[node name="Marker2D15" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(343.572, 53.9286)
+
+[node name="Marker2D16" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(343.572, 102.5)
+
+[node name="Marker2D17" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(295.357, 102.5)
+
+[node name="Marker2D18" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(247.5, 102.5)
+
+[node name="Marker2D19" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(247.5, 153.929)
+
+[node name="Marker2D20" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(295.357, 153.929)
+
+[node name="Marker2D21" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(343.572, 153.929)
+
+[node name="Marker2D22" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(343.572, 202.5)
+
+[node name="Marker2D23" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(295.357, 202.5)
+
+[node name="Marker2D24" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(247.5, 202.5)
+
+[node name="Marker2D25" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(8.92857, 172.5)
+
+[node name="Marker2D26" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(8.92857, 58.2143)
+
+[node name="Marker2D27" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(103.929, 15.3571)
+
+[node name="Marker2D28" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(300.357, 12.5)
+
+[node name="Marker2D29" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(388.929, 61.0714)
+
+[node name="Marker2D30" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(388.929, 169.643)
+
+[node name="Marker2D31" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(295.357, 229.643)
+
+[node name="Marker2D32" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(106.071, 229.643)
+
+[node name="Marker2D33" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(200.357, 192.143)
+
+[node name="Marker2D34" type="Marker2D" parent="PlantMarkers" groups=["plant_markers"]]
+position = Vector2(200, 53.9286)
 
 [node name="SoulWell" parent="." instance=ExtResource("8_wrgja")]
 position = Vector2(200, 115)
+
+[node name="PlantSpawnTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="PlantSpawnTimer" to="." method="_on_plant_spawn_timer_timeout"]

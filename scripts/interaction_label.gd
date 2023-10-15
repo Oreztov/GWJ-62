@@ -9,14 +9,14 @@ func _ready():
 	$PanelContainer/Label.text = $PanelContainer/Label.text % interact_key
 	
 	visible = false
-
-func update():
+		
+func enable():
 	$PanelContainer.global_position = get_parent().global_position - Vector2(105, 80)
-	if visible:
-		$AnimationPlayer.play("pop_out")
-	else:
-		visible = true
-		$AnimationPlayer.play("pop_in")
+	visible = true
+	$AnimationPlayer.play("pop_in")
+	
+func disable():
+	$AnimationPlayer.play("pop_out")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
