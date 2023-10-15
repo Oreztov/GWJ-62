@@ -64,7 +64,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"growth",
-"speed": 0.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -81,7 +81,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"harvest",
-"speed": 0.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -98,7 +98,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"sprout",
-"speed": 0.0
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7vcp"]
@@ -113,7 +113,7 @@ script = ExtResource("1_gs5sh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7eoq4")
-animation = &"sprout"
+animation = &"harvest"
 autoplay = "sprout"
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -159,7 +159,6 @@ horizontal_alignment = 1
 visible_characters = 2
 visible_ratio = 2.0
 
-[connection signal="animation_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_changed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="RotTimer" to="." method="_on_rot_timer_timeout"]

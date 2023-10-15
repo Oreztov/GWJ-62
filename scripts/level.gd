@@ -69,7 +69,7 @@ func spawn_plant():
 	var plant_options = [pumpkin, carrot]
 	var plant_type = randi_range(0, len(plant_options) - 1)
 	var plant_spawn = plant_options[plant_type]
-	var new_plant = plant_spawn.instantiate()
+	var new_plant = plant.instantiate()
 	new_plant.position = new_plant_marker.position
 	new_plant.plant_marker = new_plant_marker
 	new_plant.freed.connect(plant_freed)

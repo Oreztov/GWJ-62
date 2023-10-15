@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var plant = Globals.Plants.EMPTY
+
 var stage = 1
 var grow_level = 1
 var resource_needed = Globals.Resources.EMPTY
@@ -18,7 +20,11 @@ signal freed(marker)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# Pick random plant type
+	plant = randi_range(1, Globals.Plants.size() - 1)
 	$Popup.visible = false
+	$AnimatedSprite2D.play("sprout")
+	$AnimatedSprite2D.frame = plant
 
 func ask_for_resource():
 	# Get new random resource needed
@@ -98,3 +104,8 @@ func _on_grow_timer_timeout():
 			$AnimatedSprite2D.play("harvest")
 			$RotTimer.start($RotTimer.time_left + 15)
 		
+
+
+func _on_animated_sprite_2d_animation_changed():
+	# Frame 0 = empty, 1 = pumpkin, etc.... according to Globals.Plants enum
+	$AnimatedSprite2D.frame = plant

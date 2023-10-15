@@ -1,7 +1,11 @@
 extends Node
 
-enum Resources{
+enum Resources {
 	EMPTY, COMPOST, WATER, SOUL
+}
+
+enum Plants {
+	EMPTY, PUMPKIN, CARROT, HEART
 }
 
 @onready var player_reference: CharacterBody2D
