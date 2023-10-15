@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dle118v1mw774"]
+[gd_scene load_steps=11 format=3 uid="uid://dle118v1mw774"]
 
 [ext_resource type="Script" path="res://scripts/plant.gd" id="1_gs5sh"]
 [ext_resource type="Texture2D" uid="uid://cd7p0ur8opil2" path="res://resources/generic_sprout.tres" id="1_jejnx"]
@@ -35,17 +35,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a554s"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7vcp"]
 size = Vector2(16, 24)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ofhda"]
 font = ExtResource("7_ncmdd")
-
-[sub_resource type="SystemFont" id="SystemFont_ujevl"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_pc7f6"]
-font = SubResource("SystemFont_ujevl")
-font_size = 11
 
 [node name="Plant" type="Node2D"]
 z_index = 2
@@ -58,7 +52,7 @@ animation = &"sprout"
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_a554s")
+shape = SubResource("RectangleShape2D_t7vcp")
 
 [node name="InteractionLabel" parent="." instance=ExtResource("6_ju8je")]
 
@@ -94,8 +88,9 @@ offset_right = 16.0
 offset_bottom = 26.0
 text = "
 "
-label_settings = SubResource("LabelSettings_pc7f6")
 horizontal_alignment = 1
+visible_characters = 2
+visible_ratio = 2.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

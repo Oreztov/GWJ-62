@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://cc54t4tocndg7" path="res://scenes/enemy.tscn" id="10_5ko7l"]
 
 [node name="Level" type="Node2D"]
+position = Vector2(167, 109)
+scale = Vector2(2.8, 2.8)
 script = ExtResource("1_bvrog")
 composter = ExtResource("5_so264")
 water_tap = ExtResource("3_1ljv0")
@@ -241,10 +243,11 @@ position = Vector2(200.357, 192.143)
 position = Vector2(200, 53.9286)
 
 [node name="SoulWell" parent="." instance=ExtResource("8_wrgja")]
-position = Vector2(200, 120)
+position = Vector2(200, 115)
 
 [node name="PlantSpawnTimer" type="Timer" parent="."]
 process_callback = 0
+wait_time = 2.0
 one_shot = true
 autostart = true
 
