@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dt8gpxw27jtkq" path="res://sprites/light.png" id="6_uj0ay"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4e4f3"]
-size = Vector2(8.0001, 16)
+size = Vector2(12, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lx0to"]
 atlas = ExtResource("5_hq2vo")
@@ -132,14 +132,12 @@ animations = [{
 }]
 
 [node name="Enemy" type="CharacterBody2D" groups=["player"]]
-z_index = 1
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_kacb1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2.38419e-07, 12)
-rotation = 1.57079
+position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_4e4f3")
 
 [node name="TopPart" type="AnimatedSprite2D" parent="."]
@@ -160,16 +158,13 @@ color = Color(1, 0, 0, 1)
 texture = ExtResource("6_uj0ay")
 
 [node name="NavUpdateTimer" type="Timer" parent="."]
+process_callback = 0
 wait_time = 0.5
 autostart = true
 
-[node name="NavNode" type="Node2D" parent="."]
-position = Vector2(0, 8)
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="NavNode"]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_desired_distance = 16.0
-target_desired_distance = 16.0
-path_postprocessing = 1
+target_desired_distance = 24.0
 debug_enabled = true
 
 [connection signal="timeout" from="NavUpdateTimer" to="." method="_on_nav_update_timer_timeout"]
