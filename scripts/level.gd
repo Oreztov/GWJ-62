@@ -3,6 +3,8 @@ extends Node2D
 @export var composter: PackedScene
 @export var water_tap: PackedScene
 @export var plant: PackedScene
+@export var pumpkin: PackedScene
+@export var carrot: PackedScene
 
 var rng = RandomNumberGenerator.new()
 
@@ -63,8 +65,11 @@ func spawn_plant():
 		# No more positions left to spawn
 		return
 	var new_plant_marker = plant_markers[randi_range(0, len(plant_markers) - 1)]
-	# Create new plant at random position
-	var new_plant = plant.instantiate()
+	# Create new random plant from options at random position
+	var plant_options = [pumpkin, carrot]
+	var plant_type = randi_range(0, len(plant_options) - 1)
+	var plant_spawn = plant_options[plant_type]
+	var new_plant = plant_spawn.instantiate()
 	new_plant.position = new_plant_marker.position
 	new_plant.plant_marker = new_plant_marker
 	new_plant.freed.connect(plant_freed)
