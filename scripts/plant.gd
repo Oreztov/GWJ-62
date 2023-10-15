@@ -9,10 +9,11 @@ var grow_time = 5
 var resources_needed = [Globals.Resources.COMPOST, Globals.Resources.WATER, Globals.Resources.SOUL]
 
 @onready var player_in_area = false
-
-@onready var player_reference
+@onready var plant_marker
 
 var rng = RandomNumberGenerator.new()
+
+signal freed(marker)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,20 +42,22 @@ func consume_resource():
 	$GrowTimer.start(grow_time)
 	$RotTimer.start($RotTimer.time_left + 5)
 	# Consume player hand item
-	player_reference.set_hand_item(Globals.Resources.EMPTY)
+	Globals.player_reference.set_hand_item(Globals.Resources.EMPTY)
 	$Popup.visible = false
 	$InteractionLabel.disable()
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$Label.text = str($RotTimer.time_left)
+	$Label.text = str(self)
+
+func _draw():
+	draw_circle(global_position, 10, Color.AQUAMARINE)
 
 func _input(event):
 	if player_in_area and interaction_active:
 		if event.is_action_pressed("interact") and stage < 3:
 			# Check for player holding correct item
-			if player_reference.hand == resource_needed:
+			if Globals.player_reference.hand == resource_needed:
 				consume_resource()
 				interaction_active = false
 
@@ -62,7 +65,7 @@ func _on_area_2d_body_entered(body):
 	if body.is_in_group("player") and interaction_active and stage < 3:
 		$InteractionLabel.enable()
 		player_in_area = true
-		player_reference = body
+		print(self)
 
 func _on_area_2d_body_exited(body):
 	if body.is_in_group("player") and interaction_active and stage < 3:
@@ -71,6 +74,7 @@ func _on_area_2d_body_exited(body):
 
 func _on_rot_timer_timeout():
 	queue_free()
+	freed.emit(plant_marker)
 
 
 func _on_grow_timer_timeout():
