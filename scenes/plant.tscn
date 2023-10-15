@@ -34,7 +34,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7vcp"]
-size = Vector2(16, 16)
+size = Vector2(16, 24)
 
 [node name="Plant" type="Node2D"]
 z_index = 2

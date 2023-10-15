@@ -42,7 +42,6 @@ shape = SubResource("RectangleShape2D_pc3yl")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_fg6kx")
 
 [node name="InteractionLabel" parent="." instance=ExtResource("2_qe7dc")]

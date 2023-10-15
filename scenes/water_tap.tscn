@@ -23,6 +23,7 @@ height = 8
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3o1l"]
+size = Vector2(32, 32)
 
 [node name="WaterTap" type="StaticBody2D"]
 script = ExtResource("1_npgls")

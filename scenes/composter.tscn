@@ -20,6 +20,7 @@ height = 8
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukj8a"]
+size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xw51s"]
 size = Vector2(100, 1000)

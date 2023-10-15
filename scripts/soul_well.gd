@@ -6,7 +6,7 @@ var player_reference
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$InteractionLabel.update()
+	pass
 
 	
 func _input(event):
