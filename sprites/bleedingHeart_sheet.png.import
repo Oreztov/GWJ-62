@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqicydten51hc"
-path="res://.godot/imported/finish_pumpkin.png-86bb01557df439eb83868f9891f7c261.ctex"
+uid="uid://bpp7wl30ow2e6"
+path="res://.godot/imported/bleedingHeart_sheet.png-48fff13229064c1fe8499135188d34cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/finish_pumpkin.png"
-dest_files=["res://.godot/imported/finish_pumpkin.png-86bb01557df439eb83868f9891f7c261.ctex"]
+source_file="res://sprites/bleedingHeart_sheet.png"
+dest_files=["res://.godot/imported/bleedingHeart_sheet.png-48fff13229064c1fe8499135188d34cd.ctex"]
 
 [params]
 

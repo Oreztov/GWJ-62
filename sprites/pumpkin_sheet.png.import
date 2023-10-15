@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btp4waacwa7cm"
-path="res://.godot/imported/middle_pumpkin.png-633c4e0ce6cbbf313519934ce106a3a4.ctex"
+uid="uid://cmxaniun855ib"
+path="res://.godot/imported/pumpkin_sheet.png-577c4eec490f5a0c1fe1ee180df2ca85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/middle_pumpkin.png"
-dest_files=["res://.godot/imported/middle_pumpkin.png-633c4e0ce6cbbf313519934ce106a3a4.ctex"]
+source_file="res://sprites/pumpkin_sheet.png"
+dest_files=["res://.godot/imported/pumpkin_sheet.png-577c4eec490f5a0c1fe1ee180df2ca85.ctex"]
 
 [params]
 
