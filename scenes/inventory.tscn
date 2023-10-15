@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://d0u4glu4cup8j"]
+
+[node name="inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_right = 48.0
+offset_bottom = 23.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 48.0
+offset_bottom = 47.0
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 71.0
