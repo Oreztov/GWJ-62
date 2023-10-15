@@ -6,6 +6,8 @@ enum Resources{
 
 @onready var player_reference: CharacterBody2D
 
+var debug_plants = []
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

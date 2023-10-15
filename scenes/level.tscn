@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://6xbg8wkel8b4"]
+[gd_scene load_steps=10 format=3 uid="uid://6xbg8wkel8b4"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_bvrog"]
 [ext_resource type="TileSet" uid="uid://d1kqek74ycve3" path="res://resources/level_tile_set.tres" id="1_u7gxt"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://cy40k81p41ncc" path="res://scenes/composter.tscn" id="5_so264"]
 [ext_resource type="Script" path="res://scripts/tilemap_nav.gd" id="6_18j20"]
 [ext_resource type="PackedScene" uid="uid://bjtde1hwveusp" path="res://scenes/soul_well.tscn" id="8_wrgja"]
-[ext_resource type="PackedScene" uid="uid://cc54t4tocndg7" path="res://scenes/enemy.tscn" id="10_5ko7l"]
 
 [node name="Level" type="Node2D"]
 position = Vector2(167, 109)
@@ -247,10 +246,8 @@ position = Vector2(200, 115)
 
 [node name="PlantSpawnTimer" type="Timer" parent="."]
 process_callback = 0
+wait_time = 3.0
 one_shot = true
 autostart = true
-
-[node name="Enemy" parent="." instance=ExtResource("10_5ko7l")]
-position = Vector2(28.9286, 41.0714)
 
 [connection signal="timeout" from="PlantSpawnTimer" to="." method="_on_plant_spawn_timer_timeout"]

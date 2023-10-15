@@ -37,6 +37,7 @@ func ask_for_resource():
 			$Popup/PopupText.text = "S"
 	# Activate interaction
 	interaction_active = true
+	set_process_input(true)
 
 func consume_resource():
 	# Restart grow timer and add to rot timer
@@ -46,7 +47,11 @@ func consume_resource():
 	Globals.player_reference.set_hand_item(Globals.Resources.EMPTY)
 	$Popup.visible = false
 	$InteractionLabel.disable()
-	
+	resource_needed = Globals.Resources.EMPTY
+	# Disable interaction
+	interaction_active = false
+	player_in_area = false
+	set_process_input(false)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -58,7 +63,6 @@ func _input(event):
 			# Check for player holding correct item
 			if Globals.player_reference.hand == resource_needed:
 				consume_resource()
-				interaction_active = false
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("player") and interaction_active and stage < 3:
