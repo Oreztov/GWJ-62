@@ -39,7 +39,7 @@ func _ready():
 	plant_markers = get_tree().get_nodes_in_group("plant_markers")
 	
 	# Setup game variables
-	plant_spawn_time = 10
+	plant_spawn_time = 1
 
 func spawn_water_tap(blocked_graves):
 	# Check for blocked graves by composter
@@ -59,16 +59,21 @@ func spawn_water_tap(blocked_graves):
 
 func spawn_plant():
 	# Get random plant spawn point
-	var new_plant_index = randi_range(0, len(plant_markers) - 1)
-	if new_plant_index < 0:
+	if plant_markers == []:
 		# No more positions left to spawn
 		return
+	var new_plant_marker = plant_markers[randi_range(0, len(plant_markers) - 1)]
 	# Create new plant at random position
 	var new_plant = plant.instantiate()
-	new_plant.position = plant_markers[new_plant_index].position
+	new_plant.position = new_plant_marker.position
+	new_plant.plant_marker = new_plant_marker
+	new_plant.freed.connect(plant_freed)
 	call_deferred("add_child", new_plant)
 	# Remove position from list
-	plant_markers.remove_at(new_plant_index)
+	plant_markers.erase(new_plant_marker)
+
+func plant_freed(marker):
+	plant_markers.append(marker)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
