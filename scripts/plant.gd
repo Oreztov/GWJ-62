@@ -65,7 +65,9 @@ func _process(delta):
 
 func _input(event):
 	if player_in_area and interaction_active:
-		if event.is_action_pressed("interact") and stage < 3:
+		if stage == 3:
+			harvest()
+		elif event.is_action_pressed("interact") and stage < 3:
 			# Check for player holding correct item
 			if Globals.player_reference.hand == resource_needed:
 				consume_resource()
@@ -103,8 +105,13 @@ func _on_grow_timer_timeout():
 			stage += 1
 			$AnimatedSprite2D.play("harvest")
 			$RotTimer.start($RotTimer.time_left + 15)
+			interaction_active = true
+			set_process_input(true)
 		
+	
 
+func harvest():
+	queue_free()
 
 func _on_animated_sprite_2d_animation_changed():
 	# Frame 0 = empty, 1 = pumpkin, etc.... according to Globals.Plants enum
