@@ -39,7 +39,7 @@ func _ready():
 	plant_markers = get_tree().get_nodes_in_group("plant_markers")
 	
 	# Setup game variables
-	plant_spawn_time = 5
+	plant_spawn_time = 10
 
 func spawn_water_tap(blocked_graves):
 	# Check for blocked graves by composter

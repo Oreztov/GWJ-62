@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://dle118v1mw774"]
+[gd_scene load_steps=11 format=3 uid="uid://dle118v1mw774"]
 
 [ext_resource type="Script" path="res://scripts/plant.gd" id="1_gs5sh"]
 [ext_resource type="Texture2D" uid="uid://cd7p0ur8opil2" path="res://resources/generic_sprout.tres" id="1_jejnx"]
 [ext_resource type="Texture2D" uid="uid://d3hxlhxue0n2r" path="res://resources/generic_growth.tres" id="2_sv0bs"]
 [ext_resource type="Texture2D" uid="uid://gvoa2gqeglkj" path="res://resources/generic_harvest.tres" id="3_nqn35"]
 [ext_resource type="PackedScene" uid="uid://l45lwmt0s3tn" path="res://scenes/interaction_label.tscn" id="6_ju8je"]
+[ext_resource type="Texture2D" uid="uid://bdv2p282r7cfo" path="res://sprites/popup_box.png" id="6_tcd0k"]
+[ext_resource type="FontFile" uid="uid://c8d7vep1p3doh" path="res://fonts/static/PixelifySans-SemiBold.ttf" id="7_ncmdd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7eoq4"]
 animations = [{
@@ -36,6 +38,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7vcp"]
 size = Vector2(16, 24)
 
+[sub_resource type="LabelSettings" id="LabelSettings_ofhda"]
+font = ExtResource("7_ncmdd")
+
 [node name="Plant" type="Node2D"]
 z_index = 2
 script = ExtResource("1_gs5sh")
@@ -51,5 +56,43 @@ shape = SubResource("RectangleShape2D_t7vcp")
 
 [node name="InteractionLabel" parent="." instance=ExtResource("6_ju8je")]
 
+[node name="Popup" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(0, -8)
+texture = ExtResource("6_tcd0k")
+
+[node name="PopupText" type="Label" parent="Popup"]
+offset_left = -6.0
+offset_top = -11.0
+offset_right = 7.0
+offset_bottom = 12.0
+text = "C"
+label_settings = SubResource("LabelSettings_ofhda")
+horizontal_alignment = 1
+
+[node name="RotTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 25.0
+one_shot = true
+autostart = true
+
+[node name="GrowTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = -24.0
+offset_right = 16.0
+offset_bottom = 26.0
+text = "
+"
+horizontal_alignment = 1
+visible_characters = 2
+visible_ratio = 2.0
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="RotTimer" to="." method="_on_rot_timer_timeout"]
+[connection signal="timeout" from="GrowTimer" to="." method="_on_grow_timer_timeout"]
