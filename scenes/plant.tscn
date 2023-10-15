@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dle118v1mw774"]
+[gd_scene load_steps=31 format=3 uid="uid://dle118v1mw774"]
 
 [ext_resource type="Script" path="res://scripts/plant.gd" id="1_gs5sh"]
 [ext_resource type="Texture2D" uid="uid://cd7p0ur8opil2" path="res://resources/generic_sprout.tres" id="1_jejnx"]
@@ -8,8 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cj4xqtcisqyr2" path="res://sprites/carrot_sheet.png" id="4_7oafa"]
 [ext_resource type="Texture2D" uid="uid://bpp7wl30ow2e6" path="res://sprites/bleedingHeart_sheet.png" id="5_01mvg"]
 [ext_resource type="PackedScene" uid="uid://l45lwmt0s3tn" path="res://scenes/interaction_label.tscn" id="6_ju8je"]
-[ext_resource type="Texture2D" uid="uid://bdv2p282r7cfo" path="res://sprites/popup_box.png" id="6_tcd0k"]
-[ext_resource type="FontFile" uid="uid://c8d7vep1p3doh" path="res://fonts/static/PixelifySans-SemiBold.ttf" id="7_ncmdd"]
+[ext_resource type="Texture2D" uid="uid://c2c1d6jyot4x0" path="res://sprites/plantIcons.png" id="9_yw1j5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sy2ec"]
 atlas = ExtResource("3_o3y5v")
@@ -104,8 +103,158 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7vcp"]
 size = Vector2(16, 24)
 
-[sub_resource type="LabelSettings" id="LabelSettings_ofhda"]
-font = ExtResource("7_ncmdd")
+[sub_resource type="AtlasTexture" id="AtlasTexture_lejed"]
+atlas = ExtResource("9_yw1j5")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrl7l"]
+atlas = ExtResource("9_yw1j5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3ed0"]
+atlas = ExtResource("9_yw1j5")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j6u8"]
+atlas = ExtResource("9_yw1j5")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxa7w"]
+atlas = ExtResource("9_yw1j5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aay08"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrl7l")
+}],
+"loop": true,
+"name": &"compost",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3ed0")
+}],
+"loop": true,
+"name": &"harvest",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j6u8")
+}],
+"loop": true,
+"name": &"soul",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxa7w")
+}],
+"loop": true,
+"name": &"water",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_ww7l6"]
+resource_name = "pop_in"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PopupBackground:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PopupBackground:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -12), Vector2(0, -10)]
+}
+
+[sub_resource type="Animation" id="Animation_fk5qr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PopupBackground:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PopupBackground:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -8)]
+}
+
+[sub_resource type="Animation" id="Animation_yb7vx"]
+resource_name = "pop_out"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PopupBackground:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PopupBackground:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -10), Vector2(0, -12), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_stf2g"]
+_data = {
+"RESET": SubResource("Animation_fk5qr"),
+"pop_in": SubResource("Animation_ww7l6"),
+"pop_out": SubResource("Animation_yb7vx")
+}
 
 [node name="Plant" type="Node2D"]
 z_index = 2
@@ -123,19 +272,15 @@ shape = SubResource("RectangleShape2D_t7vcp")
 
 [node name="InteractionLabel" parent="." instance=ExtResource("6_ju8je")]
 
-[node name="Popup" type="Sprite2D" parent="."]
-z_index = 2
+[node name="PopupBackground" type="Sprite2D" parent="."]
 position = Vector2(0, -8)
-texture = ExtResource("6_tcd0k")
+scale = Vector2(1e-05, 1e-05)
+texture = SubResource("AtlasTexture_lejed")
 
-[node name="PopupText" type="Label" parent="Popup"]
-offset_left = -6.0
-offset_top = -11.0
-offset_right = 7.0
-offset_bottom = 12.0
-text = "C"
-label_settings = SubResource("LabelSettings_ofhda")
-horizontal_alignment = 1
+[node name="Popup" type="AnimatedSprite2D" parent="PopupBackground"]
+sprite_frames = SubResource("SpriteFrames_aay08")
+animation = &"compost"
+autoplay = "default"
 
 [node name="RotTimer" type="Timer" parent="."]
 process_callback = 0
@@ -158,6 +303,12 @@ text = "
 horizontal_alignment = 1
 visible_characters = 2
 visible_ratio = 2.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "RESET"
+libraries = {
+"": SubResource("AnimationLibrary_stf2g")
+}
 
 [connection signal="animation_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_changed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

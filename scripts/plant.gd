@@ -22,7 +22,6 @@ signal freed(marker)
 func _ready():
 	# Pick random plant type
 	plant = randi_range(1, Globals.Plants.size() - 1)
-	$Popup.visible = false
 	$AnimatedSprite2D.play("sprout")
 	$AnimatedSprite2D.frame = plant
 
@@ -33,14 +32,14 @@ func ask_for_resource():
 	# Remove resource from list
 	resources_needed.remove_at(random_resource_index)
 	# Activate Popup
-	$Popup.visible = true
+	$AnimationPlayer.play("pop_in")
 	match resource_needed:
 		Globals.Resources.WATER:
-			$Popup/PopupText.text = "W"
+			$PopupBackground/Popup.play("water")
 		Globals.Resources.COMPOST:
-			$Popup/PopupText.text = "C"
+			$PopupBackground/Popup.play("compost")
 		Globals.Resources.SOUL:
-			$Popup/PopupText.text = "S"
+			$PopupBackground/Popup.play("soul")
 	# Activate interaction
 	interaction_active = true
 	set_process_input(true)
@@ -51,7 +50,7 @@ func consume_resource():
 	$RotTimer.start($RotTimer.time_left + 5)
 	# Consume player hand item
 	Globals.player_reference.set_hand_item(Globals.Resources.EMPTY)
-	$Popup.visible = false
+	$AnimationPlayer.play("pop_out")
 	$InteractionLabel.disable()
 	resource_needed = Globals.Resources.EMPTY
 	# Disable interaction
@@ -65,12 +64,14 @@ func _process(delta):
 
 func _input(event):
 	if player_in_area and interaction_active:
-		if stage == 3:
-			harvest()
-		elif event.is_action_pressed("interact") and stage < 3:
-			# Check for player holding correct item
-			if Globals.player_reference.hand == resource_needed:
-				consume_resource()
+		if event.is_action_pressed("interact"):
+			if stage < 3:
+				# Check for player holding correct item
+				if Globals.player_reference.hand == resource_needed:
+					consume_resource()
+			if stage == 3:
+				# Harvest plant
+				harvest()
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("player") and interaction_active and stage < 3:
@@ -105,6 +106,8 @@ func _on_grow_timer_timeout():
 			stage += 1
 			$AnimatedSprite2D.play("harvest")
 			$RotTimer.start($RotTimer.time_left + 15)
+			$PopupBackground/Popup.play("harvest")
+			$AnimationPlayer.play("pop_in")
 			interaction_active = true
 			set_process_input(true)
 		
