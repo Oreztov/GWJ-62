@@ -16,14 +16,18 @@ func _physics_process(delta):
 	if direction:
 		velocity = direction * speed
 		# Play walk animation
-		$AnimatedSprite2D.play("walk")
+		$TopPart.play("walk")
+		$BottomPart.play("walk")
 		if direction.x < 0:
-			$AnimatedSprite2D.flip_h = true
-		else:
-			$AnimatedSprite2D.flip_h = false
+			$TopPart.flip_h = true
+			$BottomPart.flip_h = true
+		elif direction.x > 0:
+			$TopPart.flip_h = false
+			$BottomPart.flip_h = false
 	else:
 		velocity = Vector2.ZERO
-		$AnimatedSprite2D.play("idle")
+		$TopPart.play("idle")
+		$BottomPart.play("idle")
 	
 	
 	move_and_slide()

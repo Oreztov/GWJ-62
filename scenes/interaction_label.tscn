@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://l45lwmt0s3tn"]
+[gd_scene load_steps=3 format=3 uid="uid://l45lwmt0s3tn"]
 
 [ext_resource type="Script" path="res://scripts/interaction_label.gd" id="1_1llg0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_axbj1"]
 
 [node name="InteractionLabel" type="CanvasLayer"]
 script = ExtResource("1_1llg0")
@@ -22,3 +24,4 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 4
 text = "[%s]"
+label_settings = SubResource("LabelSettings_axbj1")
