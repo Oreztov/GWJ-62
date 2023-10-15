@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c782c7k3vk3bd"
-path="res://.godot/imported/harvest_carrot.png-6b97c61857f4b23cab776b31d2a58675.ctex"
+uid="uid://bv7g6iitp8ult"
+path="res://.godot/imported/bleedingHeartMonster.png-3cdcbe2e11799b8bdd2a7ddcb8a5127b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/harvest_carrot.png"
-dest_files=["res://.godot/imported/harvest_carrot.png-6b97c61857f4b23cab776b31d2a58675.ctex"]
+source_file="res://sprites/bleedingHeartMonster.png"
+dest_files=["res://.godot/imported/bleedingHeartMonster.png-3cdcbe2e11799b8bdd2a7ddcb8a5127b.ctex"]
 
 [params]
 

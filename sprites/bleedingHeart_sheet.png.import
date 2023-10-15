@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkrqfjffv1nd3"
-path="res://.godot/imported/start_carrot.png-ab4391f0320d885817f4eebc208eb13d.ctex"
+uid="uid://bpp7wl30ow2e6"
+path="res://.godot/imported/bleedingHeart_sheet.png-48fff13229064c1fe8499135188d34cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/start_carrot.png"
-dest_files=["res://.godot/imported/start_carrot.png-ab4391f0320d885817f4eebc208eb13d.ctex"]
+source_file="res://sprites/bleedingHeart_sheet.png"
+dest_files=["res://.godot/imported/bleedingHeart_sheet.png-48fff13229064c1fe8499135188d34cd.ctex"]
 
 [params]
 

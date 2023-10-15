@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp4eiygamun60"
-path="res://.godot/imported/start_pumpkin.png-54fbfdb36746913b4cbfc5a1315e093e.ctex"
+uid="uid://cibt3mrucpode"
+path="res://.godot/imported/carrotMonster.png-a0c77a37dbf41d0c27a32a6f1a1b1793.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/start_pumpkin.png"
-dest_files=["res://.godot/imported/start_pumpkin.png-54fbfdb36746913b4cbfc5a1315e093e.ctex"]
+source_file="res://sprites/carrotMonster.png"
+dest_files=["res://.godot/imported/carrotMonster.png-a0c77a37dbf41d0c27a32a6f1a1b1793.ctex"]
 
 [params]
 
