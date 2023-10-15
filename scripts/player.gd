@@ -5,6 +5,7 @@ var speed = base_speed
 var hand = Globals.Resources.EMPTY
 
 func _ready():
+	Globals.player_reference = self
 	$HandSprite.play("empty")
 
 func _physics_process(delta):
