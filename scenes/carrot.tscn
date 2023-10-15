@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://ck7dvs0sgdtfe"]
+
+[ext_resource type="PackedScene" uid="uid://dle118v1mw774" path="res://scenes/plant.tscn" id="1_0edfn"]
+[ext_resource type="Script" path="res://scripts/carrot.gd" id="2_btoom"]
+[ext_resource type="Texture2D" uid="uid://xriwflful0gq" path="res://sprites/middle_carrot.png" id="3_h122t"]
+[ext_resource type="Texture2D" uid="uid://bkrqfjffv1nd3" path="res://sprites/start_carrot.png" id="3_k6i6v"]
+[ext_resource type="Texture2D" uid="uid://c782c7k3vk3bd" path="res://sprites/harvest_carrot.png" id="4_dbf8q"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jkxjx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_h122t")
+}],
+"loop": true,
+"name": &"growth",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_dbf8q")
+}],
+"loop": true,
+"name": &"harvest",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_k6i6v")
+}],
+"loop": true,
+"name": &"sprout",
+"speed": 5.0
+}]
+
+[node name="carrot" instance=ExtResource("1_0edfn")]
+script = ExtResource("2_btoom")
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_jkxjx")
+animation = &"harvest"

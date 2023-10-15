@@ -1,12 +1,5 @@
-extends Node
+extends "res://scripts/plant.gd"
 
-enum Resources{
-	EMPTY, COMPOST, WATER, SOUL
-}
-
-@onready var player_reference: CharacterBody2D
-
-var debug_plants = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
