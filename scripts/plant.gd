@@ -24,6 +24,13 @@ func _ready():
 	plant = randi_range(1, Globals.Plants.size() - 1)
 	$AnimatedSprite2D.play("sprout")
 	$AnimatedSprite2D.frame = plant
+	match plant:
+		Globals.Plants.PUMPKIN:
+			$AnimationPlayer.play("plant_pumpkin")
+		Globals.Plants.CARROT:
+			$AnimationPlayer.play("plant_carrot")
+		Globals.Plants.HEART:
+			$AnimationPlayer.play("plant_heart")
 
 func ask_for_resource():
 	# Get new random resource needed
@@ -60,7 +67,16 @@ func consume_resource():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$Label.text = str($RotTimer.time_left)
+	var rot_time
+	if grow_level <= 2:
+		rot_time = 25
+	elif grow_level <= 5:
+		rot_time = 45
+	elif grow_level <= 6:
+		rot_time = 50
+	var rot_factor = $RotTimer.time_left / rot_time
+	print(str(rot_factor))
+	$AnimatedSprite2D.modulate = lerp(Color.DARK_GREEN, Color.WHITE, rot_factor)
 
 func _input(event):
 	if player_in_area and interaction_active:
@@ -74,12 +90,12 @@ func _input(event):
 				harvest()
 
 func _on_area_2d_body_entered(body):
-	if body.is_in_group("player") and interaction_active and stage < 3:
+	if body.is_in_group("player") and interaction_active:
 		$InteractionLabel.enable()
 		player_in_area = true
 
 func _on_area_2d_body_exited(body):
-	if body.is_in_group("player") and interaction_active and stage < 3:
+	if body.is_in_group("player") and interaction_active:
 		$InteractionLabel.disable()
 		player_in_area = false
 
