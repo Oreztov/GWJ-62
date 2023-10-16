@@ -58,6 +58,12 @@ interact={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Tileset"
+2d_physics/layer_2="Objects"
+2d_physics/layer_3="Characters"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

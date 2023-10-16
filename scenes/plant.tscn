@@ -333,6 +333,7 @@ animation = &"sprout"
 autoplay = "sprout"
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_t7vcp")
@@ -351,7 +352,7 @@ autoplay = "default"
 
 [node name="RotTimer" type="Timer" parent="."]
 process_callback = 0
-wait_time = 5.0
+wait_time = 25.0
 one_shot = true
 autostart = true
 
