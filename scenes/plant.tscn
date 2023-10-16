@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dle118v1mw774"]
+[gd_scene load_steps=36 format=3 uid="uid://dle118v1mw774"]
 
 [ext_resource type="Script" path="res://scripts/plant.gd" id="1_gs5sh"]
 [ext_resource type="Texture2D" uid="uid://cd7p0ur8opil2" path="res://resources/generic_sprout.tres" id="1_jejnx"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bpp7wl30ow2e6" path="res://sprites/bleedingHeart_sheet.png" id="5_01mvg"]
 [ext_resource type="PackedScene" uid="uid://l45lwmt0s3tn" path="res://scenes/interaction_label.tscn" id="6_ju8je"]
 [ext_resource type="Texture2D" uid="uid://c2c1d6jyot4x0" path="res://sprites/plantIcons.png" id="9_yw1j5"]
+[ext_resource type="Texture2D" uid="uid://dt8gpxw27jtkq" path="res://sprites/light.png" id="10_183m4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sy2ec"]
 atlas = ExtResource("3_o3y5v")
@@ -166,6 +167,93 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_fk5qr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PopupBackground:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PopupBackground:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -8)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlantLight:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.117647)]
+}
+
+[sub_resource type="Animation" id="Animation_jufsk"]
+resource_name = "plant_carrot"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlantLight:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.309804, 0, 1, 0.117647)]
+}
+
+[sub_resource type="Animation" id="Animation_0cv6l"]
+resource_name = "plant_heart"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlantLight:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.901961, 0, 1, 0.117647)]
+}
+
+[sub_resource type="Animation" id="Animation_nnxjg"]
+resource_name = "plant_pumpkin"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlantLight:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.333333, 0, 0.117647)]
+}
+
 [sub_resource type="Animation" id="Animation_ww7l6"]
 resource_name = "pop_in"
 length = 0.3
@@ -192,33 +280,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, -12), Vector2(0, -10)]
-}
-
-[sub_resource type="Animation" id="Animation_fk5qr"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PopupBackground:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PopupBackground:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -8)]
 }
 
 [sub_resource type="Animation" id="Animation_yb7vx"]
@@ -252,9 +313,15 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_stf2g"]
 _data = {
 "RESET": SubResource("Animation_fk5qr"),
+"plant_carrot": SubResource("Animation_jufsk"),
+"plant_heart": SubResource("Animation_0cv6l"),
+"plant_pumpkin": SubResource("Animation_nnxjg"),
 "pop_in": SubResource("Animation_ww7l6"),
 "pop_out": SubResource("Animation_yb7vx")
 }
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gv5xr"]
+blend_mode = 1
 
 [node name="Plant" type="Node2D"]
 z_index = 2
@@ -266,6 +333,7 @@ animation = &"sprout"
 autoplay = "sprout"
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_t7vcp")
@@ -309,6 +377,13 @@ autoplay = "RESET"
 libraries = {
 "": SubResource("AnimationLibrary_stf2g")
 }
+
+[node name="PlantLight" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.117647)
+show_behind_parent = true
+material = SubResource("CanvasItemMaterial_gv5xr")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_183m4")
 
 [connection signal="animation_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_changed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

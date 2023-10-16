@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8j7281mn8lgg"]
+
+[sub_resource type="Gradient" id="Gradient_4m1kw"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kfsff"]
+gradient = SubResource("Gradient_4m1kw")
+height = 12
+
+[sub_resource type="Gradient" id="Gradient_wqglh"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.290196, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bful2"]
+gradient = SubResource("Gradient_wqglh")
+height = 12
+
+[node name="hp" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 40.0
+value = 100.0
+texture_under = SubResource("GradientTexture2D_kfsff")
+texture_progress = SubResource("GradientTexture2D_bful2")

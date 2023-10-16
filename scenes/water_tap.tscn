@@ -26,6 +26,7 @@ size = Vector2(16, 16)
 size = Vector2(32, 32)
 
 [node name="WaterTap" type="StaticBody2D"]
+collision_layer = 2
 script = ExtResource("1_npgls")
 
 [node name="BottomPart" type="Sprite2D" parent="."]
@@ -40,6 +41,7 @@ texture = SubResource("GradientTexture2D_cb3of")
 shape = SubResource("RectangleShape2D_uuxuo")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_n3o1l")

@@ -93,6 +93,7 @@ animations = [{
 }]
 
 [node name="Gravestone" type="StaticBody2D" groups=["gravestones"]]
+collision_layer = 2
 script = ExtResource("1_7wu54")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

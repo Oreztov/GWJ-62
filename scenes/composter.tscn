@@ -29,6 +29,7 @@ size = Vector2(100, 1000)
 size = Vector2(1000, 100)
 
 [node name="Composter" type="StaticBody2D"]
+collision_layer = 2
 script = ExtResource("1_5yxlq")
 
 [node name="BottomTop" type="Sprite2D" parent="."]
@@ -43,11 +44,13 @@ texture = SubResource("GradientTexture2D_cdlmy")
 shape = SubResource("RectangleShape2D_4ut8v")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_ukj8a")
 
 [node name="BlockArea" type="Area2D" parent="."]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlockArea"]
 shape = SubResource("RectangleShape2D_xw51s")
