@@ -14,6 +14,8 @@ var resources_needed = [Globals.Resources.COMPOST, Globals.Resources.WATER, Glob
 
 @onready var plant_marker
 
+var enemy = preload("res://scenes/enemy.tscn")
+
 var rng = RandomNumberGenerator.new()
 
 signal freed(marker)
@@ -75,7 +77,6 @@ func _process(delta):
 	elif grow_level <= 6:
 		rot_time = 50
 	var rot_factor = $RotTimer.time_left / rot_time
-	print(str(rot_factor))
 	$AnimatedSprite2D.modulate = lerp(Color.DARK_GREEN, Color.WHITE, rot_factor)
 
 func _input(event):
@@ -100,6 +101,17 @@ func _on_area_2d_body_exited(body):
 		player_in_area = false
 
 func _on_rot_timer_timeout():
+	# Plant has rotted, spawn according zombie
+	match plant:
+		Globals.Plants.PUMPKIN:
+			$AnimationPlayer.play("plant_pumpkin")
+		Globals.Plants.CARROT:
+			$AnimationPlayer.play("plant_carrot")
+		Globals.Plants.HEART:
+			$AnimationPlayer.play("plant_heart")
+	var new_enemy = enemy.instantiate()
+	new_enemy.position = position
+	get_parent().add_child(new_enemy)
 	freed.emit(plant_marker)
 	queue_free()
 

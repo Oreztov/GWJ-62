@@ -156,6 +156,7 @@ autoplay = "idle"
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(1, 0, 0, 1)
 texture = ExtResource("6_uj0ay")
+texture_scale = 0.75
 
 [node name="NavUpdateTimer" type="Timer" parent="."]
 process_callback = 0

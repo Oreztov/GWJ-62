@@ -242,7 +242,7 @@ position = Vector2(200.357, 192.143)
 position = Vector2(200, 53.9286)
 
 [node name="SoulWell" parent="." instance=ExtResource("8_wrgja")]
-position = Vector2(200, 115)
+position = Vector2(200, 120)
 
 [node name="PlantSpawnTimer" type="Timer" parent="."]
 process_callback = 0
