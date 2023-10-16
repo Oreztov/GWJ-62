@@ -108,6 +108,7 @@ func _on_rot_timer_timeout():
 	var new_enemy = enemies[plant].instantiate()
 	new_enemy.position = position
 	get_parent().add_child(new_enemy)
+	new_enemy.add_to_group("enemies")
 	freed.emit(plant_marker)
 	queue_free()
 

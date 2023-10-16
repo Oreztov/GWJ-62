@@ -3,6 +3,7 @@ extends CharacterBody2D
 var base_speed = 250
 var speed = base_speed
 var hand = Globals.Resources.EMPTY
+var invincible = false
 
 func _ready():
 	Globals.player_reference = self
@@ -44,4 +45,17 @@ func set_hand_item(item):
 			$HandSprite.play("water")
 		_:
 			$HandSprite.play("empty")
-			
+
+func attacked():
+	invincible = true
+	$Invincibility.start(1.0)
+
+
+func _on_invincibility_timeout():
+	invincible = false
+
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("enemies") and invincible == false:
+		Globals.hud_reference.sub_hp(20)
+		attacked()

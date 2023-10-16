@@ -134,7 +134,7 @@ animations = [{
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ppy2j"]
 blend_mode = 1
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 4
 collision_mask = 7
 motion_mode = 1

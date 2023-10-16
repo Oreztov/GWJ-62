@@ -42,6 +42,7 @@ func _ready():
 	
 	# Setup game variables
 	plant_spawn_time = 10
+	
 
 func spawn_water_tap(blocked_graves):
 	# Check for blocked graves by composter
