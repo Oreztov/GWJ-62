@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://6xbg8wkel8b4"]
+[gd_scene load_steps=11 format=3 uid="uid://6xbg8wkel8b4"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_bvrog"]
 [ext_resource type="TileSet" uid="uid://d1kqek74ycve3" path="res://resources/level_tile_set.tres" id="1_u7gxt"]
@@ -9,8 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cy40k81p41ncc" path="res://scenes/composter.tscn" id="5_so264"]
 [ext_resource type="Script" path="res://scripts/tilemap_nav.gd" id="6_18j20"]
 [ext_resource type="PackedScene" uid="uid://bjtde1hwveusp" path="res://scenes/soul_well.tscn" id="8_wrgja"]
-[ext_resource type="PackedScene" uid="uid://b8j7281mn8lgg" path="res://scenes/hp.tscn" id="10_0hqjd"]
-[ext_resource type="PackedScene" uid="uid://dv1m8dy7k1l7f" path="res://scenes/inventory.tscn" id="11_30e3a"]
+[ext_resource type="PackedScene" uid="uid://nlmgiqnvpykm" path="res://scenes/HUD.tscn" id="10_7obxb"]
 
 [node name="Level" type="Node2D"]
 position = Vector2(167, 109)
@@ -253,16 +252,10 @@ wait_time = 3.0
 one_shot = true
 autostart = true
 
-[node name="hp" parent="." instance=ExtResource("10_0hqjd")]
-offset_left = 23.2143
-offset_top = -13.2143
-offset_right = 23.2143
-offset_bottom = -13.2143
-
-[node name="inventory" parent="." instance=ExtResource("11_30e3a")]
+[node name="HUD" parent="." instance=ExtResource("10_7obxb")]
 offset_left = -28.2143
-offset_top = 55.3571
+offset_top = -13.2143
 offset_right = -28.2143
-offset_bottom = 55.3571
+offset_bottom = -13.2143
 
 [connection signal="timeout" from="PlantSpawnTimer" to="." method="_on_plant_spawn_timer_timeout"]

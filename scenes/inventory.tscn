@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://dv1m8dy7k1l7f"]
+[gd_scene load_steps=14 format=3 uid="uid://dv1m8dy7k1l7f"]
 
 [ext_resource type="Texture2D" uid="uid://cmxaniun855ib" path="res://sprites/pumpkin_sheet.png" id="1_fidnk"]
+[ext_resource type="Script" path="res://scripts/inventory.gd" id="1_u0kb7"]
 [ext_resource type="Texture2D" uid="uid://cj4xqtcisqyr2" path="res://sprites/carrot_sheet.png" id="2_t8t3u"]
 [ext_resource type="Texture2D" uid="uid://bpp7wl30ow2e6" path="res://sprites/bleedingHeart_sheet.png" id="3_7bvex"]
 
@@ -41,41 +42,40 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_u0kb7")
 
 [node name="pumpkin" type="Sprite2D" parent="."]
 position = Vector2(8, 8)
 texture = SubResource("AtlasTexture_6eu84")
 
-[node name="Label" type="Label" parent="."]
+[node name="pumpkin_amount" type="Label" parent="."]
 layout_mode = 0
-offset_left = 16.0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_top = 16.0
+offset_right = 24.0
+offset_bottom = 39.0
 text = " 0"
 label_settings = SubResource("LabelSettings_sj83w")
 
 [node name="carrot" type="Sprite2D" parent="."]
-position = Vector2(8, 24)
+position = Vector2(8, 40)
 texture = SubResource("AtlasTexture_g1f2s")
 
-[node name="Label2" type="Label" parent="."]
+[node name="carrot_amount" type="Label" parent="."]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 40.0
-offset_bottom = 39.0
+offset_top = 48.0
+offset_right = 24.0
+offset_bottom = 71.0
 text = " 0"
 label_settings = SubResource("LabelSettings_hh0vr")
 
 [node name="bleeding_heart" type="Sprite2D" parent="."]
-position = Vector2(8, 40)
+position = Vector2(8, 72)
 texture = SubResource("AtlasTexture_v1fl1")
 
-[node name="Label3" type="Label" parent="."]
+[node name="bleeding_heart_amount" type="Label" parent="."]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 32.0
-offset_right = 40.0
-offset_bottom = 55.0
+offset_top = 80.0
+offset_right = 24.0
+offset_bottom = 103.0
 text = " 0"
 label_settings = SubResource("LabelSettings_entgk")

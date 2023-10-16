@@ -8,9 +8,10 @@ enum Plants {
 	EMPTY, PUMPKIN, CARROT, HEART
 }
 
-var inv = {"pumpkin": 0, "carrot": 0, "bleeding_heart": 0}
+var inv = {Plants.PUMPKIN: 0, Plants.CARROT: 0, Plants.HEART: 0}
 
 @onready var player_reference: CharacterBody2D
+@onready var hud_reference
 
 var debug_plants = []
 

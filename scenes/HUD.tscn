@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://nlmgiqnvpykm"]
+
+[ext_resource type="Script" path="res://scripts/HUD.gd" id="1_flxpu"]
+[ext_resource type="PackedScene" uid="uid://b8j7281mn8lgg" path="res://scenes/hp.tscn" id="1_yqrpa"]
+[ext_resource type="PackedScene" uid="uid://dv1m8dy7k1l7f" path="res://scenes/inventory.tscn" id="2_36xav"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_flxpu")
+
+[node name="hp" parent="." instance=ExtResource("1_yqrpa")]
+layout_mode = 1
+offset_left = 48.0
+offset_right = 48.0
+
+[node name="inventory" parent="." instance=ExtResource("2_36xav")]
+layout_mode = 1

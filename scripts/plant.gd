@@ -138,6 +138,7 @@ func _on_grow_timer_timeout():
 	
 
 func harvest():
+	Globals.hud_reference.add_plant(plant)
 	queue_free()
 
 func _on_animated_sprite_2d_animation_changed():
