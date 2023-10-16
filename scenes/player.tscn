@@ -198,7 +198,7 @@ autoplay = "idle"
 [node name="BottomPart" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 8)
 sprite_frames = SubResource("SpriteFrames_goejg")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
 
 [node name="PointLight2D" type="PointLight2D" parent="."]

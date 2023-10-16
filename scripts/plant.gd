@@ -14,7 +14,10 @@ var resources_needed = [Globals.Resources.COMPOST, Globals.Resources.WATER, Glob
 
 @onready var plant_marker
 
-var enemy = preload("res://scenes/enemy.tscn")
+var enemies = [preload("res://scenes/enemies/enemy.tscn"),
+preload("res://scenes/enemies/enemy_pumpkin.tscn"),
+preload("res://scenes/enemies/enemy_carrot.tscn"),
+preload("res://scenes/enemies/enemy_heart.tscn")]
 
 var rng = RandomNumberGenerator.new()
 
@@ -102,14 +105,7 @@ func _on_area_2d_body_exited(body):
 
 func _on_rot_timer_timeout():
 	# Plant has rotted, spawn according zombie
-	match plant:
-		Globals.Plants.PUMPKIN:
-			$AnimationPlayer.play("plant_pumpkin")
-		Globals.Plants.CARROT:
-			$AnimationPlayer.play("plant_carrot")
-		Globals.Plants.HEART:
-			$AnimationPlayer.play("plant_heart")
-	var new_enemy = enemy.instantiate()
+	var new_enemy = enemies[plant].instantiate()
 	new_enemy.position = position
 	get_parent().add_child(new_enemy)
 	freed.emit(plant_marker)

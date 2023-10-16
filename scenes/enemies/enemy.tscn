@@ -1,38 +1,38 @@
-[gd_scene load_steps=21 format=3 uid="uid://cc54t4tocndg7"]
+[gd_scene load_steps=22 format=3 uid="uid://cc54t4tocndg7"]
 
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_kacb1"]
-[ext_resource type="Texture2D" uid="uid://dpahml8n3wh7r" path="res://sprites/player.png" id="5_hq2vo"]
-[ext_resource type="Texture2D" uid="uid://dt8gpxw27jtkq" path="res://sprites/light.png" id="6_uj0ay"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_b68ht"]
+[ext_resource type="Texture2D" uid="uid://dpahml8n3wh7r" path="res://sprites/player.png" id="2_2ke0w"]
+[ext_resource type="Texture2D" uid="uid://dt8gpxw27jtkq" path="res://sprites/light.png" id="3_koder"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4e4f3"]
 size = Vector2(12, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lx0to"]
-atlas = ExtResource("5_hq2vo")
+atlas = ExtResource("2_2ke0w")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xm22y"]
-atlas = ExtResource("5_hq2vo")
+atlas = ExtResource("2_2ke0w")
 region = Rect2(0, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n65ia"]
-atlas = ExtResource("5_hq2vo")
+atlas = ExtResource("2_2ke0w")
 region = Rect2(0, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8hgqa"]
-atlas = ExtResource("5_hq2vo")
+atlas = ExtResource("2_2ke0w")
 region = Rect2(0, 96, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ekxh8"]
-atlas = ExtResource("5_hq2vo")
+atlas = ExtResource("2_2ke0w")
 region = Rect2(0, 128, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ehm6u"]
-atlas = ExtResource("5_hq2vo")
+atlas = ExtResource("2_2ke0w")
 region = Rect2(0, 160, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4snub"]
-atlas = ExtResource("5_hq2vo")
+atlas = ExtResource("2_2ke0w")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i56bm"]
@@ -70,31 +70,31 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7xl7m"]
-atlas = ExtResource("5_hq2vo")
+atlas = ExtResource("2_2ke0w")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t1eta"]
-atlas = ExtResource("5_hq2vo")
+atlas = ExtResource("2_2ke0w")
 region = Rect2(0, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tovno"]
-atlas = ExtResource("5_hq2vo")
+atlas = ExtResource("2_2ke0w")
 region = Rect2(0, 80, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ov83o"]
-atlas = ExtResource("5_hq2vo")
+atlas = ExtResource("2_2ke0w")
 region = Rect2(0, 112, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_utoos"]
-atlas = ExtResource("5_hq2vo")
+atlas = ExtResource("2_2ke0w")
 region = Rect2(0, 144, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wn6as"]
-atlas = ExtResource("5_hq2vo")
+atlas = ExtResource("2_2ke0w")
 region = Rect2(0, 176, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ab44i"]
-atlas = ExtResource("5_hq2vo")
+atlas = ExtResource("2_2ke0w")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_goejg"]
@@ -131,10 +131,13 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ppy2j"]
+blend_mode = 1
+
 [node name="Enemy" type="CharacterBody2D"]
 motion_mode = 1
 wall_min_slide_angle = 0.0
-script = ExtResource("1_kacb1")
+script = ExtResource("1_b68ht")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12)
@@ -153,11 +156,6 @@ sprite_frames = SubResource("SpriteFrames_goejg")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-color = Color(1, 0, 0, 1)
-texture = ExtResource("6_uj0ay")
-texture_scale = 0.75
-
 [node name="NavUpdateTimer" type="Timer" parent="."]
 process_callback = 0
 wait_time = 0.5
@@ -166,5 +164,14 @@ autostart = true
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_desired_distance = 16.0
 target_desired_distance = 24.0
+
+[node name="EnemyShadow" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 0.117647)
+show_behind_parent = true
+material = SubResource("CanvasItemMaterial_ppy2j")
+position = Vector2(4.76837e-07, 16)
+scale = Vector2(0.15, 0.15)
+skew = -1.0472
+texture = ExtResource("3_koder")
 
 [connection signal="timeout" from="NavUpdateTimer" to="." method="_on_nav_update_timer_timeout"]

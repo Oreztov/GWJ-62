@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@export var speed = 100
+@export var speed = 150
 @onready var nav_agent = $NavigationAgent2D
 
 var next_pos
@@ -25,6 +25,22 @@ func _physics_process(delta):
 	new_velocity = new_velocity * speed
 	
 	set_velocity(new_velocity)
+	
+	if velocity != Vector2.ZERO:
+		# Play walk animation
+		$TopPart.play("walk")
+		$BottomPart.play("walk")
+		if velocity.x < 0:
+			$TopPart.flip_h = true
+			$BottomPart.flip_h = true
+			$EnemyShadow.skew = 60
+		elif velocity.x > 0:
+			$TopPart.flip_h = false
+			$BottomPart.flip_h = false
+			$EnemyShadow.skew = -60
+	else:
+		$TopPart.play("idle")
+		$BottomPart.play("idle")
 	
 	move_and_slide()
 	

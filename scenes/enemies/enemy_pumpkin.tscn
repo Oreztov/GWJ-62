@@ -1,0 +1,101 @@
+[gd_scene load_steps=13 format=3 uid="uid://ba7wx06v8fgkl"]
+
+[ext_resource type="PackedScene" uid="uid://cc54t4tocndg7" path="res://scenes/enemies/enemy.tscn" id="1_de7y4"]
+[ext_resource type="Texture2D" uid="uid://b8fwgyyswt6mf" path="res://sprites/pumpkinMonster.png" id="2_tu7en"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bswwp"]
+atlas = ExtResource("2_tu7en")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvrpj"]
+atlas = ExtResource("2_tu7en")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ed1ig"]
+atlas = ExtResource("2_tu7en")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8vsp"]
+atlas = ExtResource("2_tu7en")
+region = Rect2(0, 96, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_thl2j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bswwp")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvrpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ed1ig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8vsp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bswwp")
+}],
+"loop": false,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uaxhm"]
+atlas = ExtResource("2_tu7en")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34ota"]
+atlas = ExtResource("2_tu7en")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cudgb"]
+atlas = ExtResource("2_tu7en")
+region = Rect2(0, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ap4s"]
+atlas = ExtResource("2_tu7en")
+region = Rect2(0, 112, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rm1ko"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uaxhm")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34ota")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cudgb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ap4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uaxhm")
+}],
+"loop": false,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[node name="EnemyPumpkin" instance=ExtResource("1_de7y4")]
+
+[node name="TopPart" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_thl2j")
+
+[node name="BottomPart" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_rm1ko")
+animation = &"walk"
