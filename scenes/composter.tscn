@@ -1,20 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cy40k81p41ncc"]
+[gd_scene load_steps=9 format=3 uid="uid://cy40k81p41ncc"]
 
 [ext_resource type="Script" path="res://scripts/composter.gd" id="1_5yxlq"]
 [ext_resource type="PackedScene" uid="uid://l45lwmt0s3tn" path="res://scenes/interaction_label.tscn" id="2_jkgrj"]
-
-[sub_resource type="Gradient" id="Gradient_x2crb"]
-colors = PackedColorArray(0.407843, 0.321569, 0, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_1qqei"]
-gradient = SubResource("Gradient_x2crb")
-width = 16
-height = 16
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_cdlmy"]
-gradient = SubResource("Gradient_x2crb")
-width = 16
-height = 8
+[ext_resource type="Texture2D" uid="uid://w2kpw4tkewii" path="res://sprites/composer_sheet.png" id="3_jweqn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ut8v"]
 size = Vector2(16, 16)
@@ -28,17 +16,13 @@ size = Vector2(100, 1000)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1ch5"]
 size = Vector2(1000, 100)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ssc7"]
+atlas = ExtResource("3_jweqn")
+region = Rect2(0, 16, 16, 24)
+
 [node name="Composter" type="StaticBody2D"]
 collision_layer = 2
 script = ExtResource("1_5yxlq")
-
-[node name="BottomTop" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_1qqei")
-
-[node name="TopPart" type="Sprite2D" parent="."]
-z_index = 1
-position = Vector2(0, -12)
-texture = SubResource("GradientTexture2D_cdlmy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_4ut8v")
@@ -59,6 +43,9 @@ shape = SubResource("RectangleShape2D_xw51s")
 shape = SubResource("RectangleShape2D_e1ch5")
 
 [node name="InteractionLabel" parent="." instance=ExtResource("2_jkgrj")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_8ssc7")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
