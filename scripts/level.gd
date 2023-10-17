@@ -44,6 +44,8 @@ func _ready():
 	plant_spawn_time = 10
 	Globals.inv = {Globals.Plants.PUMPKIN: 0, Globals.Plants.CARROT: 0, Globals.Plants.HEART: 0}
 	
+	Globals.hud_reference.update_inventory()
+	
 
 func spawn_water_tap(blocked_graves):
 	# Check for blocked graves by composter
