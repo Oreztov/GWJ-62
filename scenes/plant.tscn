@@ -341,6 +341,7 @@ shape = SubResource("RectangleShape2D_t7vcp")
 [node name="InteractionLabel" parent="." instance=ExtResource("6_ju8je")]
 
 [node name="PopupBackground" type="Sprite2D" parent="."]
+z_index = 2
 position = Vector2(0, -8)
 scale = Vector2(1e-05, 1e-05)
 texture = SubResource("AtlasTexture_lejed")

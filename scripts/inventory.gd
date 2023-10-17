@@ -2,7 +2,19 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	# Get hotkeys
+	var interact_key
+	for action in InputMap.action_get_events("use_pumpkin"):
+		interact_key = action.as_text().split(" ")[0]
+	$pumpkin_hotkey.text = $pumpkin_hotkey.text % interact_key
+	
+	for action in InputMap.action_get_events("use_carrot"):
+		interact_key = action.as_text().split(" ")[0]
+	$carrot_hotkey.text = $carrot_hotkey.text % interact_key
+	
+	for action in InputMap.action_get_events("use_heart"):
+		interact_key = action.as_text().split(" ")[0]
+	$bleeding_heart_hotkey.text = $bleeding_heart_hotkey.text % interact_key
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

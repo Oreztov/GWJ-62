@@ -254,10 +254,6 @@ one_shot = true
 autostart = true
 
 [node name="HUD" parent="." instance=ExtResource("10_7obxb")]
-offset_left = -28.2143
-offset_top = -13.2143
-offset_right = -28.2143
-offset_bottom = -13.2143
 
 [node name="EnemyCarrot" parent="." instance=ExtResource("11_5v7kk")]
 z_index = 0
