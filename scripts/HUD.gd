@@ -24,3 +24,6 @@ func add_hp(health):
 
 func sub_hp(health):
 	$hp.sub_hp(health)
+
+func get_hp():
+	return $hp.get_hp()

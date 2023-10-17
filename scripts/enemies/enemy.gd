@@ -69,4 +69,5 @@ func take_damage(amount):
 	
 
 func _on_hitbox_area_body_entered(body):
-	Globals.player_reference.attacked(damage)
+	if body.is_in_group("player"):
+		Globals.player_reference.attacked(damage)

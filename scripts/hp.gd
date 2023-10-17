@@ -20,6 +20,10 @@ func sub_hp(health):
 	if $hp_bar.value <= 0:
 		get_tree().reload_current_scene()
 		
+func get_hp():
+	return $hp_bar.value
+
 func update_text():
 	$hp_label.text = str($hp_bar.value)
+	
 	

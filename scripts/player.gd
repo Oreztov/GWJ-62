@@ -58,7 +58,7 @@ func _physics_process(delta):
 		get_parent().call_deferred("add_child", new_pumpkin)
 		Globals.inv[Globals.Plants.PUMPKIN] -= 1
 		Globals.hud_reference.update_inventory()
-	elif  Input.is_action_just_pressed("use_heart") and Globals.inv[Globals.Plants.HEART] > 0:
+	elif  Input.is_action_just_pressed("use_heart") and Globals.inv[Globals.Plants.HEART] > 0 and Globals.hud_reference.get_hp() < 100:
 		Globals.hud_reference.add_hp(35)
 		Globals.inv[Globals.Plants.HEART] -= 1
 		Globals.hud_reference.update_inventory()

@@ -107,5 +107,3 @@ animation = &"walk"
 
 [node name="CollisionShape2D" parent="HitboxArea" index="0"]
 position = Vector2(0, 0)
-
-[connection signal="body_entered" from="HitboxArea" to="." method="_on_hitbox_area_body_entered"]
