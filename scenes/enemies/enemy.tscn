@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cc54t4tocndg7"]
+[gd_scene load_steps=23 format=3 uid="uid://cc54t4tocndg7"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy.gd" id="1_eoeps"]
 [ext_resource type="Texture2D" uid="uid://dpahml8n3wh7r" path="res://sprites/player.png" id="2_2ke0w"]
@@ -134,6 +134,9 @@ animations = [{
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ppy2j"]
 blend_mode = 1
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlvj2"]
+size = Vector2(18, 32)
+
 [node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
 z_index = 2
 collision_layer = 4
@@ -182,6 +185,14 @@ texture = ExtResource("3_koder")
 process_callback = 0
 wait_time = 0.25
 autostart = true
+
+[node name="HitboxArea" type="Area2D" parent="." groups=["enemies"]]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxArea"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_nlvj2")
 
 [connection signal="timeout" from="NavUpdateTimer" to="." method="_on_nav_update_timer_timeout"]
 [connection signal="timeout" from="RotTimer" to="." method="_on_rot_timer_timeout"]

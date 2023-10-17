@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxc1rvw3vcy48"]
+
+[ext_resource type="Texture2D" uid="uid://cj4xqtcisqyr2" path="res://sprites/carrot_sheet.png" id="1_2vn8j"]
+[ext_resource type="Script" path="res://scenes/weapons/weapon_carrot.gd" id="1_51liy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s42o7"]
+atlas = ExtResource("1_2vn8j")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ih8vf"]
+size = Vector2(20, 10)
+
+[node name="WeaponCarrot" type="Node2D"]
+z_index = 4
+script = ExtResource("1_51liy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+rotation = -2.35619
+texture = SubResource("AtlasTexture_s42o7")
+
+[node name="HitboxArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxArea"]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_ih8vf")
+
+[connection signal="area_entered" from="HitboxArea" to="." method="_on_hitbox_area_area_entered"]

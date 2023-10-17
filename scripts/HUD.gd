@@ -15,6 +15,9 @@ func add_plant(plant, amount = 1):
 
 func remove_plant(plant, amount = 1):
 	$inventory.remove_plant(plant, amount)
+	
+func update_inventory():
+	$inventory.update_inventory()
 
 func add_hp(health):
 	$hp.add_hp(health)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8j7281mn8lgg"]
+[gd_scene load_steps=7 format=3 uid="uid://b8j7281mn8lgg"]
 
 [ext_resource type="Script" path="res://scripts/hp.gd" id="1_u5fwv"]
+[ext_resource type="LabelSettings" uid="uid://c6h3m32hum7pj" path="res://resources/hud_label_settings.tres" id="2_ptm1m"]
 
 [sub_resource type="Gradient" id="Gradient_4m1kw"]
 
@@ -33,3 +34,12 @@ offset_bottom = 40.0
 value = 100.0
 texture_under = SubResource("GradientTexture2D_kfsff")
 texture_progress = SubResource("GradientTexture2D_bful2")
+
+[node name="hp_label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 104.0
+offset_right = 151.0
+offset_bottom = 42.0
+text = "%s"
+label_settings = ExtResource("2_ptm1m")
+horizontal_alignment = 1

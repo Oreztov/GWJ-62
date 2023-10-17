@@ -63,3 +63,6 @@ func _on_nav_update_timer_timeout():
 func _on_rot_timer_timeout():
 	# Naturally rot away
 	health -= 1
+	
+func take_damage(amount):
+	health -= amount

@@ -40,8 +40,9 @@ func _ready():
 	# Get plant spawn points 'markers'
 	plant_markers = get_tree().get_nodes_in_group("plant_markers")
 	
-	# Setup game variables
+	# Setup & Reset game variables
 	plant_spawn_time = 10
+	Globals.inv = {Globals.Plants.PUMPKIN: 0, Globals.Plants.CARROT: 0, Globals.Plants.HEART: 0}
 	
 
 func spawn_water_tap(blocked_graves):
