@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_bvrog"]
 [ext_resource type="TileSet" uid="uid://d1kqek74ycve3" path="res://resources/level_tile_set.tres" id="1_u7gxt"]
 [ext_resource type="PackedScene" uid="uid://bex00buheapxy" path="res://scenes/player.tscn" id="2_p3v33"]
-[ext_resource type="PackedScene" uid="uid://cybm4l5hvwmvk" path="res://scenes/water_tap.tscn" id="3_1ljv0"]
-[ext_resource type="PackedScene" uid="uid://dwjcfjh7g5jw3" path="res://scenes/gravestone.tscn" id="3_ap34t"]
+[ext_resource type="PackedScene" uid="uid://cybm4l5hvwmvk" path="res://scenes/objects/water_tap.tscn" id="3_1ljv0"]
+[ext_resource type="PackedScene" uid="uid://dwjcfjh7g5jw3" path="res://scenes/objects/gravestone.tscn" id="3_ap34t"]
 [ext_resource type="PackedScene" uid="uid://dle118v1mw774" path="res://scenes/plant.tscn" id="4_2q5to"]
-[ext_resource type="PackedScene" uid="uid://cy40k81p41ncc" path="res://scenes/composter.tscn" id="5_so264"]
+[ext_resource type="PackedScene" uid="uid://cy40k81p41ncc" path="res://scenes/objects/composter.tscn" id="5_so264"]
 [ext_resource type="Script" path="res://scripts/tilemap_nav.gd" id="6_18j20"]
-[ext_resource type="PackedScene" uid="uid://bjtde1hwveusp" path="res://scenes/soul_well.tscn" id="8_wrgja"]
-[ext_resource type="PackedScene" uid="uid://nlmgiqnvpykm" path="res://scenes/HUD.tscn" id="10_7obxb"]
+[ext_resource type="PackedScene" uid="uid://bjtde1hwveusp" path="res://scenes/objects/soul_well.tscn" id="8_wrgja"]
+[ext_resource type="PackedScene" uid="uid://nlmgiqnvpykm" path="res://scenes/UI/HUD.tscn" id="10_7obxb"]
 
 [node name="Level" type="Node2D"]
 position = Vector2(167, 109)

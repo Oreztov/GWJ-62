@@ -1,0 +1,97 @@
+[gd_scene load_steps=9 format=3 uid="uid://dv1m8dy7k1l7f"]
+
+[ext_resource type="Texture2D" uid="uid://cmxaniun855ib" path="res://sprites/plants/pumpkin_sheet.png" id="1_fidnk"]
+[ext_resource type="Script" path="res://scripts/UI/inventory.gd" id="1_vtdpr"]
+[ext_resource type="Texture2D" uid="uid://cj4xqtcisqyr2" path="res://sprites/plants/carrot_sheet.png" id="2_t8t3u"]
+[ext_resource type="Texture2D" uid="uid://bpp7wl30ow2e6" path="res://sprites/plants/bleedingHeart_sheet.png" id="3_7bvex"]
+[ext_resource type="LabelSettings" uid="uid://c6h3m32hum7pj" path="res://resources/hud_label_settings.tres" id="3_o0i14"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6eu84"]
+atlas = ExtResource("1_fidnk")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1f2s"]
+atlas = ExtResource("2_t8t3u")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1fl1"]
+atlas = ExtResource("3_7bvex")
+region = Rect2(0, 0, 16, 16)
+
+[node name="inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vtdpr")
+
+[node name="pumpkin" type="Sprite2D" parent="."]
+position = Vector2(32, 98)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_6eu84")
+
+[node name="pumpkin_hotkey" type="Label" parent="."]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 73.0
+offset_bottom = 74.0
+text = "[%s]"
+label_settings = ExtResource("3_o0i14")
+
+[node name="pumpkin_amount" type="Label" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 96.0
+offset_right = 66.0
+offset_bottom = 138.0
+text = " 0"
+label_settings = ExtResource("3_o0i14")
+horizontal_alignment = 2
+
+[node name="carrot" type="Sprite2D" parent="."]
+position = Vector2(32, 226)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_g1f2s")
+
+[node name="carrot_hotkey" type="Label" parent="."]
+layout_mode = 0
+offset_top = 160.0
+offset_right = 73.0
+offset_bottom = 202.0
+text = "[%s]"
+label_settings = ExtResource("3_o0i14")
+
+[node name="carrot_amount" type="Label" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 224.0
+offset_right = 65.0
+offset_bottom = 266.0
+text = " 0"
+label_settings = ExtResource("3_o0i14")
+horizontal_alignment = 2
+
+[node name="bleeding_heart" type="Sprite2D" parent="."]
+position = Vector2(32, 352)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_v1fl1")
+
+[node name="bleeding_heart_hotkey" type="Label" parent="."]
+layout_mode = 0
+offset_top = 288.0
+offset_right = 73.0
+offset_bottom = 330.0
+text = "[%s]"
+label_settings = ExtResource("3_o0i14")
+
+[node name="bleeding_heart_amount" type="Label" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 354.0
+offset_right = 65.0
+offset_bottom = 396.0
+text = " 0"
+label_settings = ExtResource("3_o0i14")
+horizontal_alignment = 2

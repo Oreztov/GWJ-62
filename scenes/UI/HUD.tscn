@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://nlmgiqnvpykm"]
+
+[ext_resource type="Script" path="res://scripts/UI/HUD.gd" id="1_5kmff"]
+[ext_resource type="PackedScene" uid="uid://b8j7281mn8lgg" path="res://scenes/UI/hp.tscn" id="1_yqrpa"]
+[ext_resource type="PackedScene" uid="uid://dv1m8dy7k1l7f" path="res://scenes/UI/inventory.tscn" id="2_36xav"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_5kmff")
+
+[node name="hp" parent="." instance=ExtResource("1_yqrpa")]
+offset_left = 192.0
+offset_top = 4.0
+offset_right = 192.0
+offset_bottom = 4.0
+
+[node name="inventory" parent="." instance=ExtResource("2_36xav")]
+offset_left = 4.0
+offset_right = 4.0

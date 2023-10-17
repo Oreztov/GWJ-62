@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://chwttlby65re4"]
 
 [ext_resource type="Script" path="res://scripts/items/weapon_pumpkin.gd" id="1_af0ub"]
-[ext_resource type="Texture2D" uid="uid://cmxaniun855ib" path="res://sprites/pumpkin_sheet.png" id="1_oqu3i"]
+[ext_resource type="Texture2D" uid="uid://cmxaniun855ib" path="res://sprites/plants/pumpkin_sheet.png" id="1_oqu3i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ope5y"]
 atlas = ExtResource("1_oqu3i")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbawbmwfr2dwu"]
 
 [ext_resource type="Script" path="res://scripts/items/weapon_carrot.gd" id="1_7wnsf"]
-[ext_resource type="Texture2D" uid="uid://cj4xqtcisqyr2" path="res://sprites/carrot_sheet.png" id="2_td8s1"]
+[ext_resource type="Texture2D" uid="uid://cj4xqtcisqyr2" path="res://sprites/plants/carrot_sheet.png" id="2_td8s1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s42o7"]
 atlas = ExtResource("2_td8s1")
