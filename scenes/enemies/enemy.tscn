@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://cc54t4tocndg7"]
 
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_b68ht"]
+[ext_resource type="Script" path="res://scripts/enemies/enemy.gd" id="1_eoeps"]
 [ext_resource type="Texture2D" uid="uid://dpahml8n3wh7r" path="res://sprites/player.png" id="2_2ke0w"]
 [ext_resource type="Texture2D" uid="uid://dt8gpxw27jtkq" path="res://sprites/light.png" id="3_koder"]
 
@@ -135,11 +135,12 @@ animations = [{
 blend_mode = 1
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
+z_index = 2
 collision_layer = 4
 collision_mask = 7
 motion_mode = 1
 wall_min_slide_angle = 0.0
-script = ExtResource("1_b68ht")
+script = ExtResource("1_eoeps")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12)
@@ -177,4 +178,10 @@ scale = Vector2(0.15, 0.15)
 skew = -1.0472
 texture = ExtResource("3_koder")
 
+[node name="RotTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.25
+autostart = true
+
 [connection signal="timeout" from="NavUpdateTimer" to="." method="_on_nav_update_timer_timeout"]
+[connection signal="timeout" from="RotTimer" to="." method="_on_rot_timer_timeout"]

@@ -324,7 +324,7 @@ _data = {
 blend_mode = 1
 
 [node name="Plant" type="Node2D"]
-z_index = 2
+z_index = 1
 script = ExtResource("1_gs5sh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

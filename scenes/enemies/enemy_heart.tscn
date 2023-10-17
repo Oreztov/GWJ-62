@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://co7jt1nh4gq3o"]
+[gd_scene load_steps=18 format=3 uid="uid://co7jt1nh4gq3o"]
 
 [ext_resource type="PackedScene" uid="uid://cc54t4tocndg7" path="res://scenes/enemies/enemy.tscn" id="1_ptesa"]
+[ext_resource type="Script" path="res://scripts/enemies/enemy_heart.gd" id="2_a5me8"]
 [ext_resource type="Texture2D" uid="uid://duwkeleeghsil" path="res://sprites/bleedingHeartMonster.png" id="2_r4ve6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jd0ba"]
@@ -120,12 +121,17 @@ animations = [{
 }]
 
 [node name="EnemyHeart" instance=ExtResource("1_ptesa")]
+z_index = 4
+collision_mask = 5
+script = ExtResource("2_a5me8")
 
 [node name="TopPart" parent="." index="1"]
+z_index = 3
 sprite_frames = SubResource("SpriteFrames_81ebw")
 frame = 5
 frame_progress = 1.0
 
 [node name="BottomPart" parent="." index="2"]
+z_index = 2
 sprite_frames = SubResource("SpriteFrames_vejgk")
 animation = &"walk"

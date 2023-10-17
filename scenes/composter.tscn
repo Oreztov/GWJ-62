@@ -21,6 +21,7 @@ atlas = ExtResource("3_jweqn")
 region = Rect2(0, 16, 16, 24)
 
 [node name="Composter" type="StaticBody2D"]
+z_index = 1
 collision_layer = 2
 script = ExtResource("1_5yxlq")
 

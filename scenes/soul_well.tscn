@@ -26,6 +26,7 @@ size = Vector2(16, 16)
 size = Vector2(32, 32)
 
 [node name="SoulWell" type="StaticBody2D"]
+z_index = 1
 collision_layer = 2
 script = ExtResource("1_62fyl")
 

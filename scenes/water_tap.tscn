@@ -47,6 +47,7 @@ animations = [{
 }]
 
 [node name="WaterTap" type="StaticBody2D"]
+z_index = 1
 collision_layer = 2
 script = ExtResource("1_npgls")
 

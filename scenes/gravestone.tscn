@@ -93,6 +93,7 @@ animations = [{
 }]
 
 [node name="Gravestone" type="StaticBody2D" groups=["gravestones"]]
+z_index = 1
 collision_layer = 2
 script = ExtResource("1_7wu54")
 
