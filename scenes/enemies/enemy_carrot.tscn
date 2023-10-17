@@ -120,6 +120,7 @@ animations = [{
 }]
 
 [node name="EnemyCarrot" instance=ExtResource("1_1jmn3")]
+damage = 10
 
 [node name="TopPart" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_53sja")

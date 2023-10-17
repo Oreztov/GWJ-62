@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @export var speed = 150
 @export var health = 100
-
+@export var damage = 20
 @onready var nav_agent = $NavigationAgent2D
 
 var next_pos
@@ -63,6 +63,10 @@ func _on_nav_update_timer_timeout():
 func _on_rot_timer_timeout():
 	# Naturally rot away
 	health -= 1
-	
+
 func take_damage(amount):
 	health -= amount
+	
+
+func _on_hitbox_area_body_entered(body):
+	Globals.player_reference.attacked(damage)

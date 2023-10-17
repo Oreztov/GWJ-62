@@ -219,7 +219,7 @@ texture = ExtResource("6_atnuo")
 
 [node name="Invincibility" type="Timer" parent="."]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["player"]]
 collision_layer = 4
 collision_mask = 4
 

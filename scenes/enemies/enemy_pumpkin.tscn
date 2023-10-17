@@ -1,7 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://ba7wx06v8fgkl"]
+[gd_scene load_steps=15 format=3 uid="uid://ba7wx06v8fgkl"]
 
 [ext_resource type="PackedScene" uid="uid://cc54t4tocndg7" path="res://scenes/enemies/enemy.tscn" id="1_de7y4"]
 [ext_resource type="Texture2D" uid="uid://b8fwgyyswt6mf" path="res://sprites/pumpkinMonster.png" id="2_tu7en"]
+[ext_resource type="Script" path="res://scripts/enemies/enemy_pumpkin.gd" id="2_wi6jk"]
+[ext_resource type="PackedScene" uid="uid://chwttlby65re4" path="res://scenes/items/weapon_pumpkin.tscn" id="3_p0ooy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bswwp"]
 atlas = ExtResource("2_tu7en")
@@ -92,6 +94,9 @@ animations = [{
 }]
 
 [node name="EnemyPumpkin" instance=ExtResource("1_de7y4")]
+script = ExtResource("2_wi6jk")
+weapon_pumpkin = ExtResource("3_p0ooy")
+damage = 0
 
 [node name="TopPart" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_thl2j")
@@ -99,3 +104,8 @@ sprite_frames = SubResource("SpriteFrames_thl2j")
 [node name="BottomPart" parent="." index="2"]
 sprite_frames = SubResource("SpriteFrames_rm1ko")
 animation = &"walk"
+
+[node name="CollisionShape2D" parent="HitboxArea" index="0"]
+position = Vector2(0, 0)
+
+[connection signal="body_entered" from="HitboxArea" to="." method="_on_hitbox_area_body_entered"]

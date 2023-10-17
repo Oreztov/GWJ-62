@@ -196,3 +196,4 @@ shape = SubResource("RectangleShape2D_nlvj2")
 
 [connection signal="timeout" from="NavUpdateTimer" to="." method="_on_nav_update_timer_timeout"]
 [connection signal="timeout" from="RotTimer" to="." method="_on_rot_timer_timeout"]
+[connection signal="body_entered" from="HitboxArea" to="." method="_on_hitbox_area_body_entered"]

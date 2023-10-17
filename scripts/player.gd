@@ -54,8 +54,13 @@ func _physics_process(delta):
 		var new_pumpkin = weapon_pumpkin.instantiate()
 		# Spawn at legs
 		new_pumpkin.position = position + $CollisionShape2D.position
+		new_pumpkin.parent = true
 		get_parent().call_deferred("add_child", new_pumpkin)
 		Globals.inv[Globals.Plants.PUMPKIN] -= 1
+		Globals.hud_reference.update_inventory()
+	elif  Input.is_action_just_pressed("use_heart") and Globals.inv[Globals.Plants.HEART] > 0:
+		Globals.hud_reference.add_hp(35)
+		Globals.inv[Globals.Plants.HEART] -= 1
 		Globals.hud_reference.update_inventory()
 
 func set_hand_item(item):
@@ -70,16 +75,10 @@ func set_hand_item(item):
 		_:
 			$HandSprite.play("empty")
 
-func attacked():
+func attacked(amount):
+	Globals.hud_reference.sub_hp(amount)
 	invincible = true
 	$Invincibility.start(1.0)
 
-
 func _on_invincibility_timeout():
 	invincible = false
-
-
-func _on_area_2d_body_entered(body):
-	if body.is_in_group("enemies") and invincible == false:
-		Globals.hud_reference.sub_hp(20)
-		attacked()
