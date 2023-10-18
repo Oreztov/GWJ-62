@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://cd7p0ur8opil2" path="res://resources/generic_sprout.tres" id="1_jejnx"]
 [ext_resource type="Texture2D" uid="uid://d3hxlhxue0n2r" path="res://resources/generic_growth.tres" id="2_sv0bs"]
 [ext_resource type="Texture2D" uid="uid://gvoa2gqeglkj" path="res://resources/generic_harvest.tres" id="3_nqn35"]
-[ext_resource type="Texture2D" uid="uid://cmxaniun855ib" path="res://sprites/pumpkin_sheet.png" id="3_o3y5v"]
-[ext_resource type="Texture2D" uid="uid://cj4xqtcisqyr2" path="res://sprites/carrot_sheet.png" id="4_7oafa"]
-[ext_resource type="Texture2D" uid="uid://bpp7wl30ow2e6" path="res://sprites/bleedingHeart_sheet.png" id="5_01mvg"]
-[ext_resource type="PackedScene" uid="uid://l45lwmt0s3tn" path="res://scenes/interaction_label.tscn" id="6_ju8je"]
+[ext_resource type="Texture2D" uid="uid://cmxaniun855ib" path="res://sprites/plants/pumpkin_sheet.png" id="3_o3y5v"]
+[ext_resource type="Texture2D" uid="uid://cj4xqtcisqyr2" path="res://sprites/plants/carrot_sheet.png" id="4_7oafa"]
+[ext_resource type="Texture2D" uid="uid://bpp7wl30ow2e6" path="res://sprites/plants/bleedingHeart_sheet.png" id="5_01mvg"]
+[ext_resource type="PackedScene" uid="uid://l45lwmt0s3tn" path="res://scenes/UI/interaction_label.tscn" id="6_ju8je"]
 [ext_resource type="Texture2D" uid="uid://c2c1d6jyot4x0" path="res://sprites/plantIcons.png" id="9_yw1j5"]
 [ext_resource type="Texture2D" uid="uid://dt8gpxw27jtkq" path="res://sprites/light.png" id="10_183m4"]
 
@@ -380,6 +380,7 @@ libraries = {
 }
 
 [node name="PlantLight" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.117647)
 show_behind_parent = true
 material = SubResource("CanvasItemMaterial_gv5xr")

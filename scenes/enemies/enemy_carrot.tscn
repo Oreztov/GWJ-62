@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://b7nrd1xgrf1yp"]
 
 [ext_resource type="PackedScene" uid="uid://cc54t4tocndg7" path="res://scenes/enemies/enemy.tscn" id="1_1jmn3"]
-[ext_resource type="Texture2D" uid="uid://dg0oqj7oco3ex" path="res://sprites/carrotMonster.png" id="2_c7onw"]
+[ext_resource type="Texture2D" uid="uid://dg0oqj7oco3ex" path="res://sprites/enemies/carrot_monster/carrotMonster.png" id="2_c7onw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bvblx"]
 atlas = ExtResource("2_c7onw")
@@ -120,7 +120,7 @@ animations = [{
 }]
 
 [node name="EnemyCarrot" instance=ExtResource("1_1jmn3")]
-damage = 10
+damage = 25
 
 [node name="TopPart" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_53sja")

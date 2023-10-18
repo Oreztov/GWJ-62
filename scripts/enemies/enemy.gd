@@ -7,39 +7,49 @@ extends CharacterBody2D
 @onready var nav_agent = $NavigationAgent2D
 
 var next_pos
+var spawned = false
+var initial_pos = Vector2.ZERO
 
-func ready():
-	pass
+func _ready():
+	initial_pos = position
+	position.y += 16
+	print("a")
+	var tween = create_tween()
+	tween.tween_property(self, "position", initial_pos, 1)
+	tween.tween_callback(func(): spawned = true)
+	$DirtParticles.play("default")
+	print("b")
 
 func _physics_process(delta):
 	# Death
-	if health <= 0:
-		queue_free()
-	
-	if nav_agent.is_navigation_finished():
-		set_velocity(Vector2.ZERO)
+	if spawned:
+		if health <= 0:
+			queue_free()
+		
+		if nav_agent.is_navigation_finished():
+			set_velocity(Vector2.ZERO)
+			move_and_slide()
+			return
+		
+		set_velocity(handle_movement())
+		
+		if velocity != Vector2.ZERO:
+			# Play walk animation
+			$TopPart.play("walk")
+			$BottomPart.play("walk")
+			if velocity.x < 0:
+				$TopPart.flip_h = true
+				$BottomPart.flip_h = true
+				$EnemyShadow.skew = 60
+			elif velocity.x > 0:
+				$TopPart.flip_h = false
+				$BottomPart.flip_h = false
+				$EnemyShadow.skew = -60
+		else:
+			$TopPart.play("idle")
+			$BottomPart.play("idle")
+		
 		move_and_slide()
-		return
-	
-	set_velocity(handle_movement())
-	
-	if velocity != Vector2.ZERO:
-		# Play walk animation
-		$TopPart.play("walk")
-		$BottomPart.play("walk")
-		if velocity.x < 0:
-			$TopPart.flip_h = true
-			$BottomPart.flip_h = true
-			$EnemyShadow.skew = 60
-		elif velocity.x > 0:
-			$TopPart.flip_h = false
-			$BottomPart.flip_h = false
-			$EnemyShadow.skew = -60
-	else:
-		$TopPart.play("idle")
-		$BottomPart.play("idle")
-	
-	move_and_slide()
 	
 func handle_movement():
 	nav_agent.target_position = Globals.player_reference.global_position
@@ -62,7 +72,7 @@ func _on_nav_update_timer_timeout():
 
 func _on_rot_timer_timeout():
 	# Naturally rot away
-	health -= 1
+	take_damage(1)
 
 func take_damage(amount):
 	health -= amount

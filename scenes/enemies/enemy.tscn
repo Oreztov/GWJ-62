@@ -1,38 +1,39 @@
-[gd_scene load_steps=23 format=3 uid="uid://cc54t4tocndg7"]
+[gd_scene load_steps=32 format=3 uid="uid://cc54t4tocndg7"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy.gd" id="1_eoeps"]
-[ext_resource type="Texture2D" uid="uid://dpahml8n3wh7r" path="res://sprites/player.png" id="2_2ke0w"]
+[ext_resource type="Texture2D" uid="uid://dpahml8n3wh7r" path="res://sprites/player/player.png" id="2_3b3gl"]
 [ext_resource type="Texture2D" uid="uid://dt8gpxw27jtkq" path="res://sprites/light.png" id="3_koder"]
+[ext_resource type="Texture2D" uid="uid://cd7vebh4wu6vx" path="res://sprites/dirt_particles.png" id="4_h7ui5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k3hlb"]
 radius = 4.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lx0to"]
-atlas = ExtResource("2_2ke0w")
+atlas = ExtResource("2_3b3gl")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xm22y"]
-atlas = ExtResource("2_2ke0w")
+atlas = ExtResource("2_3b3gl")
 region = Rect2(0, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n65ia"]
-atlas = ExtResource("2_2ke0w")
+atlas = ExtResource("2_3b3gl")
 region = Rect2(0, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8hgqa"]
-atlas = ExtResource("2_2ke0w")
+atlas = ExtResource("2_3b3gl")
 region = Rect2(0, 96, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ekxh8"]
-atlas = ExtResource("2_2ke0w")
+atlas = ExtResource("2_3b3gl")
 region = Rect2(0, 128, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ehm6u"]
-atlas = ExtResource("2_2ke0w")
+atlas = ExtResource("2_3b3gl")
 region = Rect2(0, 160, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4snub"]
-atlas = ExtResource("2_2ke0w")
+atlas = ExtResource("2_3b3gl")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i56bm"]
@@ -70,31 +71,31 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7xl7m"]
-atlas = ExtResource("2_2ke0w")
+atlas = ExtResource("2_3b3gl")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t1eta"]
-atlas = ExtResource("2_2ke0w")
+atlas = ExtResource("2_3b3gl")
 region = Rect2(0, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tovno"]
-atlas = ExtResource("2_2ke0w")
+atlas = ExtResource("2_3b3gl")
 region = Rect2(0, 80, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ov83o"]
-atlas = ExtResource("2_2ke0w")
+atlas = ExtResource("2_3b3gl")
 region = Rect2(0, 112, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_utoos"]
-atlas = ExtResource("2_2ke0w")
+atlas = ExtResource("2_3b3gl")
 region = Rect2(0, 144, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wn6as"]
-atlas = ExtResource("2_2ke0w")
+atlas = ExtResource("2_3b3gl")
 region = Rect2(0, 176, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ab44i"]
-atlas = ExtResource("2_2ke0w")
+atlas = ExtResource("2_3b3gl")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_goejg"]
@@ -137,8 +138,86 @@ blend_mode = 1
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlvj2"]
 size = Vector2(18, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cduj6"]
+atlas = ExtResource("4_h7ui5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggr38"]
+atlas = ExtResource("4_h7ui5")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdu51"]
+atlas = ExtResource("4_h7ui5")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_huoif"]
+atlas = ExtResource("4_h7ui5")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_edmr7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cduj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggr38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdu51")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_huoif")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="Animation" id="Animation_y68xs"]
+resource_name = "spawn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1e-05), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_iij8h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xedn7"]
+_data = {
+"RESET": SubResource("Animation_iij8h"),
+"spawn": SubResource("Animation_y68xs")
+}
+
 [node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
-z_index = 2
+z_index = 1
 collision_layer = 4
 collision_mask = 7
 motion_mode = 1
@@ -183,7 +262,6 @@ texture = ExtResource("3_koder")
 
 [node name="RotTimer" type="Timer" parent="."]
 process_callback = 0
-wait_time = 0.25
 autostart = true
 
 [node name="HitboxArea" type="Area2D" parent="." groups=["enemies"]]
@@ -193,6 +271,20 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxArea"]
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_nlvj2")
+
+[node name="DirtParticles" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 10)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_edmr7")
+autoplay = "default"
+frame = 5
+frame_progress = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "spawn"
+libraries = {
+"": SubResource("AnimationLibrary_xedn7")
+}
 
 [connection signal="timeout" from="NavUpdateTimer" to="." method="_on_nav_update_timer_timeout"]
 [connection signal="timeout" from="RotTimer" to="." method="_on_rot_timer_timeout"]

@@ -13,6 +13,11 @@ var last_direction = Vector2.ZERO
 func _ready():
 	Globals.player_reference = self
 	$HandSprite.play("empty")
+	
+	$TopPart.play("walk")
+	$BottomPart.play("walk")
+	$TopPart.play("idle")
+	$BottomPart.play("idle")
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
