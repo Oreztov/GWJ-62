@@ -13,12 +13,10 @@ var initial_pos = Vector2.ZERO
 func _ready():
 	initial_pos = position
 	position.y += 16
-	print("a")
 	var tween = create_tween()
 	tween.tween_property(self, "position", initial_pos, 1)
 	tween.tween_callback(func(): spawned = true)
 	$DirtParticles.play("default")
-	print("b")
 
 func _physics_process(delta):
 	# Death

@@ -81,6 +81,11 @@ func _process(delta):
 		rot_time = 50
 	var rot_factor = $RotTimer.time_left / rot_time
 	$AnimatedSprite2D.modulate = lerp(Color.DARK_GREEN, Color.WHITE, rot_factor)
+	$GPUParticles2D.speed_scale = 1 * ease(1 - rot_factor, 5)
+	if rot_factor < 0.5:
+		$GPUParticles2D.visible = true
+	else:
+		$GPUParticles2D.visible = false
 
 func _input(event):
 	if player_in_area and interaction_active:

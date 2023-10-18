@@ -1,7 +1,7 @@
 extends Node2D
 
 var explode_time = 1 # speed_scale factor
-var damage = 40
+var damage = 50
 var parent = null
 # Called when the node enters the scene tree for the first time.
 func _ready():

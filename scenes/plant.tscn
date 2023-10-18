@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dle118v1mw774"]
+[gd_scene load_steps=40 format=3 uid="uid://dle118v1mw774"]
 
 [ext_resource type="Script" path="res://scripts/plant.gd" id="1_gs5sh"]
 [ext_resource type="Texture2D" uid="uid://cd7p0ur8opil2" path="res://resources/generic_sprout.tres" id="1_jejnx"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://l45lwmt0s3tn" path="res://scenes/UI/interaction_label.tscn" id="6_ju8je"]
 [ext_resource type="Texture2D" uid="uid://c2c1d6jyot4x0" path="res://sprites/plantIcons.png" id="9_yw1j5"]
 [ext_resource type="Texture2D" uid="uid://dt8gpxw27jtkq" path="res://sprites/light.png" id="10_183m4"]
+[ext_resource type="Texture2D" uid="uid://7mwfhk6gmmkg" path="res://sprites/rot_bubble.png" id="11_x1ukk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sy2ec"]
 atlas = ExtResource("3_o3y5v")
@@ -323,6 +324,23 @@ _data = {
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gv5xr"]
 blend_mode = 1
 
+[sub_resource type="Gradient" id="Gradient_3lw1i"]
+colors = PackedColorArray(0, 1, 0, 1, 0, 1, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_nkrmw"]
+gradient = SubResource("Gradient_3lw1i")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_41m6g"]
+emission_shape = 1
+emission_sphere_radius = 5.0
+particle_flag_disable_z = true
+gravity = Vector3(0, -25, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = -128.7
+angle_max = 58.5
+color_ramp = SubResource("GradientTexture1D_nkrmw")
+
 [node name="Plant" type="Node2D"]
 z_index = 1
 script = ExtResource("1_gs5sh")
@@ -386,6 +404,12 @@ show_behind_parent = true
 material = SubResource("CanvasItemMaterial_gv5xr")
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("10_183m4")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 6
+process_material = SubResource("ParticleProcessMaterial_41m6g")
+texture = ExtResource("11_x1ukk")
+lifetime = 3.0
 
 [connection signal="animation_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_changed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
