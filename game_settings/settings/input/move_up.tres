@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="ggsInputSetting" load_steps=4 format=3 uid="uid://1vmbvdm6dtci"]
+
+[ext_resource type="Script" path="res://game_settings/templates/input.gd" id="1_aonqc"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_x7uhw"]
+device = -1
+physical_keycode = 4194320
+
+[sub_resource type="InputEventKey" id="InputEventKey_dw4nd"]
+device = -1
+physical_keycode = 4194320
+
+[resource]
+resource_name = "move_up"
+script = ExtResource("1_aonqc")
+action = "move_up"
+event_index = 0
+type = 1
+default_as_event = SubResource("InputEventKey_dw4nd")
+current_as_event = SubResource("InputEventKey_x7uhw")
+current = [1, 4194320]
+default = [1, 4194320]
+name = "move_up"
+category = "input"
+value_type = 28
+value_hint = 0
+value_hint_string = ""

@@ -4,9 +4,9 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for action in InputMap.action_get_events("interact"):
-		interact_key = action.as_text().split(" ")[0]
-	$PanelContainer/Label.text = $PanelContainer/Label.text % interact_key
+	Globals.hotkeys_updated.connect(update)
+	
+	update()
 	
 	visible = false
 		
@@ -18,9 +18,11 @@ func enable():
 func disable():
 	$AnimationPlayer.play("pop_out")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func update():
+	# Get hotkey
+	for action in InputMap.action_get_events("interact"):
+		interact_key = action.as_text().split(" ")[0]
+	$PanelContainer/Label.text = "[%s]" % interact_key
 	
 
 

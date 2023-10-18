@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="ggsInputSetting" load_steps=4 format=3 uid="uid://b81pps8kbedeq"]
+
+[ext_resource type="Script" path="res://game_settings/templates/input.gd" id="1_32rud"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_qv6ni"]
+device = -1
+physical_keycode = 69
+unicode = 101
+
+[sub_resource type="InputEventKey" id="InputEventKey_b55fe"]
+device = -1
+physical_keycode = 69
+unicode = 101
+
+[resource]
+resource_name = "use_heart"
+script = ExtResource("1_32rud")
+action = "use_heart"
+event_index = 0
+type = 1
+default_as_event = SubResource("InputEventKey_b55fe")
+current_as_event = SubResource("InputEventKey_qv6ni")
+current = [1, 69]
+default = [1, 69]
+name = "use_heart"
+category = "input"
+value_type = 28
+value_hint = 0
+value_hint_string = ""

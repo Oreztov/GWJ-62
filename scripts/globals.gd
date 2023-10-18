@@ -21,6 +21,8 @@ var colorblind_intensity
 
 var debug_plants = []
 
+signal hotkeys_updated
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

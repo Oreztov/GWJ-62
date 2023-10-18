@@ -1,23 +1,30 @@
 extends Control
 
+var initial_text
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	initial_text = $pumpkin_hotkey.text
+	
+	Globals.hotkeys_updated.connect(update_hotkeys)
+	
+	update_hotkeys()
+	update_inventory()
+	
+func update_hotkeys():
 	# Get hotkeys
 	var interact_key
 	for action in InputMap.action_get_events("use_pumpkin"):
 		interact_key = action.as_text().split(" ")[0]
-	$pumpkin_hotkey.text = $pumpkin_hotkey.text % interact_key
+	$pumpkin_hotkey.text = initial_text % interact_key
 	
 	for action in InputMap.action_get_events("use_carrot"):
 		interact_key = action.as_text().split(" ")[0]
-	$carrot_hotkey.text = $carrot_hotkey.text % interact_key
+	$carrot_hotkey.text = initial_text % interact_key
 	
 	for action in InputMap.action_get_events("use_heart"):
 		interact_key = action.as_text().split(" ")[0]
-	$bleeding_heart_hotkey.text = $bleeding_heart_hotkey.text % interact_key
-	
-	update_inventory()
-
+	$bleeding_heart_hotkey.text = initial_text % interact_key
 
 func update_inventory():
 		$pumpkin_amount.text = " " + str(Globals.inv[Globals.Plants.PUMPKIN])

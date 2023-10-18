@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/enemies/enemy.gd" id="1_eoeps"]
 [ext_resource type="Texture2D" uid="uid://dpahml8n3wh7r" path="res://sprites/player/player.png" id="2_3b3gl"]
 [ext_resource type="Texture2D" uid="uid://dt8gpxw27jtkq" path="res://sprites/light.png" id="3_koder"]
-[ext_resource type="Texture2D" uid="uid://cd7vebh4wu6vx" path="res://sprites/dirt_particles.png" id="4_h7ui5"]
+[ext_resource type="Texture2D" uid="uid://cd7vebh4wu6vx" path="res://sprites/enemies/dirt_particles.png" id="4_fbwxy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k3hlb"]
 radius = 4.0
@@ -139,19 +139,19 @@ blend_mode = 1
 size = Vector2(18, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cduj6"]
-atlas = ExtResource("4_h7ui5")
+atlas = ExtResource("4_fbwxy")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ggr38"]
-atlas = ExtResource("4_h7ui5")
+atlas = ExtResource("4_fbwxy")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdu51"]
-atlas = ExtResource("4_h7ui5")
+atlas = ExtResource("4_fbwxy")
 region = Rect2(0, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_huoif"]
-atlas = ExtResource("4_h7ui5")
+atlas = ExtResource("4_fbwxy")
 region = Rect2(0, 48, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_edmr7"]

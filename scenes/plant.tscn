@@ -8,9 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://cj4xqtcisqyr2" path="res://sprites/plants/carrot_sheet.png" id="4_7oafa"]
 [ext_resource type="Texture2D" uid="uid://bpp7wl30ow2e6" path="res://sprites/plants/bleedingHeart_sheet.png" id="5_01mvg"]
 [ext_resource type="PackedScene" uid="uid://l45lwmt0s3tn" path="res://scenes/UI/interaction_label.tscn" id="6_ju8je"]
-[ext_resource type="Texture2D" uid="uid://c2c1d6jyot4x0" path="res://sprites/plantIcons.png" id="9_yw1j5"]
+[ext_resource type="Texture2D" uid="uid://c2c1d6jyot4x0" path="res://sprites/plants/plantIcons.png" id="9_xdum8"]
 [ext_resource type="Texture2D" uid="uid://dt8gpxw27jtkq" path="res://sprites/light.png" id="10_183m4"]
-[ext_resource type="Texture2D" uid="uid://7mwfhk6gmmkg" path="res://sprites/rot_bubble.png" id="11_x1ukk"]
+[ext_resource type="Texture2D" uid="uid://7mwfhk6gmmkg" path="res://sprites/plants/rot_bubble.png" id="11_albey"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sy2ec"]
 atlas = ExtResource("3_o3y5v")
@@ -106,23 +106,23 @@ animations = [{
 size = Vector2(16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lejed"]
-atlas = ExtResource("9_yw1j5")
+atlas = ExtResource("9_xdum8")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mrl7l"]
-atlas = ExtResource("9_yw1j5")
+atlas = ExtResource("9_xdum8")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e3ed0"]
-atlas = ExtResource("9_yw1j5")
+atlas = ExtResource("9_xdum8")
 region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3j6u8"]
-atlas = ExtResource("9_yw1j5")
+atlas = ExtResource("9_xdum8")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jxa7w"]
-atlas = ExtResource("9_yw1j5")
+atlas = ExtResource("9_xdum8")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aay08"]
@@ -408,7 +408,7 @@ texture = ExtResource("10_183m4")
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 amount = 6
 process_material = SubResource("ParticleProcessMaterial_41m6g")
-texture = ExtResource("11_x1ukk")
+texture = ExtResource("11_albey")
 lifetime = 3.0
 
 [connection signal="animation_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_changed"]
