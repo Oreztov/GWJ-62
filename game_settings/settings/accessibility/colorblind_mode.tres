@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bocx0xyrf6rdc"]
+
+[ext_resource type="Script" path="res://game_settings/settings/accessibility/colorblind_mode.gd" id="1_algis"]
+
+[resource]
+resource_name = "colorblind_mode"
+script = ExtResource("1_algis")
+current = 0
+default = null
+name = "colorblind_mode"
+category = "accessibility"
+value_type = 2
+value_hint = 0
+value_hint_string = ""

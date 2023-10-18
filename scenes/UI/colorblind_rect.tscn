@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://feqrgfn084g8"]
+
+[ext_resource type="Shader" path="res://shaders/colorblind.gdshader" id="1_5df4l"]
+[ext_resource type="Script" path="res://scripts/UI/colorblind_rect.gd" id="2_3egw5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l6fjn"]
+shader = ExtResource("1_5df4l")
+shader_parameter/mode = 2
+shader_parameter/intensity = 1.0
+
+[node name="ColorblindRect" type="ColorRect"]
+material = SubResource("ShaderMaterial_l6fjn")
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+script = ExtResource("2_3egw5")

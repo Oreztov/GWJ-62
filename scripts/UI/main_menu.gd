@@ -2,9 +2,12 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$MainContainer.visible = true
+	$MainContainer/VBoxContainer/PlayButton.grab_focus()
+	$SettingsContainer.visible = false
 	if Globals.ingame:
 		visible = false
-		$PanelContainer/VBoxContainer/PlayButton.text = "Continue!"
+		$MainContainer/VBoxContainer/PlayButton.text = "Continue!"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,8 +33,18 @@ func _on_play_button_pressed():
 
 
 func _on_settings_button_pressed():
-	pass # Replace with function body.
+	# To settings menu
+	$MainContainer.visible = false
+	$SettingsContainer.visible = true
+	$SettingsContainer/VBoxContainer/ScrollContainer/VBoxContainer/VolumeContainer/Slider/Slider.grab_focus()
 
 
 func _on_quit_button_pressed():
 	get_tree().quit()
+
+
+func _on_back_button_pressed():
+	# Back to main menu
+	$MainContainer.visible = true
+	$SettingsContainer.visible = false
+	$MainContainer/VBoxContainer/PlayButton.grab_focus()
