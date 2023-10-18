@@ -6,7 +6,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l6fjn"]
 shader = ExtResource("1_5df4l")
 shader_parameter/mode = 2
-shader_parameter/intensity = 1.0
+shader_parameter/intensity = 0.0
 
 [node name="ColorblindRect" type="ColorRect"]
 material = SubResource("ShaderMaterial_l6fjn")

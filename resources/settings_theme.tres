@@ -1,4 +1,10 @@
-[gd_resource type="Theme" format=3 uid="uid://dhkr0h2sh1xvo"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dhkr0h2sh1xvo"]
+
+[ext_resource type="FontFile" uid="uid://dsuq4v0qtnt26" path="res://fonts/static/PixelifySans-Regular.ttf" id="1_smcaa"]
+
+[sub_resource type="SystemFont" id="SystemFont_8agsx"]
 
 [resource]
 Button/font_sizes/font_size = 36
+Button/fonts/font = ExtResource("1_smcaa")
+OptionButton/fonts/font = SubResource("SystemFont_8agsx")
