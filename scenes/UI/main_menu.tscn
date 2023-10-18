@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwpke2nmwkcjj"]
+
+[ext_resource type="Theme" uid="uid://ckigjkqs2dlx4" path="res://resources/main_menu_theme.tres" id="1_5qwo0"]
+[ext_resource type="Script" path="res://scripts/UI/main_menu.gd" id="2_2rrl0"]
+[ext_resource type="FontFile" uid="uid://c8d7vep1p3doh" path="res://fonts/static/PixelifySans-SemiBold.ttf" id="2_kyqjj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dx8nt"]
+font = ExtResource("2_kyqjj")
+font_size = 150
+
+[node name="Menu" type="CanvasLayer"]
+process_mode = 3
+
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5qwo0")
+script = ExtResource("2_2rrl0")
+
+[node name="PanelContainer" type="PanelContainer" parent="MainMenu"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -316.0
+offset_top = -183.0
+offset_right = 316.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/PanelContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MainMenu/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Grave
+Gardens"
+label_settings = SubResource("LabelSettings_dx8nt")
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MainMenu/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="MainMenu/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play!"
+
+[node name="SettingsButton" type="Button" parent="MainMenu/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Settings..."
+
+[node name="QuitButton" type="Button" parent="MainMenu/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit :["
+
+[connection signal="pressed" from="MainMenu/PanelContainer/VBoxContainer/PlayButton" to="MainMenu" method="_on_play_button_pressed"]
+[connection signal="pressed" from="MainMenu/PanelContainer/VBoxContainer/SettingsButton" to="MainMenu" method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MainMenu/PanelContainer/VBoxContainer/QuitButton" to="MainMenu" method="_on_quit_button_pressed"]
