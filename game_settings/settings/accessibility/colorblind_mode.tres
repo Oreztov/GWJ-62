@@ -5,8 +5,8 @@
 [resource]
 resource_name = "colorblind_mode"
 script = ExtResource("1_algis")
-current = 0
-default = null
+current = 2
+default = 2
 name = "colorblind_mode"
 category = "accessibility"
 value_type = 2

@@ -6,7 +6,7 @@
 resource_name = "colorblind_intensity"
 script = ExtResource("1_xa6oo")
 current = 0.0
-default = null
+default = 0.0
 name = "colorblind_intensity"
 category = "accessibility"
 value_type = 3

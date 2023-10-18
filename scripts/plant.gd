@@ -78,7 +78,7 @@ func _process(delta):
 	elif grow_level <= 5:
 		rot_time = 45
 	elif grow_level <= 6:
-		rot_time = 50
+		rot_time = 60
 	var rot_factor = $RotTimer.time_left / rot_time
 	$AnimatedSprite2D.modulate = lerp(Color.DARK_GREEN, Color.WHITE, rot_factor)
 	$GPUParticles2D.speed_scale = 1 * ease(1 - rot_factor, 5)
@@ -135,7 +135,7 @@ func _on_grow_timer_timeout():
 		6:
 			stage += 1
 			$AnimatedSprite2D.play("harvest")
-			$RotTimer.start($RotTimer.time_left + 15)
+			$RotTimer.start($RotTimer.time_left + 25)
 			$PopupBackground/Popup.play("harvest")
 			$AnimationPlayer.play("pop_in")
 			interaction_active = true
