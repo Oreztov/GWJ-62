@@ -3,6 +3,7 @@ extends "res://scripts/enemies/enemy.gd"
 @export var weapon_pumpkin: PackedScene
 
 
+
 func _on_hitbox_area_body_entered(body):
 	if body.is_in_group("player"):
 		var new_pumpkin = weapon_pumpkin.instantiate()
