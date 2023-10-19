@@ -4,58 +4,67 @@ extends CharacterBody2D
 @export var speed = 150
 @export var health = 100
 @export var damage = 20
+@export var attack_frame = 2
+@export var knockback_amount = 750
 
 @onready var nav_agent = $NavigationAgent2D
-
 var next_pos
-var spawned = false
+
 var initial_pos = Vector2.ZERO
 var initial_hp
+
+var spawned = false
 var deter = false
+var attacking = false
 
 func _ready():
 	initial_pos = position
 	initial_hp = health
+	# Spawn animation
 	position.y += 16
 	var tween = create_tween()
 	tween.tween_property(self, "position", initial_pos, 1)
 	tween.tween_callback(func(): spawned = true)
 	$DirtParticles.play("default")
+	
+	$AttackArea.monitoring = false
 
 func _physics_process(delta):
 	# Death
 	if spawned:
 		if health <= 0:
 			queue_free()
+			
+		if not attacking:
 		
-		if nav_agent.is_navigation_finished():
-			set_velocity(Vector2.ZERO)
-			move_and_slide()
-			return
-		
-		set_velocity(handle_movement())
-		
-		if velocity != Vector2.ZERO:
-			# Play walk animation
-			if deter:
-				$TopPart.play("deter_walk")
-				$BottomPart.play("deter_walk")
+			if nav_agent.is_navigation_finished():
+				set_velocity(Vector2.ZERO)
+				move_and_slide()
+				return
+			
+			set_velocity(handle_movement())
+			
+			if velocity != Vector2.ZERO:
+				# Play walk animation
+				if deter:
+					$TopPart.play("deter_walk")
+					$BottomPart.play("deter_walk")
+				else:
+					$TopPart.play("walk")
+					$BottomPart.play("walk")
+				if velocity.x < 0:
+					$TopPart.flip_h = true
+					$BottomPart.flip_h = true
+					$EnemyShadow.skew = 60
+				elif velocity.x > 0:
+					$TopPart.flip_h = false
+					$BottomPart.flip_h = false
+					$EnemyShadow.skew = -60
 			else:
-				$TopPart.play("walk")
-				$BottomPart.play("walk")
-			if velocity.x < 0:
-				$TopPart.flip_h = true
-				$BottomPart.flip_h = true
-				$EnemyShadow.skew = 60
-			elif velocity.x > 0:
-				$TopPart.flip_h = false
-				$BottomPart.flip_h = false
-				$EnemyShadow.skew = -60
-		else:
-			$TopPart.play("idle")
-			$BottomPart.play("idle")
-		
-		move_and_slide()
+				$TopPart.play("idle")
+				$BottomPart.play("idle")
+			
+			move_and_slide()
 	
 func handle_movement():
 	nav_agent.target_position = Globals.player_reference.global_position
@@ -85,7 +94,35 @@ func take_damage(amount):
 	if health <= (0.5 * initial_hp):
 		deter = true
 	
+	
+func attack():
+	# Start attack, activate hitbox
+	if deter:
+		$TopPart.play("deter_attack")
+		$BottomPart.play("deter_attack")
+	else:
+		$TopPart.play("attack")
+		$BottomPart.play("attack")
+	attacking = true
 
 func _on_hitbox_area_body_entered(body):
-	if body.is_in_group("player"):
-		Globals.player_reference.attacked(damage)
+	if body.is_in_group("player") and not attacking:
+		attack()
+
+
+func _on_top_part_animation_finished():
+	# Stop attack, disable hitbox
+	if $TopPart.animation == "attack" or $TopPart.animation == "deter_attack":
+		$AttackArea.monitoring = false
+		attacking = false
+
+
+func _on_attack_area_area_entered(area):
+	if area.is_in_group("player"):
+		Globals.player_reference.attacked(damage, position, knockback_amount)
+
+
+func _on_top_part_frame_changed():
+	if $TopPart.animation == "attack" or $TopPart.animation == "deter_attack":
+		if $TopPart.frame == attack_frame:
+			$AttackArea.monitoring = true

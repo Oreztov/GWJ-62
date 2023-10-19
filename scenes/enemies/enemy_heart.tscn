@@ -174,9 +174,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0xvy1")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
-"speed": 10.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -215,7 +215,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0csb1")
 }],
-"loop": true,
+"loop": false,
 "name": &"deter_attack",
 "speed": 10.0
 }, {
@@ -354,9 +354,9 @@ region = Rect2(0, 304, 32, 16)
 atlas = ExtResource("4_7fxjw")
 region = Rect2(0, 336, 32, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0hvgp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofn1b"]
 atlas = ExtResource("4_7fxjw")
-region = Rect2(0, 352, 32, 16)
+region = Rect2(0, 368, 32, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lnqgq"]
 atlas = ExtResource("5_dlthk")
@@ -429,9 +429,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rtaeb")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
-"speed": 10.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -468,9 +468,9 @@ animations = [{
 "texture": SubResource("AtlasTexture_2j4sy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0hvgp")
+"texture": SubResource("AtlasTexture_ofn1b")
 }],
-"loop": true,
+"loop": false,
 "name": &"deter_attack",
 "speed": 10.0
 }, {
@@ -522,13 +522,12 @@ z_index = 4
 collision_mask = 5
 script = ExtResource("2_a5me8")
 health = 125
+attack_frame = 10
 
 [node name="TopPart" parent="." index="1"]
 z_index = 3
 sprite_frames = SubResource("SpriteFrames_81ebw")
-animation = &"deter_attack"
-frame = 4
-frame_progress = 0.326753
+animation = &"attack"
 
 [node name="BottomPart" parent="." index="2"]
 z_index = 2

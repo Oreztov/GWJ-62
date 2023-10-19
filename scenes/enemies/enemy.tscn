@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cc54t4tocndg7"]
+[gd_scene load_steps=33 format=3 uid="uid://cc54t4tocndg7"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy.gd" id="1_eoeps"]
 [ext_resource type="Texture2D" uid="uid://dpahml8n3wh7r" path="res://sprites/player/player.png" id="2_3b3gl"]
@@ -39,12 +39,12 @@ region = Rect2(0, 0, 16, 16)
 [sub_resource type="SpriteFrames" id="SpriteFrames_i56bm"]
 animations = [{
 "frames": [],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 5.0
 }, {
 "frames": [],
-"loop": true,
+"loop": false,
 "name": &"deter_attack",
 "speed": 5.0
 }, {
@@ -116,12 +116,12 @@ region = Rect2(0, 16, 16, 16)
 [sub_resource type="SpriteFrames" id="SpriteFrames_goejg"]
 animations = [{
 "frames": [],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 5.0
 }, {
 "frames": [],
-"loop": true,
+"loop": false,
 "name": &"deter_attack",
 "speed": 5.0
 }, {
@@ -167,6 +167,9 @@ blend_mode = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlvj2"]
 size = Vector2(18, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3i51"]
+size = Vector2(30, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cduj6"]
 atlas = ExtResource("4_fbwxy")
@@ -262,13 +265,13 @@ shape = SubResource("CircleShape2D_k3hlb")
 z_index = 1
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_i56bm")
-animation = &"deter_attack"
+animation = &"deter_walk"
 autoplay = "idle"
 
 [node name="BottomPart" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 8)
 sprite_frames = SubResource("SpriteFrames_goejg")
-animation = &"deter_attack"
+animation = &"attack"
 autoplay = "idle"
 
 [node name="NavUpdateTimer" type="Timer" parent="."]
@@ -302,6 +305,14 @@ collision_mask = 4
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_nlvj2")
 
+[node name="AttackArea" type="Area2D" parent="." groups=["enemies"]]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_f3i51")
+
 [node name="DirtParticles" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 10)
 scale = Vector2(2, 2)
@@ -316,6 +327,9 @@ libraries = {
 "": SubResource("AnimationLibrary_xedn7")
 }
 
+[connection signal="animation_finished" from="TopPart" to="." method="_on_top_part_animation_finished"]
+[connection signal="frame_changed" from="TopPart" to="." method="_on_top_part_frame_changed"]
 [connection signal="timeout" from="NavUpdateTimer" to="." method="_on_nav_update_timer_timeout"]
 [connection signal="timeout" from="RotTimer" to="." method="_on_rot_timer_timeout"]
 [connection signal="body_entered" from="HitboxArea" to="." method="_on_hitbox_area_body_entered"]
+[connection signal="area_entered" from="AttackArea" to="." method="_on_attack_area_area_entered"]

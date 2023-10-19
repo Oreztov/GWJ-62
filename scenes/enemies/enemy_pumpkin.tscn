@@ -447,7 +447,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fa5tl")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack_stage1",
 "speed": 10.0
 }, {
@@ -461,7 +461,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qnqle")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack_stage2",
 "speed": 10.0
 }, {
@@ -496,7 +496,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uynm2")
 }],
-"loop": true,
+"loop": false,
 "name": &"deter_attack_stage1",
 "speed": 10.0
 }, {
@@ -510,7 +510,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rtd3y")
 }],
-"loop": true,
+"loop": false,
 "name": &"deter_attack_stage2",
 "speed": 10.0
 }, {
@@ -566,11 +566,10 @@ damage = 0
 
 [node name="TopPart" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_thl2j")
-animation = &"deter_walk"
 
 [node name="BottomPart" parent="." index="2"]
 sprite_frames = SubResource("SpriteFrames_rm1ko")
-animation = &"walk"
+animation = &"deter_attack_stage2"
 
 [node name="CollisionShape2D" parent="HitboxArea" index="0"]
 position = Vector2(0, 6)

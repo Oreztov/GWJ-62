@@ -6,6 +6,7 @@ var hand = Globals.Resources.EMPTY
 var invincible = false
 
 var last_direction = Vector2.ZERO
+var knockback_velocity = Vector2.ZERO
 
 @export var weapon_carrot: PackedScene
 @export var weapon_pumpkin: PackedScene
@@ -38,9 +39,14 @@ func _physics_process(delta):
 			$TopPart.flip_h = false
 			$BottomPart.flip_h = false
 	else:
-		velocity = Vector2.ZERO
+		velocity.x = move_toward(velocity.x, 0, speed / 2)
+		velocity.y = move_toward(velocity.y, 0, speed / 2)
 		$TopPart.play("idle")
 		$BottomPart.play("idle")
+	
+	# Apply knockback
+	velocity += knockback_velocity
+	knockback_velocity = Vector2.ZERO
 	
 	move_and_slide()
 	
@@ -80,10 +86,15 @@ func set_hand_item(item):
 		_:
 			$HandSprite.play("empty")
 
-func attacked(amount):
+func attacked(amount, source_pos = Vector2.ZERO, knockback_amount = 100):
+	# Take damage
 	Globals.hud_reference.sub_hp(amount)
+	# Iframes
 	invincible = true
 	$Invincibility.start(1.0)
+	# Knockback
+	var knockback_dir = (position - source_pos).normalized()
+	knockback_velocity = knockback_dir * knockback_amount
 
 func _on_invincibility_timeout():
 	invincible = false

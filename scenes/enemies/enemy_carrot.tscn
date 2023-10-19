@@ -78,7 +78,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mdcew")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 10.0
 }, {
@@ -92,7 +92,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_diwcm")
 }],
-"loop": true,
+"loop": false,
 "name": &"deter_attack",
 "speed": 10.0
 }, {
@@ -214,7 +214,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0qnlb")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 10.0
 }, {
@@ -228,7 +228,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3b0do")
 }],
-"loop": true,
+"loop": false,
 "name": &"deter_attack",
 "speed": 10.0
 }, {
@@ -279,15 +279,14 @@ animations = [{
 }]
 
 [node name="EnemyCarrot" instance=ExtResource("1_1jmn3")]
-damage = 25
+damage = 15
 
 [node name="TopPart" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_53sja")
-animation = &"deter_walk"
-frame_progress = 0.835485
+animation = &"attack"
 
 [node name="BottomPart" parent="." index="2"]
 sprite_frames = SubResource("SpriteFrames_c8q5f")
-animation = &"deter_walk"
-frame = 2
-frame_progress = 0.803483
+
+[node name="AttackArea" parent="." index="8"]
+monitoring = false
