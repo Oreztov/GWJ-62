@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://6xbg8wkel8b4"]
+[gd_scene load_steps=12 format=3 uid="uid://6xbg8wkel8b4"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_bvrog"]
 [ext_resource type="TileSet" uid="uid://d1kqek74ycve3" path="res://resources/level_tile_set.tres" id="1_u7gxt"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://bjtde1hwveusp" path="res://scenes/objects/soul_well.tscn" id="8_wrgja"]
 [ext_resource type="PackedScene" uid="uid://nlmgiqnvpykm" path="res://scenes/UI/HUD.tscn" id="10_7obxb"]
 [ext_resource type="PackedScene" uid="uid://bwpke2nmwkcjj" path="res://scenes/UI/menu.tscn" id="11_7f7e5"]
-[ext_resource type="PackedScene" uid="uid://ba7wx06v8fgkl" path="res://scenes/enemies/enemy_pumpkin.tscn" id="14_h2gb6"]
 
 [node name="Level" type="Node2D"]
 position = Vector2(167, 109)
@@ -256,8 +255,5 @@ autostart = true
 [node name="HUD" parent="." instance=ExtResource("10_7obxb")]
 
 [node name="Menu" parent="." instance=ExtResource("11_7f7e5")]
-
-[node name="EnemyPumpkin" parent="." instance=ExtResource("14_h2gb6")]
-position = Vector2(51.7857, 221.071)
 
 [connection signal="timeout" from="PlantSpawnTimer" to="." method="_on_plant_spawn_timer_timeout"]

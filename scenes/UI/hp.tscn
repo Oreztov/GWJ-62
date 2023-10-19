@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://b8j7281mn8lgg"]
 
 [ext_resource type="Script" path="res://scripts/UI/hp.gd" id="1_ctdtj"]
-[ext_resource type="LabelSettings" uid="uid://c6h3m32hum7pj" path="res://resources/hud_label_settings.tres" id="2_ptm1m"]
-[ext_resource type="AudioStream" uid="uid://cixd53yswxs1j" path="res://resources/GWJ62_Death_Sound_Effect.mp3" id="3_hxm6i"]
+[ext_resource type="LabelSettings" uid="uid://c6h3m32hum7pj" path="res://resources/UI/hud_label_settings.tres" id="2_ptm1m"]
+[ext_resource type="AudioStream" uid="uid://cixd53yswxs1j" path="res://sounds/GWJ62_Death_Sound_Effect.mp3" id="3_hxm6i"]
 
 [sub_resource type="Gradient" id="Gradient_4m1kw"]
 

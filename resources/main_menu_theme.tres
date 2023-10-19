@@ -1,7 +1,0 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ckigjkqs2dlx4"]
-
-[ext_resource type="FontFile" uid="uid://dsuq4v0qtnt26" path="res://fonts/static/PixelifySans-Regular.ttf" id="1_ktwma"]
-
-[resource]
-Button/font_sizes/font_size = 72
-Button/fonts/font = ExtResource("1_ktwma")

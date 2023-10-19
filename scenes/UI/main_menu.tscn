@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dg0oqj7oco3ex" path="res://sprites/enemies/carrot_monster/carrotMonster.png" id="6_4csbb"]
 [ext_resource type="Texture2D" uid="uid://b8fwgyyswt6mf" path="res://sprites/enemies/pumpkin_monster/pumpkinMonster.png" id="7_pwoaa"]
 [ext_resource type="Texture2D" uid="uid://duwkeleeghsil" path="res://sprites/enemies/bleeding_heart_monster/bleedingHeartMonster.png" id="8_w5six"]
-[ext_resource type="AudioStream" uid="uid://bhwgjp6elg0mh" path="res://resources/GWJ62_Game_Intro.mp3" id="9_cvwpx"]
+[ext_resource type="AudioStream" uid="uid://bhwgjp6elg0mh" path="res://sounds/GWJ62_Game_Intro.mp3" id="9_cvwpx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c7ucc"]
 atlas = ExtResource("4_7ois3")
