@@ -245,4 +245,10 @@ collision_mask = 4
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_ukp6t")
 
+[node name="SoulLight" type="PointLight2D" parent="."]
+position = Vector2(0, -16)
+color = Color(0.858824, 0.215686, 0.47451, 1)
+texture = ExtResource("6_atnuo")
+texture_scale = 0.3
+
 [connection signal="timeout" from="Invincibility" to="." method="_on_invincibility_timeout"]

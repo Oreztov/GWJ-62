@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dle118v1mw774"]
+[gd_scene load_steps=37 format=3 uid="uid://dle118v1mw774"]
 
 [ext_resource type="Script" path="res://scripts/plant.gd" id="1_gs5sh"]
 [ext_resource type="Texture2D" uid="uid://cd7p0ur8opil2" path="res://resources/generic_sprout.tres" id="1_jejnx"]
@@ -194,66 +194,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, -8)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("PlantLight:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.117647)]
-}
-
-[sub_resource type="Animation" id="Animation_jufsk"]
-resource_name = "plant_carrot"
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PlantLight:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.309804, 0, 1, 0.117647)]
-}
-
-[sub_resource type="Animation" id="Animation_0cv6l"]
-resource_name = "plant_heart"
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PlantLight:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.901961, 0, 1, 0.117647)]
-}
-
-[sub_resource type="Animation" id="Animation_nnxjg"]
-resource_name = "plant_pumpkin"
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PlantLight:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 0.333333, 0, 0.117647)]
-}
 
 [sub_resource type="Animation" id="Animation_ww7l6"]
 resource_name = "pop_in"
@@ -314,9 +254,6 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_stf2g"]
 _data = {
 "RESET": SubResource("Animation_fk5qr"),
-"plant_carrot": SubResource("Animation_jufsk"),
-"plant_heart": SubResource("Animation_0cv6l"),
-"plant_pumpkin": SubResource("Animation_nnxjg"),
 "pop_in": SubResource("Animation_ww7l6"),
 "pop_out": SubResource("Animation_yb7vx")
 }
@@ -398,11 +335,10 @@ libraries = {
 }
 
 [node name="PlantLight" type="Sprite2D" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0.117647)
+modulate = Color(0, 1, 0, 0)
 show_behind_parent = true
 material = SubResource("CanvasItemMaterial_gv5xr")
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("10_183m4")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]

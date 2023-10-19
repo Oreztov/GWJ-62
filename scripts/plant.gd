@@ -29,13 +29,6 @@ func _ready():
 	plant = randi_range(1, Globals.Plants.size() - 1)
 	$AnimatedSprite2D.play("sprout")
 	$AnimatedSprite2D.frame = plant
-	match plant:
-		Globals.Plants.PUMPKIN:
-			$AnimationPlayer.play("plant_pumpkin")
-		Globals.Plants.CARROT:
-			$AnimationPlayer.play("plant_carrot")
-		Globals.Plants.HEART:
-			$AnimationPlayer.play("plant_heart")
 
 func ask_for_resource():
 	# Get new random resource needed
@@ -82,10 +75,13 @@ func _process(delta):
 	var rot_factor = $RotTimer.time_left / rot_time
 	$AnimatedSprite2D.modulate = lerp(Color.DARK_GREEN, Color.WHITE, rot_factor)
 	$GPUParticles2D.speed_scale = 1 * ease(1 - rot_factor, 5)
+	$PlantLight.modulate.a = lerp(0.5, 0.0, rot_factor) - 0.3
 	if rot_factor < 0.5:
 		$GPUParticles2D.visible = true
+		$PlantLight.visible = true
 	else:
 		$GPUParticles2D.visible = false
+		$PlantLight.visible = false
 
 func _input(event):
 	if player_in_area and interaction_active:

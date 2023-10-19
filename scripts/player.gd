@@ -13,7 +13,9 @@ var knockback_velocity = Vector2.ZERO
 
 func _ready():
 	Globals.player_reference = self
+	
 	$HandSprite.play("empty")
+	$SoulLight.enabled = false
 	
 	$TopPart.play("walk")
 	$BottomPart.play("walk")
@@ -76,11 +78,13 @@ func _physics_process(delta):
 
 func set_hand_item(item):
 	hand = item
+	$SoulLight.enabled = false
 	match item:
 		Globals.Resources.COMPOST:
 			$HandSprite.play("compost")
 		Globals.Resources.SOUL:
 			$HandSprite.play("soul")
+			$SoulLight.enabled = true
 		Globals.Resources.WATER:
 			$HandSprite.play("water")
 		_:

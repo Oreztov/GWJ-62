@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bjtde1hwveusp"]
+[gd_scene load_steps=9 format=3 uid="uid://bjtde1hwveusp"]
 
 [ext_resource type="Script" path="res://scripts/objects/soul_well.gd" id="1_3mrmc"]
 [ext_resource type="Texture2D" uid="uid://d1kcsud7hg5o0" path="res://sprites/objects/soulwell_sheet.png" id="2_56v0t"]
 [ext_resource type="PackedScene" uid="uid://l45lwmt0s3tn" path="res://scenes/UI/interaction_label.tscn" id="2_qe7dc"]
+[ext_resource type="Texture2D" uid="uid://dt8gpxw27jtkq" path="res://sprites/light.png" id="4_iuyas"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_25eom"]
 atlas = ExtResource("2_56v0t")
@@ -41,6 +42,11 @@ collision_mask = 4
 shape = SubResource("RectangleShape2D_fg6kx")
 
 [node name="InteractionLabel" parent="." instance=ExtResource("2_qe7dc")]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.858824, 0.215686, 0.47451, 1)
+texture = ExtResource("4_iuyas")
+texture_scale = 0.5
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
