@@ -35,6 +35,7 @@ collision_mask = 4
 shape = SubResource("RectangleShape2D_ukj8a")
 
 [node name="BlockArea" type="Area2D" parent="."]
+rotation = 0.785398
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlockArea"]

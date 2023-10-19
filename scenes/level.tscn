@@ -37,7 +37,6 @@ anchor_mode = 0
 
 [node name="Gravestone" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(8, 8)
-replace_me = true
 
 [node name="Gravestone2" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(8, 120)
@@ -45,7 +44,6 @@ replace_me = true
 
 [node name="Gravestone3" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(8, 232)
-replace_me = true
 
 [node name="Gravestone4" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(200, 232)
@@ -53,7 +51,6 @@ replace_me = true
 
 [node name="Gravestone5" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(392, 232)
-replace_me = true
 
 [node name="Gravestone6" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(392, 120)
@@ -61,7 +58,6 @@ replace_me = true
 
 [node name="Gravestone7" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(392, 8)
-replace_me = true
 
 [node name="Gravestone8" parent="Gravestones" instance=ExtResource("3_ap34t")]
 position = Vector2(200, 8)
