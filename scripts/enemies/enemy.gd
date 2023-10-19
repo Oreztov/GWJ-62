@@ -4,14 +4,18 @@ extends CharacterBody2D
 @export var speed = 150
 @export var health = 100
 @export var damage = 20
+
 @onready var nav_agent = $NavigationAgent2D
 
 var next_pos
 var spawned = false
 var initial_pos = Vector2.ZERO
+var initial_hp
+var deter = false
 
 func _ready():
 	initial_pos = position
+	initial_hp = health
 	position.y += 16
 	var tween = create_tween()
 	tween.tween_property(self, "position", initial_pos, 1)
@@ -33,8 +37,12 @@ func _physics_process(delta):
 		
 		if velocity != Vector2.ZERO:
 			# Play walk animation
-			$TopPart.play("walk")
-			$BottomPart.play("walk")
+			if deter:
+				$TopPart.play("deter_walk")
+				$BottomPart.play("deter_walk")
+			else:
+				$TopPart.play("walk")
+				$BottomPart.play("walk")
 			if velocity.x < 0:
 				$TopPart.flip_h = true
 				$BottomPart.flip_h = true
@@ -74,6 +82,8 @@ func _on_rot_timer_timeout():
 
 func take_damage(amount):
 	health -= amount
+	if health <= (0.5 * initial_hp):
+		deter = true
 	
 
 func _on_hitbox_area_body_entered(body):

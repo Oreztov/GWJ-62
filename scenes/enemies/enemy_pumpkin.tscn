@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://ba7wx06v8fgkl"]
+[gd_scene load_steps=79 format=3 uid="uid://ba7wx06v8fgkl"]
 
 [ext_resource type="PackedScene" uid="uid://cc54t4tocndg7" path="res://scenes/enemies/enemy.tscn" id="1_de7y4"]
 [ext_resource type="Texture2D" uid="uid://b8fwgyyswt6mf" path="res://sprites/enemies/pumpkin_monster/pumpkinMonster.png" id="2_tu7en"]
@@ -554,6 +554,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nt4u5"]
+size = Vector2(24, 28)
+
 [node name="EnemyPumpkin" instance=ExtResource("1_de7y4")]
 script = ExtResource("2_wi6jk")
 weapon_pumpkin = ExtResource("3_p0ooy")
@@ -570,4 +573,5 @@ sprite_frames = SubResource("SpriteFrames_rm1ko")
 animation = &"walk"
 
 [node name="CollisionShape2D" parent="HitboxArea" index="0"]
-position = Vector2(0, 0)
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_nt4u5")

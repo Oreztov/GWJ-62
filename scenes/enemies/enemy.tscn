@@ -38,6 +38,21 @@ region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i56bm"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"deter_attack",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"deter_walk",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lx0to")
@@ -100,6 +115,21 @@ region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_goejg"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"deter_attack",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"deter_walk",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7xl7m")
@@ -232,13 +262,13 @@ shape = SubResource("CircleShape2D_k3hlb")
 z_index = 1
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_i56bm")
-animation = &"walk"
+animation = &"deter_attack"
 autoplay = "idle"
 
 [node name="BottomPart" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 8)
 sprite_frames = SubResource("SpriteFrames_goejg")
-animation = &"idle"
+animation = &"deter_attack"
 autoplay = "idle"
 
 [node name="NavUpdateTimer" type="Timer" parent="."]

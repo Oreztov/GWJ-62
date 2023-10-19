@@ -40,7 +40,7 @@ func _ready():
 	
 	# Setup & Reset game variables
 	plant_spawn_time = 10
-	Globals.inv = {Globals.Plants.PUMPKIN: 0, Globals.Plants.CARROT: 0, Globals.Plants.HEART: 0}
+	Globals.inv = {Globals.Plants.PUMPKIN: 0, Globals.Plants.CARROT: 10, Globals.Plants.HEART: 0}
 	
 	Globals.hud_reference.update_inventory()
 	
