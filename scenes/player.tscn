@@ -1,14 +1,18 @@
-[gd_scene load_steps=32 format=3 uid="uid://bex00buheapxy"]
+[gd_scene load_steps=33 format=3 uid="uid://bex00buheapxy"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_7lnnx"]
 [ext_resource type="Texture2D" uid="uid://bbhp8hsjw1yvf" path="res://sprites/objects/compost_bag.png" id="2_e4g4y"]
 [ext_resource type="PackedScene" uid="uid://cbawbmwfr2dwu" path="res://scenes/items/weapon_carrot.tscn" id="2_x5qid"]
-[ext_resource type="Texture2D" uid="uid://cd7p0ur8opil2" path="res://resources/generic_sprout.tres" id="3_1t1te"]
 [ext_resource type="PackedScene" uid="uid://chwttlby65re4" path="res://scenes/items/weapon_pumpkin.tscn" id="3_p7wkx"]
 [ext_resource type="Texture2D" uid="uid://bqna6wpxtr0ed" path="res://sprites/objects/water_sheet.png" id="4_v25mb"]
 [ext_resource type="Texture2D" uid="uid://dpahml8n3wh7r" path="res://sprites/player/player.png" id="5_cwdgy"]
+[ext_resource type="Texture2D" uid="uid://d1kcsud7hg5o0" path="res://sprites/objects/soulwell_sheet.png" id="5_sd73w"]
 [ext_resource type="Texture2D" uid="uid://dt8gpxw27jtkq" path="res://sprites/light.png" id="6_atnuo"]
 [ext_resource type="Texture2D" uid="uid://dff610tlvc177" path="res://sprites/player/player_idle.png" id="7_34ty0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ui0o"]
+atlas = ExtResource("5_sd73w")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j08bx"]
 atlas = ExtResource("4_v25mb")
@@ -34,7 +38,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_1t1te")
+"texture": SubResource("AtlasTexture_4ui0o")
 }],
 "loop": true,
 "name": &"soul",
@@ -208,7 +212,7 @@ weapon_pumpkin = ExtResource("3_p7wkx")
 z_index = 1
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_y7ou1")
-animation = &"compost"
+animation = &"soul"
 autoplay = "empty"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

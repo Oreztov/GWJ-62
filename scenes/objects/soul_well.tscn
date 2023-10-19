@@ -1,23 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://bjtde1hwveusp"]
+[gd_scene load_steps=8 format=3 uid="uid://bjtde1hwveusp"]
 
 [ext_resource type="Script" path="res://scripts/objects/soul_well.gd" id="1_3mrmc"]
+[ext_resource type="Texture2D" uid="uid://d1kcsud7hg5o0" path="res://sprites/objects/soulwell_sheet.png" id="2_56v0t"]
 [ext_resource type="PackedScene" uid="uid://l45lwmt0s3tn" path="res://scenes/UI/interaction_label.tscn" id="2_qe7dc"]
 
-[sub_resource type="Gradient" id="Gradient_pvjwc"]
-colors = PackedColorArray(0.243137, 0, 1, 1, 1, 1, 1, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_25eom"]
+atlas = ExtResource("2_56v0t")
+region = Rect2(0, 24, 16, 16)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_bcgoo"]
-gradient = SubResource("Gradient_pvjwc")
-width = 16
-height = 16
-
-[sub_resource type="Gradient" id="Gradient_nlgyd"]
-colors = PackedColorArray(0.243137, 0, 1, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_gs20e"]
-gradient = SubResource("Gradient_nlgyd")
-width = 16
-height = 8
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5jum"]
+atlas = ExtResource("2_56v0t")
+region = Rect2(0, 16, 16, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pc3yl"]
 size = Vector2(16, 16)
@@ -31,12 +24,12 @@ collision_layer = 2
 script = ExtResource("1_3mrmc")
 
 [node name="BottomPart" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_bcgoo")
+texture = SubResource("AtlasTexture_25eom")
 
 [node name="TopPart" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(0, -12)
-texture = SubResource("GradientTexture2D_gs20e")
+texture = SubResource("AtlasTexture_s5jum")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_pc3yl")
