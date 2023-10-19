@@ -4,7 +4,7 @@ var explode_time = 1 # speed_scale factor
 var damage = 50
 
 var parent = null
-var pumpkin_visible = false
+var pumpkin_visible = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
