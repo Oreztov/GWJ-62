@@ -16,6 +16,7 @@ var initial_hp
 var spawned = false
 var deter = false
 var attacking = false
+var allowed_to_move = true
 
 func _ready():
 	initial_pos = position
@@ -35,7 +36,7 @@ func _physics_process(delta):
 		if health <= 0:
 			queue_free()
 			
-		if not attacking:
+		if allowed_to_move:
 		
 			if nav_agent.is_navigation_finished():
 				set_velocity(Vector2.ZERO)
@@ -46,12 +47,13 @@ func _physics_process(delta):
 			
 			if velocity != Vector2.ZERO:
 				# Play walk animation
-				if deter:
-					$TopPart.play("deter_walk")
-					$BottomPart.play("deter_walk")
-				else:
-					$TopPart.play("walk")
-					$BottomPart.play("walk")
+				if not attacking:
+					if deter:
+						$TopPart.play("deter_walk")
+						$BottomPart.play("deter_walk")
+					else:
+						$TopPart.play("walk")
+						$BottomPart.play("walk")
 				if velocity.x < 0:
 					$TopPart.flip_h = true
 					$BottomPart.flip_h = true
@@ -60,7 +62,7 @@ func _physics_process(delta):
 					$TopPart.flip_h = false
 					$BottomPart.flip_h = false
 					$EnemyShadow.skew = -60
-			else:
+			elif not attacking:
 				$TopPart.play("idle")
 				$BottomPart.play("idle")
 			
@@ -104,6 +106,7 @@ func attack():
 		$TopPart.play("attack")
 		$BottomPart.play("attack")
 	attacking = true
+	allowed_to_move = false
 
 func _on_hitbox_area_body_entered(body):
 	if body.is_in_group("player") and not attacking:
@@ -115,6 +118,7 @@ func _on_top_part_animation_finished():
 	if $TopPart.animation == "attack" or $TopPart.animation == "deter_attack":
 		$AttackArea.monitoring = false
 		attacking = false
+		allowed_to_move = true
 
 
 func _on_attack_area_area_entered(area):

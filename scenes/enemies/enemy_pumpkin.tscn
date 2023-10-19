@@ -175,7 +175,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0ylaj")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack_stage1",
 "speed": 10.0
 }, {
@@ -189,9 +189,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_165vo")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack_stage2",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -224,7 +224,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cr12c")
 }],
-"loop": true,
+"loop": false,
 "name": &"deter_attack_stage1",
 "speed": 10.0
 }, {
@@ -238,7 +238,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fl4c4")
 }],
-"loop": true,
+"loop": false,
 "name": &"deter_attack_stage2",
 "speed": 5.0
 }, {
@@ -560,16 +560,19 @@ size = Vector2(24, 28)
 [node name="EnemyPumpkin" instance=ExtResource("1_de7y4")]
 script = ExtResource("2_wi6jk")
 weapon_pumpkin = ExtResource("3_p0ooy")
-speed = 200
+speed = 250
 health = 75
 damage = 0
 
 [node name="TopPart" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_thl2j")
+animation = &"attack_stage2"
+frame = 2
+frame_progress = 1.0
 
 [node name="BottomPart" parent="." index="2"]
 sprite_frames = SubResource("SpriteFrames_rm1ko")
-animation = &"deter_attack_stage2"
+animation = &"attack_stage1"
 
 [node name="CollisionShape2D" parent="HitboxArea" index="0"]
 position = Vector2(0, 6)

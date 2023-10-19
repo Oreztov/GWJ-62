@@ -547,3 +547,4 @@ autoplay = "walk"
 [node name="intro" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_cvwpx")
 autoplay = true
+bus = &"SFX"

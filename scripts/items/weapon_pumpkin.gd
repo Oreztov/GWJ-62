@@ -2,15 +2,18 @@ extends Node2D
 
 var explode_time = 1 # speed_scale factor
 var damage = 50
+
 var parent = null
+var pumpkin_visible = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimationPlayer.speed_scale = explode_time
-
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _draw():
+	$PumpkinSprite.visible = pumpkin_visible
 
 
 func _on_animation_player_animation_finished(anim_name):
