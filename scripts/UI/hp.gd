@@ -19,7 +19,7 @@ func sub_hp(health):
 	update_text()
 	if $hp_bar.value <= 0:
 		$death_sound.play(0.0)
-		get_tree().reload_current_scene()
+		Globals.game_over.emit()
 		
 func get_hp():
 	return $hp_bar.value
