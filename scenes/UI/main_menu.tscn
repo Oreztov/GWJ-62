@@ -481,65 +481,67 @@ layer_0/tile_data = PackedInt32Array(0, 65536, 1, 65536, 131072, 1, 131072, 1310
 script = ExtResource("3_suj0v")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-32, -16)
 anchor_mode = 0
+zoom = Vector2(0.95, 0.95)
 
 [node name="TopPartPlayer" type="AnimatedSprite2D" parent="."]
 z_index = 1
-position = Vector2(208, 264)
-scale = Vector2(8, 8)
+position = Vector2(136, 576)
+scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_gnyj6")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="BottomPartPlayer" type="AnimatedSprite2D" parent="."]
-position = Vector2(208, 392)
-scale = Vector2(8, 8)
+position = Vector2(136, 672)
+scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_ekdgm")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="TopPartCarrot" type="AnimatedSprite2D" parent="."]
 z_index = 1
-position = Vector2(1080, 74)
-scale = Vector2(-8, 8)
+position = Vector2(1128, 63)
+scale = Vector2(-6, 6)
 sprite_frames = SubResource("SpriteFrames_bs0l8")
 animation = &"walk"
 autoplay = "walk"
 
 [node name="BottomPartCarrot" type="AnimatedSprite2D" parent="."]
-position = Vector2(1080, 202)
-scale = Vector2(-8, 8)
+position = Vector2(1128, 157)
+scale = Vector2(-6, 6)
 sprite_frames = SubResource("SpriteFrames_t3yhx")
 animation = &"walk"
 autoplay = "walk"
 
 [node name="TopPartPumpkin" type="AnimatedSprite2D" parent="."]
 z_index = 1
-position = Vector2(1032, 248)
-scale = Vector2(-8, 8)
+position = Vector2(152, 48)
+scale = Vector2(-6, 6)
 sprite_frames = SubResource("SpriteFrames_lh3wc")
 animation = &"walk"
 autoplay = "walk"
 
 [node name="BottomPartPumpkin" type="AnimatedSprite2D" parent="."]
-position = Vector2(1032, 376)
-scale = Vector2(-8, 8)
+position = Vector2(152, 143)
+scale = Vector2(-6, 6)
 sprite_frames = SubResource("SpriteFrames_luxe4")
 animation = &"walk"
 autoplay = "walk"
 
 [node name="TopPartHeart" type="AnimatedSprite2D" parent="."]
 z_index = 3
-position = Vector2(1096, 480)
-scale = Vector2(-8, 8)
+position = Vector2(1120, 568)
+scale = Vector2(-6, 6)
 sprite_frames = SubResource("SpriteFrames_ycy4q")
 animation = &"walk"
 autoplay = "walk"
 
 [node name="BottomPartHeart" type="AnimatedSprite2D" parent="."]
 z_index = 2
-position = Vector2(1096, 608)
-scale = Vector2(-8, 8)
+position = Vector2(1120, 664)
+scale = Vector2(-6, 6)
 sprite_frames = SubResource("SpriteFrames_18jt6")
 animation = &"walk"
 autoplay = "walk"

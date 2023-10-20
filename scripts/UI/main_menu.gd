@@ -71,3 +71,8 @@ func game_over():
 	$MainContainer/VBoxContainer/PlayButton.text = "Restart!"
 	$MainContainer/VBoxContainer/Title.text = "👻Game👻\n👻Over👻"
 	dead = true
+
+
+func _on_main_container_visibility_changed():
+	$CreditsContainer.visible = $MainContainer.visible
+	$HiScoreContainer.visible = $MainContainer.visible
