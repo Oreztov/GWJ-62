@@ -62,6 +62,8 @@ func consume_resource():
 	interaction_active = false
 	player_in_area = false
 	set_process_input(false)
+	# Award score
+	Globals.add_score(10)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -147,6 +149,8 @@ func harvest():
 			Globals.hud_reference.add_plant(plant, 3)
 		Globals.Plants.HEART:
 			Globals.hud_reference.add_plant(plant, 1)
+	# Award score
+	Globals.add_score(50)
 	queue_free()
 
 func _on_animated_sprite_2d_animation_changed():

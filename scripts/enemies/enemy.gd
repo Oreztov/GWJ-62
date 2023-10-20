@@ -34,6 +34,8 @@ func _physics_process(delta):
 	# Death
 	if spawned:
 		if health <= 0:
+			# Award score
+			Globals.add_score(25)
 			queue_free()
 			
 		if allowed_to_move:

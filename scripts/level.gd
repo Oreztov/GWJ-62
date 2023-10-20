@@ -13,6 +13,8 @@ var rng = RandomNumberGenerator.new()
 
 @onready var plant_spawn_time
 
+var time = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Get all gravestones
@@ -41,6 +43,9 @@ func _ready():
 	# Setup & Reset game variables
 	plant_spawn_time = 10
 	Globals.inv = {Globals.Plants.PUMPKIN: 0, Globals.Plants.CARROT: 0, Globals.Plants.HEART: 0}
+	Globals.score = 0
+	
+	time = 0
 	
 	Globals.hud_reference.update_inventory()
 	
@@ -80,8 +85,13 @@ func plant_freed(marker):
 	plant_markers.append(marker)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _physics_process(delta):
+	# Score each second
+	time += delta
+	if time >= 5.0:
+		time -= 5
+		# Award score
+		Globals.add_score(5)
 
 
 func _on_plant_spawn_timer_timeout():
