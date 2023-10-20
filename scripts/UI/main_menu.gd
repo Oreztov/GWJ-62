@@ -5,6 +5,7 @@ func _ready():
 	$MainContainer.visible = true
 	$MainContainer/VBoxContainer/PlayButton.grab_focus()
 	$SettingsContainer.visible = false
+	$HelpContainer.visible = false
 	if Globals.ingame:
 		visible = false
 		$MainContainer/VBoxContainer/PlayButton.text = "Continue!"
@@ -19,7 +20,10 @@ func _unhandled_key_input(event):
 	if Globals.ingame:
 		if event.is_action_pressed("ui_cancel"):
 			get_tree().paused = !get_tree().paused
+			_on_back_button_pressed()
 			visible = !visible
+			if visible:
+				$MainContainer/VBoxContainer/PlayButton.grab_focus()
 
 func _on_play_button_pressed():
 	# Start game
@@ -38,13 +42,16 @@ func _on_settings_button_pressed():
 	$SettingsContainer.visible = true
 	$SettingsContainer/VBoxContainer/ScrollContainer/VBoxContainer/VolumeContainer/Slider/Slider.grab_focus()
 
-
-func _on_quit_button_pressed():
-	get_tree().quit()
-
-
 func _on_back_button_pressed():
 	# Back to main menu
 	$MainContainer.visible = true
 	$SettingsContainer.visible = false
+	$HelpContainer.visible = false
 	$MainContainer/VBoxContainer/PlayButton.grab_focus()
+
+
+func _on_help_button_pressed():
+	# To Help Menu
+	$MainContainer.visible = false
+	$HelpContainer.visible = true
+	$HelpContainer/VBoxContainer/Info/LeftSide/BackButton.grab_focus()

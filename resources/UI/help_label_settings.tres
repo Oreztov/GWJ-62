@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bm7r8bh1072p"]
+
+[ext_resource type="FontFile" uid="uid://dsuq4v0qtnt26" path="res://fonts/static/PixelifySans-Regular.ttf" id="1_effc3"]
+
+[resource]
+font = ExtResource("1_effc3")
+font_size = 20
