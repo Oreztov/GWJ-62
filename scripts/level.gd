@@ -48,6 +48,8 @@ func _ready():
 	time = 0
 	
 	Globals.hud_reference.update_inventory()
+	Globals.hud_reference.update_score()
+	get_tree().paused = false
 	
 
 func spawn_water_tap(blocked_graves):

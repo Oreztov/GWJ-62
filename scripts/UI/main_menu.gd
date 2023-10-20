@@ -13,6 +13,8 @@ func _ready():
 		$MainContainer/VBoxContainer/PlayButton.text = "Continue!"
 		
 	Globals.game_over.connect(game_over)
+	
+	dead = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
