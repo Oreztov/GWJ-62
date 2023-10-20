@@ -69,7 +69,7 @@ func game_over():
 	visible = true
 	$MainContainer/VBoxContainer/PlayButton.grab_focus()
 	$MainContainer/VBoxContainer/PlayButton.text = "Restart!"
-	$MainContainer/VBoxContainer/Title.text = "👻Game👻\n👻Over👻"
+	$MainContainer/VBoxContainer/Title.text = "Game\nOver"
 	dead = true
 
 

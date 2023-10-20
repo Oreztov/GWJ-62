@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://cixd53yswxs1j" path="res://sounds/GWJ62_Death_Sound_Effect.mp3" id="3_hxm6i"]
 
 [sub_resource type="Gradient" id="Gradient_4m1kw"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.305882)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_kfsff"]
 gradient = SubResource("Gradient_4m1kw")
