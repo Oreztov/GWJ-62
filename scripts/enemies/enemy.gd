@@ -90,7 +90,8 @@ func find_path():
 	nav_agent.target_position = Globals.player_reference.global_position
 
 func _on_nav_update_timer_timeout():
-	find_path()
+	if not dead:
+		find_path()
 
 
 func _on_rot_timer_timeout():
@@ -115,8 +116,9 @@ func attack():
 	allowed_to_move = false
 
 func _on_hitbox_area_body_entered(body):
-	if body.is_in_group("player") and not attacking:
-		attack()
+	if not dead:
+		if body.is_in_group("player") and not attacking:
+			attack()
 
 
 func _on_top_part_animation_finished():
@@ -131,12 +133,14 @@ func _on_top_part_animation_finished():
 
 
 func _on_attack_area_area_entered(area):
-	if area.is_in_group("player"):
-		Globals.player_reference.attacked(damage, position, knockback_amount)
+	if not dead:
+		if area.is_in_group("player"):
+			Globals.player_reference.attacked(damage, position, knockback_amount)
 
 
 func _on_top_part_frame_changed():
-	if $TopPart.animation == "attack" or $TopPart.animation == "deter_attack":
-		if $TopPart.frame == attack_frame:
-			$AttackArea.monitoring = true
+	if not dead:
+		if $TopPart.animation == "attack" or $TopPart.animation == "deter_attack":
+			if $TopPart.frame == attack_frame:
+				$AttackArea.monitoring = true
 	

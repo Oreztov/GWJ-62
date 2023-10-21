@@ -279,7 +279,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"deter_attack",
-"speed": 10.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -554,7 +554,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"death",
-"speed": 10.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -595,7 +595,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"deter_attack",
-"speed": 10.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -644,16 +644,18 @@ animations = [{
 z_index = 4
 collision_mask = 5
 script = ExtResource("2_a5me8")
-health = 125
+health = 150
 damage = 25
 attack_frame = 10
 
 [node name="TopPart" parent="." index="1"]
 z_index = 3
 sprite_frames = SubResource("SpriteFrames_81ebw")
-animation = &"idle"
+animation = &"deter_attack"
+frame = 11
+frame_progress = 1.0
 
 [node name="BottomPart" parent="." index="2"]
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_vejgk")
-animation = &"idle"
+animation = &"attack"

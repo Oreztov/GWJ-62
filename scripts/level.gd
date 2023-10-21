@@ -12,8 +12,10 @@ var rng = RandomNumberGenerator.new()
 @onready var plant_markers
 
 @onready var plant_spawn_time
+var plant_spawn_curve = preload("res://resources/spawn_curve.tres")
 
 var time = 0
+var time_sum = time
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,7 +43,7 @@ func _ready():
 	plant_markers = get_tree().get_nodes_in_group("plant_markers")
 	
 	# Setup & Reset game variables
-	plant_spawn_time = 10
+	plant_spawn_time = 15
 	Globals.inv = {Globals.Plants.PUMPKIN: 0, Globals.Plants.CARROT: 0, Globals.Plants.HEART: 0}
 	Globals.score = 0
 	
@@ -93,6 +95,7 @@ func plant_freed(marker):
 func _physics_process(delta):
 	# Score each second
 	time += delta
+	time_sum += delta
 	if time >= 5.0:
 		time -= 5
 		# Award score
@@ -101,7 +104,9 @@ func _physics_process(delta):
 
 func _on_plant_spawn_timer_timeout():
 	spawn_plant()
-	$PlantSpawnTimer.start(plant_spawn_time)
+	var plant_spawn_factor = time_sum / 600 # Increase spawn rates along a curve for 10 minutes
+	plant_spawn_factor = clampf(plant_spawn_factor, 0, 1)
+	$PlantSpawnTimer.start(plant_spawn_time * plant_spawn_curve.sample(plant_spawn_factor))
 	
 func on_enemy_spawned():
 	if len(get_tree().get_nodes_in_group("enemies")) == 3:

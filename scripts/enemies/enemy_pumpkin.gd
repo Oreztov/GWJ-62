@@ -24,8 +24,9 @@ func attack():
 	allowed_to_move = true
 
 func _on_hitbox_area_body_entered(body):
-	if body.is_in_group("player") and not attacking:
-		attack()
+	if not dead:
+		if body.is_in_group("player") and not attacking:
+			attack()
 
 
 func _on_top_part_animation_finished():
@@ -48,8 +49,9 @@ func _on_top_part_animation_finished():
 		queue_free()
 	
 func _on_attack_area_area_entered(area):
-	if area.is_in_group("player") and not attacking:
-		attack()
+	if not dead:
+		if area.is_in_group("player") and not attacking:
+			attack()
 
 func _on_top_part_frame_changed():
 	pass
