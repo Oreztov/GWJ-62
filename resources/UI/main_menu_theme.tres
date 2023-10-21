@@ -1,7 +1,15 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ckigjkqs2dlx4"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://ckigjkqs2dlx4"]
 
 [ext_resource type="FontFile" uid="uid://dsuq4v0qtnt26" path="res://fonts/static/PixelifySans-Regular.ttf" id="1_ktwma"]
+[ext_resource type="StyleBox" uid="uid://clir2iw03yxom" path="res://resources/UI/button2_style_box.tres" id="2_mqy5y"]
+[ext_resource type="StyleBox" uid="uid://ckaadent0hs3j" path="res://resources/UI/main_style_box_texture.tres" id="2_p3yxq"]
+[ext_resource type="StyleBox" uid="uid://dj5fh5i7wi82q" path="res://resources/UI/button_style_box.tres" id="3_y0pwv"]
+[ext_resource type="StyleBox" uid="uid://1a1bvae25inx" path="res://resources/UI/button3_style_box.tres" id="4_n3vrs"]
 
 [resource]
 Button/font_sizes/font_size = 72
 Button/fonts/font = ExtResource("1_ktwma")
+Button/styles/hover = ExtResource("2_mqy5y")
+Button/styles/normal = ExtResource("3_y0pwv")
+Button/styles/pressed = ExtResource("4_n3vrs")
+PanelContainer/styles/panel = ExtResource("2_p3yxq")

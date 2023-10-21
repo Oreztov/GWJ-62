@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/items/weapon_pumpkin.gd" id="1_af0ub"]
 [ext_resource type="Texture2D" uid="uid://cmxaniun855ib" path="res://sprites/plants/pumpkin_sheet.png" id="1_oqu3i"]
+[ext_resource type="Texture2D" uid="uid://dt8gpxw27jtkq" path="res://sprites/light.png" id="3_40knw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ope5y"]
 atlas = ExtResource("1_oqu3i")
@@ -9,9 +10,6 @@ region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_c41il"]
 blend_mode = 1
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qra01"]
-load_path = "res://.godot/imported/light.png-191c2812e8968dabd6c4fd26c78b4e95.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gu77b"]
 radius = 27.0
@@ -106,6 +104,7 @@ tracks/6/keys = {
 [sub_resource type="Animation" id="Animation_cytia"]
 resource_name = "explode"
 length = 0.3
+step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -125,10 +124,10 @@ tracks/1/path = NodePath("ExplosionSprite:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1e-05, 1e-05), Vector2(0.00926907, 0.00926907), Vector2(0.0740826, 0.0740826), Vector2(0.250005, 0.250005), Vector2(0.425927, 0.425927), Vector2(0.490741, 0.490741), Vector2(0.5, 0.5)]
+"values": [Vector2(1e-05, 1e-05), Vector2(0.000280959, 0.000280959), Vector2(0.00868068, 0.00868068), Vector2(0.0658529, 0.0658529), Vector2(0.277472, 0.277472), Vector2(0.722538, 0.722538), Vector2(0.934157, 0.934157), Vector2(0.991329, 0.991329), Vector2(0.999729, 0.999729), Vector2(1, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -137,7 +136,7 @@ tracks/2/path = NodePath("ExplosionSprite:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.2, 0.3),
+"times": PackedFloat32Array(0.23, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 0.466667, 0.121569, 1), Color(1, 0.466667, 0.121569, 0)]
@@ -213,7 +212,7 @@ texture = SubResource("AtlasTexture_ope5y")
 visible = false
 modulate = Color(1, 0.466667, 0.121569, 1)
 material = SubResource("CanvasItemMaterial_c41il")
-texture = SubResource("CompressedTexture2D_qra01")
+texture = ExtResource("3_40knw")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
