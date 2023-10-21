@@ -2,7 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://bwpa14en5oak1"
+uid="uid://d2u253unqice2"
 path="res://.godot/imported/GWJ62ChillOut.mp3-824768f064d7c90702afca7905cacd5e.mp3str"
 
 [deps]
@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/GWJ62ChillOut.mp3-824768f064d7c90702afca7905c
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

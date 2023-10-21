@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://bjtde1hwveusp" path="res://scenes/objects/soul_well.tscn" id="8_wrgja"]
 [ext_resource type="PackedScene" uid="uid://nlmgiqnvpykm" path="res://scenes/UI/HUD.tscn" id="10_7obxb"]
 [ext_resource type="PackedScene" uid="uid://bwpke2nmwkcjj" path="res://scenes/UI/menu.tscn" id="11_7f7e5"]
-[ext_resource type="AudioStream" uid="uid://bfak07yb2n6fk" path="res://sounds/music/GWJ62ChillOutAlt.mp3" id="12_u7uii"]
-[ext_resource type="AudioStream" uid="uid://bvlmkg6vrd0g0" path="res://sounds/music/GWJ62AggressiveChaseAlt.mp3" id="13_dwea6"]
+[ext_resource type="AudioStream" uid="uid://d2u253unqice2" path="res://sounds/music/GWJ62ChillOut.mp3" id="12_30pce"]
+[ext_resource type="AudioStream" uid="uid://cjgewdglsin5k" path="res://sounds/music/GWJ62AggressiveChase.mp3" id="13_xdiga"]
 
 [node name="Level" type="Node2D"]
 position = Vector2(167, 109)
@@ -255,12 +255,12 @@ autostart = true
 [node name="Menu" parent="." instance=ExtResource("11_7f7e5")]
 
 [node name="MusicChill" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_u7uii")
+stream = ExtResource("12_30pce")
 autoplay = true
 bus = &"Music"
 
 [node name="MusicAggressive" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_dwea6")
+stream = ExtResource("13_xdiga")
 bus = &"Music"
 
 [connection signal="timeout" from="PlantSpawnTimer" to="." method="_on_plant_spawn_timer_timeout"]
