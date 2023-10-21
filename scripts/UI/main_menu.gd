@@ -2,6 +2,8 @@ extends Control
 
 var dead = false
 
+var initial_hiscore_text
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$MainContainer.visible = true
@@ -15,6 +17,9 @@ func _ready():
 	Globals.game_over.connect(game_over)
 	
 	dead = false
+	
+	initial_hiscore_text = $HiScoreContainer/HiScoreLabel.text
+	$HiScoreContainer/HiScoreLabel.text = initial_hiscore_text % SaveSystem.get_var("high_score", 0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -73,6 +78,7 @@ func game_over():
 	$MainContainer/VBoxContainer/PlayButton.text = "Restart!"
 	$MainContainer/VBoxContainer/Title.text = "Game\nOver"
 	dead = true
+	$HiScoreContainer/HiScoreLabel.text = initial_hiscore_text % SaveSystem.get_var("high_score", 0)
 
 
 func _on_main_container_visibility_changed():

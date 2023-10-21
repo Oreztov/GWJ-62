@@ -25,7 +25,16 @@ var debug_plants = []
 signal hotkeys_updated
 signal game_over
 
+func _ready():
+	game_over.connect(save_data)
+
 func add_score(amount):
 	score += amount
 	hud_reference.update_score()
+	
+func save_data():
+	if score > SaveSystem.get_var("high_score", 0):
+		SaveSystem.set_var("high_score", score)
+		SaveSystem.save()
+	
 	

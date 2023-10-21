@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Globals="*res://scripts/globals.gd"
 GGS="*res://addons/ggs/classes/global/ggs.tscn"
+SaveSystem="*res://addons/save_system/SaveSystem.gd"
 
 [display]
 
@@ -29,7 +30,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/ggs/plugin.cfg")
+enabled=PackedStringArray("res://addons/ggs/plugin.cfg", "res://addons/save_system/plugin.cfg")
 
 [input]
 
