@@ -41,6 +41,7 @@ func _on_top_part_animation_finished():
 		spawn_weapon_pumpkin()
 	# Stage 2 done
 	elif $TopPart.animation == "attack_stage2" or $TopPart.animation == "deter_attack_stage2":
+		Globals.enemy_died.emit()
 		queue_free()
 	
 func _on_attack_area_area_entered(area):

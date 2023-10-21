@@ -36,6 +36,7 @@ func _physics_process(delta):
 		if health <= 0:
 			# Award score
 			Globals.add_score(25)
+			Globals.enemy_died.emit()
 			queue_free()
 			
 		if allowed_to_move:

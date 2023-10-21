@@ -51,6 +51,9 @@ func _ready():
 	Globals.hud_reference.update_score()
 	get_tree().paused = false
 	
+	Globals.enemy_died.connect(on_enemy_died)
+	Globals.enemy_spawned.connect(on_enemy_spawned)
+	
 
 func spawn_water_tap(blocked_graves):
 	# Check for blocked graves by composter
@@ -99,3 +102,13 @@ func _physics_process(delta):
 func _on_plant_spawn_timer_timeout():
 	spawn_plant()
 	$PlantSpawnTimer.start(plant_spawn_time)
+	
+func on_enemy_spawned():
+	if len(get_tree().get_nodes_in_group("enemies")) == 3:
+		$MusicChill.stop()
+		$MusicAggressive.play()
+
+func on_enemy_died():
+	if len(get_tree().get_nodes_in_group("enemies")) == 3:
+		$MusicAggressive.stop()
+		$MusicChill.play()

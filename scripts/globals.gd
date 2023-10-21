@@ -25,6 +25,9 @@ var debug_plants = []
 signal hotkeys_updated
 signal game_over
 
+signal enemy_spawned
+signal enemy_died
+
 func _ready():
 	game_over.connect(save_data)
 
