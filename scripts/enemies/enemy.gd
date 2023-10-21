@@ -17,6 +17,7 @@ var spawned = false
 var deter = false
 var attacking = false
 var allowed_to_move = true
+var dead = false
 
 func _ready():
 	initial_pos = position
@@ -32,12 +33,14 @@ func _ready():
 
 func _physics_process(delta):
 	# Death
-	if spawned:
+	if spawned and not dead:
 		if health <= 0:
-			# Award score
+			# Award score, play death
 			Globals.add_score(25)
-			Globals.enemy_died.emit()
-			queue_free()
+			$TopPart.play("death")
+			$BottomPart.play("death")
+			dead = true
+			return
 			
 		if allowed_to_move:
 		
@@ -122,6 +125,9 @@ func _on_top_part_animation_finished():
 		$AttackArea.monitoring = false
 		attacking = false
 		allowed_to_move = true
+	elif $TopPart.animation == "death":
+		Globals.enemy_died.emit()
+		queue_free()
 
 
 func _on_attack_area_area_entered(area):
@@ -133,3 +139,4 @@ func _on_top_part_frame_changed():
 	if $TopPart.animation == "attack" or $TopPart.animation == "deter_attack":
 		if $TopPart.frame == attack_frame:
 			$AttackArea.monitoring = true
+	

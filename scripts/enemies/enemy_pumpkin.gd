@@ -43,6 +43,9 @@ func _on_top_part_animation_finished():
 	elif $TopPart.animation == "attack_stage2" or $TopPart.animation == "deter_attack_stage2":
 		Globals.enemy_died.emit()
 		queue_free()
+	elif $TopPart.animation == "death":
+		Globals.enemy_died.emit()
+		queue_free()
 	
 func _on_attack_area_area_entered(area):
 	if area.is_in_group("player") and not attacking:
