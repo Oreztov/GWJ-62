@@ -68,7 +68,7 @@ func _on_help_button_pressed():
 	# To Help Menu
 	$MainContainer.visible = false
 	$HelpContainer.visible = true
-	$HelpContainer/VBoxContainer/Info/LeftSide/BackButton.grab_focus()
+	$HelpContainer/VBoxContainer/BackButton.grab_focus()
 	
 func game_over():
 	get_tree().paused = true
