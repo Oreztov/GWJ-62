@@ -2,7 +2,9 @@ extends "res://scripts/enemies/enemy.gd"
 
 @export var weapon_pumpkin: PackedScene
 
-
+func _ready():
+	super._ready()
+	circling = false
 
 func spawn_weapon_pumpkin():
 	var new_pumpkin = weapon_pumpkin.instantiate()

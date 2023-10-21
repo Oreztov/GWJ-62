@@ -18,6 +18,14 @@ var deter = false
 var attacking = false
 var allowed_to_move = true
 var dead = false
+var circling = true  # whether or not the enemy
+
+# CIRCLING
+var TILE_SIZE = 16
+var CIRCLING_RADIUS = 7  # in pixel units
+
+var angle = randf_range(0, 2 * PI)
+var offset = Vector2(cos(angle), sin(angle)) * CIRCLING_RADIUS * TILE_SIZE
 
 func _ready():
 	initial_pos = position
@@ -30,6 +38,9 @@ func _ready():
 	$DirtParticles.play("default")
 	
 	$AttackArea.monitoring = false
+	
+	if randf_range(0, 1) > 0.7:
+		offset = Vector2.ZERO
 
 func _physics_process(delta):
 	# Death
@@ -75,8 +86,8 @@ func _physics_process(delta):
 			move_and_slide()
 	
 func handle_movement():
-	nav_agent.target_position = Globals.player_reference.global_position
-	# Calculate and set agent velocity towards next waypoint
+	nav_agent.target_position = get_target_position()
+	
 	var current_agent_position: Vector2 = global_transform.origin
 	var next_path_position: Vector2 = nav_agent.get_next_path_position()
 
@@ -85,14 +96,20 @@ func handle_movement():
 	new_velocity = new_velocity * speed
 	
 	return new_velocity
-	
+
 func find_path():
-	nav_agent.target_position = Globals.player_reference.global_position
+	nav_agent.target_position = get_target_position()
+
+func get_target_position():
+	var enemy_count = len(get_tree().get_nodes_in_group("enemies")) / 3
+	var nav_offset = Vector2.ZERO
+	if enemy_count > 3 and circling:
+		nav_offset = offset
+	return Globals.player_reference.global_position + nav_offset
 
 func _on_nav_update_timer_timeout():
 	if not dead:
 		find_path()
-
 
 func _on_rot_timer_timeout():
 	# Naturally rot away
