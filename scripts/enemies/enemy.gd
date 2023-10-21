@@ -113,7 +113,7 @@ func attack():
 		$TopPart.play("attack")
 		$BottomPart.play("attack")
 	attacking = true
-	allowed_to_move = false
+	# allowed_to_move = false
 
 func _on_hitbox_area_body_entered(body):
 	if not dead:
