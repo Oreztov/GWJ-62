@@ -17,6 +17,8 @@ var plant_spawn_curve = preload("res://resources/spawn_curve.tres")
 var time = 0
 var time_sum = time
 
+var aggro_playing = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Get all gravestones
@@ -110,10 +112,18 @@ func _on_plant_spawn_timer_timeout():
 	
 func on_enemy_spawned():
 	if len(get_tree().get_nodes_in_group("enemies")) == 3:
+		# Stop chill music, Start aggressive music
 		$MusicChill.stop()
-		$MusicAggressive.play()
+		$MusicAggressive.volume_db = 0
+		$MusicAggressive.play(0)
+		aggro_playing = true
 
 func on_enemy_died():
 	if len(get_tree().get_nodes_in_group("enemies")) == 3:
-		$MusicAggressive.stop()
+		# Fade out chill music, return aggressive
+		aggro_playing = false
+		var music_tween = create_tween()
+		music_tween.tween_property($MusicAggressive, "volume_db", -50, 2)
+		music_tween.tween_callback(func():$MusicAggressive.volume_db = 0; if not aggro_playing: $MusicAggressive.stop())
 		$MusicChill.play()
+		
