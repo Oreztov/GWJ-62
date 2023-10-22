@@ -127,6 +127,7 @@ theme = ExtResource("1_v8gmf")
 script = ExtResource("2_2rrl0")
 
 [node name="CreditsContainer" type="PanelContainer" parent="MainMenu"]
+visible = false
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -148,6 +149,7 @@ label_settings = ExtResource("25_3fs3h")
 horizontal_alignment = 1
 
 [node name="HiScoreContainer" type="PanelContainer" parent="MainMenu"]
+visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -168,6 +170,7 @@ label_settings = ExtResource("4_8an01")
 horizontal_alignment = 1
 
 [node name="MainContainer" type="PanelContainer" parent="MainMenu"]
+visible = false
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 1
 anchors_preset = 8
@@ -610,7 +613,6 @@ size_flags_vertical = 8
 text = "Back..."
 
 [node name="HelpContainer" type="PanelContainer" parent="MainMenu"]
-visible = false
 custom_minimum_size = Vector2(1200, 700)
 layout_mode = 1
 anchors_preset = 8
@@ -683,7 +685,7 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="MainMenu/HelpContainer/VBoxContainer/Resources"]
 layout_mode = 2
-text = "⇨"
+text = "->"
 label_settings = ExtResource("25_3fs3h")
 
 [node name="Resource1" type="VBoxContainer" parent="MainMenu/HelpContainer/VBoxContainer/Resources"]
@@ -713,8 +715,10 @@ label_settings = ExtResource("25_3fs3h")
 
 [node name="Label2" type="Label" parent="MainMenu/HelpContainer/VBoxContainer/Resources/Resource1"]
 layout_mode = 2
-text = "     ⇩⇩⇩"
+text = "V
+"
 label_settings = ExtResource("25_3fs3h")
+horizontal_alignment = 1
 
 [node name="Control2" type="Control" parent="MainMenu/HelpContainer/VBoxContainer/Resources/Resource1"]
 custom_minimum_size = Vector2(0, 40)
@@ -763,8 +767,9 @@ label_settings = ExtResource("25_3fs3h")
 
 [node name="Label2" type="Label" parent="MainMenu/HelpContainer/VBoxContainer/Resources/Resource2"]
 layout_mode = 2
-text = "            ⇩⇩⇩ "
+text = "V"
 label_settings = ExtResource("25_3fs3h")
+horizontal_alignment = 1
 
 [node name="Control2" type="Control" parent="MainMenu/HelpContainer/VBoxContainer/Resources/Resource2"]
 custom_minimum_size = Vector2(0, 40)
@@ -813,8 +818,9 @@ label_settings = ExtResource("25_3fs3h")
 
 [node name="Label2" type="Label" parent="MainMenu/HelpContainer/VBoxContainer/Resources/Resource3"]
 layout_mode = 2
-text = "        ⇩⇩⇩"
+text = "V"
 label_settings = ExtResource("25_3fs3h")
+horizontal_alignment = 1
 
 [node name="Control2" type="Control" parent="MainMenu/HelpContainer/VBoxContainer/Resources/Resource3"]
 custom_minimum_size = Vector2(0, 40)
@@ -837,7 +843,7 @@ label_settings = ExtResource("25_3fs3h")
 
 [node name="Label3" type="Label" parent="MainMenu/HelpContainer/VBoxContainer/Resources"]
 layout_mode = 2
-text = "⇨"
+text = "->"
 label_settings = ExtResource("25_3fs3h")
 
 [node name="Plant" type="VBoxContainer" parent="MainMenu/HelpContainer/VBoxContainer/Resources"]
@@ -889,7 +895,7 @@ label_settings = ExtResource("25_3fs3h")
 
 [node name="Label4" type="Label" parent="MainMenu/HelpContainer/VBoxContainer/Resources"]
 layout_mode = 2
-text = "⇨"
+text = "->"
 label_settings = ExtResource("25_3fs3h")
 
 [node name="Item" type="VBoxContainer" parent="MainMenu/HelpContainer/VBoxContainer/Resources"]
@@ -1030,7 +1036,7 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="MainMenu/HelpContainer/VBoxContainer/Resources2"]
 layout_mode = 2
-text = "⇨"
+text = "->"
 label_settings = ExtResource("25_3fs3h")
 
 [node name="Enemy1" type="VBoxContainer" parent="MainMenu/HelpContainer/VBoxContainer/Resources2"]
