@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://bjtde1hwveusp" path="res://scenes/objects/soul_well.tscn" id="8_wrgja"]
 [ext_resource type="PackedScene" uid="uid://nlmgiqnvpykm" path="res://scenes/UI/HUD.tscn" id="10_7obxb"]
 [ext_resource type="PackedScene" uid="uid://bwpke2nmwkcjj" path="res://scenes/UI/menu.tscn" id="11_7f7e5"]
-[ext_resource type="AudioStream" uid="uid://cc6adlnpy16yt" path="res://sounds/music/GWJ62ChillGraveyard.mp3" id="12_sfws3"]
-[ext_resource type="AudioStream" uid="uid://cjgewdglsin5k" path="res://sounds/music/GWJ62AggressiveChase.mp3" id="13_xdiga"]
+[ext_resource type="AudioStream" uid="uid://h0t6gtf1xxps" path="res://sounds/music/GWJ62HappyPoppies.mp3" id="12_kkpbd"]
+[ext_resource type="AudioStream" uid="uid://bhj1ujhfggyaq" path="res://sounds/music/GWJ62AggressiveChase.mp3" id="13_xdiga"]
 
 [node name="Level" type="Node2D"]
 position = Vector2(167, 109)
@@ -255,7 +255,7 @@ autostart = true
 [node name="Menu" parent="." instance=ExtResource("11_7f7e5")]
 
 [node name="MusicChill" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_sfws3")
+stream = ExtResource("12_kkpbd")
 autoplay = true
 bus = &"Music"
 
