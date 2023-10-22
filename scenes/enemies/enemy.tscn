@@ -179,7 +179,7 @@ blend_mode = 1
 size = Vector2(18, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3i51"]
-size = Vector2(30, 28)
+size = Vector2(32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cduj6"]
 atlas = ExtResource("4_fbwxy")
@@ -312,7 +312,6 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxArea"]
-position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_nlvj2")
 
 [node name="AttackArea" type="Area2D" parent="." groups=["enemies"]]
@@ -320,7 +319,6 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_f3i51")
 
 [node name="DirtParticles" type="AnimatedSprite2D" parent="."]

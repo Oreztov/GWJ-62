@@ -40,8 +40,8 @@ func _on_area_2d_area_entered(area):
 			# Do damage
 			Globals.player_reference.attacked(damage)
 		elif area.is_in_group("enemies"):
-			# Ignore player
-			return 0
+			# Do damage
+			area.get_parent().take_damage(damage)
 
 
 func _on_audio_stream_player_finished():

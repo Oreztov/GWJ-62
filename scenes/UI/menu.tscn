@@ -376,6 +376,8 @@ grab_focus_on_mouse_over = true
 
 [node name="Btn" parent="MainMenu/SettingsContainer/VBoxContainer/ScrollContainer/VBoxContainer/AccessibilityContainer/OptionList" index="0"]
 item_count = 3
+selected = 0
+allow_reselect = true
 popup/item_0/text = "Protanopia"
 popup/item_0/id = 0
 popup/item_1/text = "Deutranopia"

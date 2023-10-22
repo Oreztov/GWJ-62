@@ -24,6 +24,7 @@ func attack():
 		$BottomPart.play("attack_stage1")
 	attacking = true
 	allowed_to_move = true
+	speed = 275
 
 func _on_hitbox_area_body_entered(body):
 	if not dead:

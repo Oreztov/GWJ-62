@@ -665,7 +665,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nt4u5"]
-size = Vector2(24, 28)
+size = Vector2(16, 24)
 
 [node name="EnemyPumpkin" instance=ExtResource("1_de7y4")]
 script = ExtResource("2_wi6jk")
@@ -682,7 +682,7 @@ sprite_frames = SubResource("SpriteFrames_rm1ko")
 animation = &"idle"
 
 [node name="CollisionShape2D" parent="HitboxArea" index="0"]
-position = Vector2(0, 6)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_nt4u5")
 
 [node name="Death" parent="." index="11"]
