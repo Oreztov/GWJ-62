@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/enemies/enemy_heart.gd" id="2_a5me8"]
 [ext_resource type="Texture2D" uid="uid://duwkeleeghsil" path="res://sprites/enemies/bleeding_heart_monster/bleedingHeartMonster.png" id="2_r4ve6"]
 [ext_resource type="Texture2D" uid="uid://bm0d6h1tauorp" path="res://sprites/enemies/bleeding_heart_monster/bleedingHeartMonsterAttack.png" id="3_krn7a"]
-[ext_resource type="Texture2D" uid="uid://dusb1hwqjj3ti" path="res://sprites/enemies/bleeding_heart_monster/bleedingHeartMonsterDeterDeath.png" id="4_01igb"]
+[ext_resource type="Texture2D" uid="uid://c72chmrp25nb7" path="res://sprites/enemies/bleeding_heart_monster/bleedingHeartMonsterDeterDeath.png" id="4_01igb"]
 [ext_resource type="Texture2D" uid="uid://njhemqpbv8um" path="res://sprites/enemies/bleeding_heart_monster/bleedingHeartMonsterDeterAttack.png" id="4_7fxjw"]
 [ext_resource type="Texture2D" uid="uid://dj2ivm6ndme5o" path="res://sprites/enemies/bleeding_heart_monster/bleedingHeartMonsterDeterWalking.png" id="5_dlthk"]
 [ext_resource type="AudioStream" uid="uid://b4ea1wqjiuyac" path="res://sounds/HeartDeathSFX.mp3" id="8_bi3dh"]

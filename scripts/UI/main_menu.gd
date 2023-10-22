@@ -15,6 +15,7 @@ func _ready():
 		$MainContainer/VBoxContainer/PlayButton.text = "Continue!"
 		
 	Globals.game_over.connect(game_over)
+	$GameOver.hide()
 	
 	dead = false
 	
@@ -48,7 +49,7 @@ func _on_play_button_pressed():
 			visible = false
 	else:
 		# Restart game
-		$MainContainer/VBoxContainer/Title.text = "Grave\nGardens"
+		$GameOver.hide()
 		get_tree().reload_current_scene()
 
 func _on_settings_button_pressed():
@@ -76,7 +77,7 @@ func game_over():
 	visible = true
 	$MainContainer/VBoxContainer/PlayButton.grab_focus()
 	$MainContainer/VBoxContainer/PlayButton.text = "Restart!"
-	$MainContainer/VBoxContainer/Title.text = "Game\nOver"
+	$GameOver.show()
 	dead = true
 	$HiScoreContainer/HiScoreLabel.text = initial_hiscore_text % SaveSystem.get_var("high_score", 0)
 
