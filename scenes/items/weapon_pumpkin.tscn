@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://chwttlby65re4"]
+[gd_scene load_steps=12 format=3 uid="uid://chwttlby65re4"]
 
 [ext_resource type="Script" path="res://scripts/items/weapon_pumpkin.gd" id="1_af0ub"]
 [ext_resource type="Texture2D" uid="uid://cmxaniun855ib" path="res://sprites/plants/pumpkin_sheet.png" id="1_oqu3i"]
 [ext_resource type="Texture2D" uid="uid://dt8gpxw27jtkq" path="res://sprites/light.png" id="3_40knw"]
+[ext_resource type="AudioStream" uid="uid://rh5b0whx7n0t" path="res://sounds/ExplosionSFX.mp3" id="4_ccoag"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ope5y"]
 atlas = ExtResource("1_oqu3i")
@@ -229,5 +230,10 @@ libraries = {
 "": SubResource("AnimationLibrary_fpgn6")
 }
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ccoag")
+bus = &"SFX"
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

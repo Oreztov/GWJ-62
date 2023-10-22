@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://nlmgiqnvpykm" path="res://scenes/UI/HUD.tscn" id="10_7obxb"]
 [ext_resource type="PackedScene" uid="uid://bwpke2nmwkcjj" path="res://scenes/UI/menu.tscn" id="11_7f7e5"]
 [ext_resource type="AudioStream" uid="uid://cc6adlnpy16yt" path="res://sounds/music/GWJ62ChillGraveyard.mp3" id="12_sfws3"]
-[ext_resource type="AudioStream" uid="uid://bhj1ujhfggyaq" path="res://sounds/music/GWJ62AggressiveChase.mp3" id="13_xdiga"]
+[ext_resource type="AudioStream" uid="uid://cjgewdglsin5k" path="res://sounds/music/GWJ62AggressiveChase.mp3" id="13_xdiga"]
 
 [node name="Level" type="Node2D"]
 position = Vector2(167, 109)

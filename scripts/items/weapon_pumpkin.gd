@@ -22,7 +22,8 @@ func _on_animation_player_animation_finished(anim_name):
 			$AnimationPlayer.speed_scale = 1
 			$AnimationPlayer.play("explode")
 		"explode":
-			queue_free()
+			$AudioStreamPlayer.play()
+			
 
 
 func _on_area_2d_area_entered(area):
@@ -41,3 +42,7 @@ func _on_area_2d_area_entered(area):
 		elif area.is_in_group("enemies"):
 			# Ignore player
 			return 0
+
+
+func _on_audio_stream_player_finished():
+	queue_free()

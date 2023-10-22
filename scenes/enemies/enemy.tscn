@@ -338,6 +338,7 @@ libraries = {
 }
 
 [node name="Death" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
 
 [connection signal="animation_finished" from="TopPart" to="." method="_on_top_part_animation_finished"]
 [connection signal="frame_changed" from="TopPart" to="." method="_on_top_part_frame_changed"]

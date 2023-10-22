@@ -155,6 +155,7 @@ func harvest():
 			Globals.hud_reference.add_plant(plant, 1)
 	# Award score
 	Globals.add_score(50)
+	Globals.player_reference.get_node("Use").play()
 	queue_free()
 
 func _on_animated_sprite_2d_animation_changed():

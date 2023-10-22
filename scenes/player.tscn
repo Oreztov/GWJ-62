@@ -255,8 +255,10 @@ texture_scale = 0.3
 
 [node name="PickUp" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_h8ffr")
+bus = &"SFX"
 
 [node name="Use" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_5vrss")
+bus = &"SFX"
 
 [connection signal="timeout" from="Invincibility" to="." method="_on_invincibility_timeout"]
