@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bex00buheapxy"]
+[gd_scene load_steps=35 format=3 uid="uid://bex00buheapxy"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_7lnnx"]
 [ext_resource type="Texture2D" uid="uid://bbhp8hsjw1yvf" path="res://sprites/objects/compost_bag.png" id="2_e4g4y"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://d1kcsud7hg5o0" path="res://sprites/objects/soulwell_sheet.png" id="5_sd73w"]
 [ext_resource type="Texture2D" uid="uid://dt8gpxw27jtkq" path="res://sprites/light.png" id="6_atnuo"]
 [ext_resource type="Texture2D" uid="uid://dff610tlvc177" path="res://sprites/player/player_idle.png" id="7_34ty0"]
+[ext_resource type="AudioStream" uid="uid://w2n4w4e618xm" path="res://sounds/PickUpSFX.mp3" id="10_h8ffr"]
+[ext_resource type="AudioStream" uid="uid://bdfwlo28rpktl" path="res://sounds/UseSFX.mp3" id="11_5vrss"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ui0o"]
 atlas = ExtResource("5_sd73w")
@@ -250,5 +252,11 @@ position = Vector2(0, -16)
 color = Color(0.858824, 0.215686, 0.47451, 1)
 texture = ExtResource("6_atnuo")
 texture_scale = 0.3
+
+[node name="PickUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_h8ffr")
+
+[node name="Use" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_5vrss")
 
 [connection signal="timeout" from="Invincibility" to="." method="_on_invincibility_timeout"]

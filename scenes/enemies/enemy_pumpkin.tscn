@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://ba7wx06v8fgkl"]
+[gd_scene load_steps=95 format=3 uid="uid://ba7wx06v8fgkl"]
 
 [ext_resource type="PackedScene" uid="uid://cc54t4tocndg7" path="res://scenes/enemies/enemy.tscn" id="1_de7y4"]
 [ext_resource type="Texture2D" uid="uid://b8fwgyyswt6mf" path="res://sprites/enemies/pumpkin_monster/pumpkinMonster.png" id="2_tu7en"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cynvw7251257o" path="res://sprites/enemies/pumpkin_monster/pumpkinMonsterDeterDeath.png" id="6_sw5lb"]
 [ext_resource type="Texture2D" uid="uid://cnfjpmajlebeb" path="res://sprites/enemies/pumpkin_monster/pumpkinMonsterDeterAttackStage2.png" id="7_s2igh"]
 [ext_resource type="Texture2D" uid="uid://c2ncrykbxrqm8" path="res://sprites/enemies/pumpkin_monster/pumpkinMonsterDeterWalking.png" id="8_3jpk3"]
+[ext_resource type="AudioStream" uid="uid://cvp2lihun7ugl" path="res://sounds/PumpkinDeathSFX.mp3" id="11_gb3ak"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u4lig"]
 atlas = ExtResource("4_exu53")
@@ -683,3 +684,6 @@ animation = &"idle"
 [node name="CollisionShape2D" parent="HitboxArea" index="0"]
 position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_nt4u5")
+
+[node name="Death" parent="." index="11"]
+stream = ExtResource("11_gb3ak")

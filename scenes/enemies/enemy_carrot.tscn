@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://b7nrd1xgrf1yp"]
+[gd_scene load_steps=54 format=3 uid="uid://b7nrd1xgrf1yp"]
 
 [ext_resource type="PackedScene" uid="uid://cc54t4tocndg7" path="res://scenes/enemies/enemy.tscn" id="1_1jmn3"]
 [ext_resource type="Texture2D" uid="uid://dg0oqj7oco3ex" path="res://sprites/enemies/carrot_monster/carrotMonster.png" id="2_c7onw"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://tif1i1ieom71" path="res://sprites/enemies/carrot_monster/carrotMonsterDeterDeath.png" id="3_3nw1v"]
 [ext_resource type="Texture2D" uid="uid://pcamvd6bqr2d" path="res://sprites/enemies/carrot_monster/carrotMonsterDeterAttack.png" id="3_me6yj"]
 [ext_resource type="Texture2D" uid="uid://c6f5n0gu2x7dm" path="res://sprites/enemies/carrot_monster/carrotMonsterDeterWalking.png" id="4_p3d4c"]
+[ext_resource type="AudioStream" uid="uid://du706wx5qek71" path="res://sounds/CarrotDeathSFX.mp3" id="7_a6wy7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a0r65"]
 atlas = ExtResource("2_m635v")
@@ -401,3 +402,6 @@ animation = &"idle"
 
 [node name="AttackArea" parent="." index="8"]
 monitoring = false
+
+[node name="Death" parent="." index="11"]
+stream = ExtResource("7_a6wy7")

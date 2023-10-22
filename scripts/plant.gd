@@ -55,6 +55,7 @@ func consume_resource():
 	$RotTimer.start($RotTimer.time_left + 5)
 	# Consume player hand item
 	Globals.player_reference.set_hand_item(Globals.Resources.EMPTY)
+	$Use.play()
 	$AnimationPlayer.play("pop_out")
 	$InteractionLabel.disable()
 	resource_needed = Globals.Resources.EMPTY

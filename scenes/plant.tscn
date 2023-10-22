@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dle118v1mw774"]
+[gd_scene load_steps=38 format=3 uid="uid://dle118v1mw774"]
 
 [ext_resource type="Script" path="res://scripts/plant.gd" id="1_gs5sh"]
 [ext_resource type="Texture2D" uid="uid://cd7p0ur8opil2" path="res://resources/generic_sprout.tres" id="1_jejnx"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c2c1d6jyot4x0" path="res://sprites/plants/plantIcons.png" id="9_xdum8"]
 [ext_resource type="Texture2D" uid="uid://dt8gpxw27jtkq" path="res://sprites/light.png" id="10_183m4"]
 [ext_resource type="Texture2D" uid="uid://7mwfhk6gmmkg" path="res://sprites/plants/rot_bubble.png" id="11_albey"]
+[ext_resource type="AudioStream" uid="uid://bdfwlo28rpktl" path="res://sounds/UseSFX.mp3" id="12_wsdcg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sy2ec"]
 atlas = ExtResource("3_o3y5v")
@@ -346,6 +347,9 @@ amount = 6
 process_material = SubResource("ParticleProcessMaterial_41m6g")
 texture = ExtResource("11_albey")
 lifetime = 3.0
+
+[node name="Use" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_wsdcg")
 
 [connection signal="animation_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_changed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

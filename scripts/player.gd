@@ -60,6 +60,7 @@ func _physics_process(delta):
 		# Point towards where your direction
 		new_carrot.rotation = last_direction.angle()
 		get_parent().call_deferred("add_child", new_carrot)
+		$Use.play()
 		Globals.inv[Globals.Plants.CARROT] -= 1
 		Globals.hud_reference.update_inventory()
 	# Pumpkin
@@ -69,10 +70,12 @@ func _physics_process(delta):
 		new_pumpkin.position = position + $CollisionShape2D.position
 		new_pumpkin.parent = true
 		get_parent().call_deferred("add_child", new_pumpkin)
+		$Use.play()
 		Globals.inv[Globals.Plants.PUMPKIN] -= 1
 		Globals.hud_reference.update_inventory()
 	elif  Input.is_action_just_pressed("use_heart") and Globals.inv[Globals.Plants.HEART] > 0 and Globals.hud_reference.get_hp() < 100:
 		Globals.hud_reference.add_hp(30)
+		$Use.play()
 		Globals.inv[Globals.Plants.HEART] -= 1
 		Globals.hud_reference.update_inventory()
 
@@ -89,6 +92,8 @@ func set_hand_item(item):
 			$HandSprite.play("water")
 		_:
 			$HandSprite.play("empty")
+	if hand != Globals.Resources.EMPTY:
+		$PickUp.play()
 
 func attacked(amount, source_pos = Vector2.ZERO, knockback_amount = 100):
 	# Take damage

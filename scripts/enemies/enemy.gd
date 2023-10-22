@@ -48,6 +48,7 @@ func _physics_process(delta):
 		if health <= 0:
 			# Award score, play death
 			Globals.add_score(25)
+			$Death.play()
 			$TopPart.play("death")
 			$BottomPart.play("death")
 			dead = true
